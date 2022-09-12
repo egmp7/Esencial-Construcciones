@@ -1,0 +1,35 @@
+{
+    "title":"Esencial Construcciones",
+    "slogan":"La belleza de vivir en el paraíso.",
+    "about":"Esencial construcciones nace en octubre del 2015 con el propósito de crear una arquitectura que responda tanto a la necesidad del cliente como a la relación con el contexto; enfocándonos en el cumplimiento de todos los requerimientos y normas técnicas necesarias para que la edificación sea habitable, por esa razón contamos con un grupo interdisciplinario de profesionales dispuestos a cumplir con nuestro objetivo.",
+    "objective":"Diseñar y construir edificaciones con los más altos estándares de calidad e implementando tecnologías innovadoras y sostenibles con la finalidad de satisfacer las necesidades de nuestros clientes.",
+    "services":
+    [{
+        "service":"Diseño y Planificación",
+        "description":"Elaboramos propuestas para cualquier tipo de proyectos inmobiliarios sean urbanos y/o rurales, entregando un estudio técnico con todos los planos y cálculos correspondientes para las diversas infraestructuras."
+    },
+    {
+        "service":"Construcción",
+        "description":"Edificamos tus proyectos arquitectónicos con los mejores materiales del mercado garantizando un sistema estructural resistente y confiable; a cargo de profesionales con gran experiencia en el ámbito de la construcción."
+    },
+    {
+        "service":"Ampliación y Remodelación",
+        "description":"Incrementamos y/o modernizamos sus espacios interiores y exteriores, con excelentes acabados para lograr que las edificaciones adquieran una nueva identidad, adaptándonos a los requerimientos de nuestros clientes."
+    },
+    {
+        "service":"Topografía",
+        "description":"Levantamos y mapeamos terrenos urbanos y/o rurales aprobados en el municipio, además elaboramos planos para la subdivisión de lotes incluyendo en nuestros servicios el replanteo sobre el terreno."
+    },
+    {
+        "service":"Domótica del Hogar",
+        "description":"Con el propósito de actualizar nuestros servicios contamos con ingenieros expertos en automatización de viviendas, para controlar varias acciones realizadas por el humano en las actividades diarias del hogar mediante la implementación de la tecnología."
+    },
+    {
+        "service":"Publicidad",
+        "description":"Poseemos un equipo de profesionales encargados del marketing y publicidad para crear anuncios publicitarios satisfaciendo las demandas de nuestros clientes, nos enfocamos en gran parte al marketing digital implementando estrategias de vanguardia."
+    },
+    {
+        "service":"Maquetería",
+        "description":"Elaboramos maquetas virtuales y/o físicas para cualquier tipo de proyecto sea inmobiliario o estudiantil con el fin de aportar en la expresión formal del proyecto."
+    }]
+}

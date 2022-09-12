@@ -1,0 +1,10 @@
+11/09/2022: 
+    -   Set flask and python enviroment, Templates
+    -   Static Files (Url for images, css, favicon)
+            https://flask.palletsprojects.com/en/1.1.x/tutorial/static/
+    -   Navigation Module
+            https://www.geeksforgeeks.org/navigation-bars-in-flask/
+    -   Read a Json file
+            https://www.geeksforgeeks.org/read-json-file-using-python/
+    -   Nesting extends templates
+            https://jinja.palletsprojects.com/en/3.1.x/templates/

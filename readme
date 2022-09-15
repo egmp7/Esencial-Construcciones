@@ -1,10 +1,54 @@
 11/09/2022: 
-    -   Set flask and python enviroment, Templates
-    -   Static Files (Url for images, css, favicon)
-            https://flask.palletsprojects.com/en/1.1.x/tutorial/static/
-    -   Navigation Module
-            https://www.geeksforgeeks.org/navigation-bars-in-flask/
-    -   Read a Json file
-            https://www.geeksforgeeks.org/read-json-file-using-python/
-    -   Nesting extends templates
-            https://jinja.palletsprojects.com/en/3.1.x/templates/
+        -   Set flask and python enviroment, Templates
+        
+        -   Static Files (Url for images, css, favicon)
+                https://flask.palletsprojects.com/en/1.1.x/tutorial/static/
+        -   Navigation Module
+
+                Check base.html & app.py files
+
+                https://www.geeksforgeeks.org/navigation-bars-in-flask/
+        -   Read a Json file
+
+                Check app.py file
+
+                https://www.geeksforgeeks.org/read-json-file-using-python/
+
+        -   Nesting extends templates
+            
+                Not applied
+
+                https://jinja.palletsprojects.com/en/3.1.x/templates/
+
+14/09/2022: 
+        -   String Concatenation
+
+                Check Home template / services section
+
+                https://stackoverflow.com/questions/39842718/im-trying-to-create-an-url-for-in-an-html-img-src-tag-where-the-filename
+
+        -   For loops with range
+
+                Check Home template / projects section
+
+        -   Convert int to string inside template
+
+                Check Home template / projects section
+
+                https://stackoverflow.com/questions/19161093/convert-integer-to-string-jinja
+
+        -   Update a variable with jinja
+
+                Check Home template / home caraousel & about carousel
+
+                https://stackoverflow.com/questions/9486393/jinja2-change-the-value-of-a-variable-inside-a-loop
+
+         -  Forms, HTTP Medthods
+
+                Check Home template / Contact Section
+
+                https://www.digitalocean.com/community/tutorials/how-to-use-web-forms-in-a-flask-application
+                https://flask.palletsprojects.com/en/2.2.x/quickstart/#http-methods
+
+
+

@@ -1,5 +1,6 @@
 #   SET UP 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+
 app = Flask(__name__)
 
 
@@ -25,7 +26,7 @@ nav = Navigation(app)
  """
 nav.Bar('top', [
     nav.Item('Home', 'home'),
-    nav.Item('Proyectos', 'proyectos')
+    nav.Item('Proyectos', 'projects')
 ])
 
 #   GET website DATA with JSON
@@ -34,16 +35,19 @@ f = open('static/data.json')
 data = json.load(f)
 
 #   ROUTES
-@app.route('/home')
+@app.route('/home', methods=['GET', 'POST'])
 def home():
-    return render_template(
-        'home.html',
-        data = data)
+    if request.method == 'POST':
+        return 'hello world'
+    else:
+        return render_template(
+            'home.html',
+            data = data)
 
-@app.route('/proyectos')
-def proyectos():
+@app.route('/projects')
+def projects():
     return render_template(
-        'proyectos.html')
+        'projects.html')
 
 #   Run 
 if __name__ =='__main__':

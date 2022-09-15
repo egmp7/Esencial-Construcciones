@@ -1,10 +1,19 @@
+<!-- This variable controls the active 
+    class for the carousel from boostrap -->
+
+{% set carousel = { 'first':True,
+                    'second':True} %}
+
 {% extends "base.html" %}
-{%block content%}
+
+{% block content %}
 
 <main>
     <header class="masthead">
 
-        <!-- Carousel component -->
+        <!-- HEAD -->
+        
+        <!-- Computer view -->
 
         <div    id="makeFade"
                 class="carousel slide carousel-fade" 
@@ -12,52 +21,34 @@
 
             <div class="carousel-inner">
                         
-                        <!-- Carousel items -->
+                {% for i in range (1,6)%}
+
+                    <!-- Carousel item -->
+
+                    <div class="carousel-item {{ 'active' if carousel.first else '' }}">            
                         
-                        <div class="carousel-item active">
-                            
-                            <img src="{{ url_for('static', filename='img/bg-1.jpg')}}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>{{data.title}}</h5>
-                                <p>{{data.slogan}}</p>
-                            </div>
-                        </div>
+                        <!-- img -->
 
-                        <div class="carousel-item ">
-                            
-                            <img src="{{ url_for('static', filename='img/bg-2.jpg')}}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>{{data.title}}</h5>
-                                <p>{{data.slogan}}</p>
-                            </div>
-                        </div>
+                        <img src="{{ url_for(   'static',
+                                                filename='/'.join([ 'img', 
+                                                                    'bg-' + i|string + '.jpg'
+                                                                    ]))}} " 
+                            class="d-block w-100">
+                        
+                        <!-- Text -->
 
-                        <div class="carousel-item ">
-                            
-                            <img src="{{ url_for('static', filename='img/bg-3.jpg')}}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>{{data.title}}</h5>
-                                <p>{{data.slogan}}</p>
-                            </div>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>{{data.title}}</h5>
+                            <p>{{data.slogan}}</p>
                         </div>
+                    </div>
 
-                        <div class="carousel-item ">
-                            
-                            <img src="{{ url_for('static', filename='img/bg-4.jpg')}}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>{{data.title}}</h5>
-                                <p>{{data.slogan}}</p>
-                            </div>
-                        </div>
+                    <!-- Update caraousel object -->
 
-                        <div class="carousel-item ">
-                            
-                            <img src="{{ url_for('static', filename='img/bg-5.jpg')}}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>{{data.title}}</h5>
-                                <p>{{data.slogan}}</p>
-                            </div>
-                        </div>
+                    {% if carousel.update({'first': False}) %} {% endif %}
+
+                {% endfor %}
+                           
             </div>
 
             <!-- Bootstrap previus and next  controls -->
@@ -73,7 +64,7 @@
 
         </div>
 
-        <!-- Header phone view -->
+        <!-- Head phone view -->
         <div id="inicio-phone">
             
             <div id="phone-text">
@@ -86,7 +77,173 @@
 
     </header>
 
-    <p>{{data}}</p>
-    
+    <!-- ABOUT -->
+
+    <div id="about-container">
+
+        <!-- About - Carousel -->
+
+        <div id="about-carousel" class="about " >
+            <div class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+
+                    {% for i in range (0,4)%}
+
+                        <!-- Carousel item -->
+
+                        <div class="carousel-item {{ 'active' if carousel.second else '' }}"> 
+
+                            <img    src="{{ url_for(   'static',
+                                                        filename='/'.join([ 'img', 
+                                                                            'about-' + i|string + '.jpg'
+                                                                            ]))}} "  
+                                class="d-block w-100">
+                        </div>
+
+                        <!-- Update caraousel object -->
+
+                        {% if carousel.update({'second': False}) %} {% endif %}
+
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+        <!-- About - Text -->
+
+        <div id="about-text" class="about">
+            <p><strong>ACERCA DE NOSOTROS</strong></p>
+
+            <h6>{{data.about}} </h6>
+            <br>
+            <br>
+
+            <p><strong>OBJETIVO</strong></p>
+            <h6>{{data.objective}}</h6>
+
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+
+    <div id="servicios-home">
+        <h2><strong>Servicios</strong></h2>
+        <div id="servicios-container" class="row">
+
+            <!-- Card -->
+
+            {% for service in data.services%}
+
+            <div class="card col-s-6" style="width: 18rem;">
+                <!-- Adding a variable to a html attribute -->
+                <img 
+                    class="card-img-top"
+                    src="{{ url_for(   'static',
+                                        filename='/'.join([ 'img', 
+                                                            'services', 
+                                                            service.id + '-1.jpg'
+                                                            ]))}} ">
+                <div class="card-body">
+                    <h5 class="card-title">{{service.name}}</h5>
+                    <p class="card-text">{{service.description}}</p>
+                </div>
+            </div>
+            
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- PROJECTS -->
+
+    <div id="projects-home">
+        <h2 class="proyectos-title"><strong>Proyectos</strong></h2><br>
+        <div class="block">
+
+            {% for i in range(1,5) %}
+            
+            <div class="project">
+                <img src="{{ url_for(   'static',
+                                        filename='/'.join([ 'img', 
+                                                            'projects', 
+                                                            'e' + i|string + '-1.jpg'
+                                                            ]))}} ">
+                <div class="text">
+                    <p>Proyecto E{{i|string}}</p>
+                    <p>{{data.projects[i -1].description}}</p>
+                </div>
+            </div>
+        
+            {%endfor%}
+
+        </div>
+
+        <!-- Projects ver mas button -->
+        <a  id="ar"
+            class="a"
+            href="{{ url_for('projects') }}" >
+            <button class="btn btn-outline-dark btn-lg">Ver más</button>
+        </a>
+    </div>
+
+    <!-- CONTACT -->
+
+    <div id="contactos-header" class="container-fluid">
+        
+        <!-- Section Title -->
+
+        <h2 class="text-center"><strong>Contacto</strong></h2>
+
+        <div class="row mb-3">
+
+            <!-- Name, Phone & Maps -->
+
+            <div class="col-sm">
+
+                <!-- Text -->
+                <div class="text">
+                    <p>Arquitecto: {{data.contact.name}}</p>
+                    <p>Teléfono: {{data.contact.phone}}</p>
+                </div>
+                <!-- Embeded Maps -->
+                <div class="map-responsive">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63836.69300401769!2d-78.48293860910093!3d-0.20286038013794772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d590eb5647cd6d%3A0xb8e005887399b0b9!2sQuito%20170157!5e0!3m2!1sen!2sec!4v1663201820344!5m2!1sen!2sec" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+            </div>
+           
+            <!-- Form -->
+            <form   class="col-sm"
+                    method="POST">
+
+                 <!-- Form title -->
+                <h3>Necesita una proforma?</h3>
+
+               <!--  Name -->
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                    <label for="e-mail" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="e-mail">
+                </div>
+                
+                <!-- Description -->
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Descripción</label>
+                    <textarea type="text" class="form-control" id="description" rows="10"></textarea>
+                </div>
+
+                <!-- Submit -->
+                
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </form>
+        </div>
+    </div>
 </main>
-{%endblock%}
+
+{% endblock %}

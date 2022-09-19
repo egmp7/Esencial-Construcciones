@@ -1,0 +1,20 @@
+@use 'utilities/home';
+@use 'utilities/nav_footer';
+
+// Utilities
+@import "utilities/variables";
+
+body {
+  font-family: $font;
+}
+.row{
+  margin: 0 !important;
+}
+
+a {
+  color: $text-color2 !important;
+}
+a:hover {
+  text-decoration: none !important;
+  color: $text-hover !important;
+}

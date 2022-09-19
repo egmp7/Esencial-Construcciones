@@ -46,45 +46,70 @@
     }],
     "projects":
     [{
+        "id":"p1",
+        "name":"Diseño de Piscina",
         "description":"Diseño de Piscina cubierta incluye servicios.",
         "client":"Ing. Pareja",
         "location":"Valle de Tumbaco"
     },
     {
+        "id":"p2",
+        "name":"Diseño de Jardín Zen",
         "description":"Diseño de Jardín Zen con B.B.Q.",
         "client":"Dr. Paúl Gamboa",
         "location":"Barrio San José de Moran"
     },
     {
+        "id":"p3",
+        "name":"Pérgola en madera",
         "description":"Diseño y construcción de pérgola en madera.",
         "client":"Familia Suárez - Benavides",
         "location":"Barrio San Carlos de Calderón"
     },
     {
+        "id":"p4",
+        "name":"Ampliación en tercer piso",
         "description":"Ampliación en tercer piso, incluye dormitorios y cuarto de lavar.",
         "client":"Familia Avilés",
         "location":" Sector Villa flora"
     },
     {
+        "id":"p5",
+        "name":"Locales comerciales",
         "description":"Diseño y construcción de locales comerciales.",
         "client":"Sra. Verónica Esparza",
         "location":" Sector Calderón"
     },
     {
+        "id":"p6",
+        "name":"Remodelación de vivienda",
         "description":"Remodelación de vivienda.",
         "client":"Familia Guano",
         "location":" Sector Calderón"
     },
     {
+        "id":"p7",
+        "name":"Construcción de vivienda 1",
+        "description":"Construcción de vivienda.",
+        "client":"Familia Sambrano",
+        "location":" Sector Carcelén"
+    },
+    {
+        "id":"p8",
+        "name":"Construcción de vivienda 2",
         "description":"Construcción de vivienda.",
         "client":"Familia Benalcázar",
         "location":" Sector Guajaló"
     },
     {
+        "id":"p9",
+        "name":"Proyecto víal - urbano",
         "description":"Visualización de proyecto víal - urbano.",
         "client":"GAMA Consultoría"
     },
     {
+        "id":"p10",
+        "name":"Ampliación y remodelación de vivienda",
         "description":"Ampliación y remodelación de vivienda.",
         "client":" Familia Boada Sanchez",
         "location":"Calderón, vía Panamericana Norte"

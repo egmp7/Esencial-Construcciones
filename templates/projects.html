@@ -1,205 +1,106 @@
 {% extends "base.html" %}
 {%block content%}
 
-<main id="proyectos">
+
+<main>
+    <!-- Modal -->
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#project-modal">
+        Launch demo modal
+    </button>
+  
+   <!--  Modal view -->
+    <div class="modal fade" id="project-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <!-- Title -->
+                    <h5 class="modal-title">Modal title</h5>
+
+                    <!-- Close button -->
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+                    ...
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
     <div id="documentation-guide2">
+        
+        <!-- Title -->
+
         <div id="documentation-guide2-title">
             <h2 class="text-center">Proyectos</h2>
         </div>
+
+        <!-- Left Nav -->
+
         <div id="documentation-guide1-list">
             <ul class="list-group">
-                <a href="#e1">
-                    <li class="list-group-item">Diseño de Piscina</li>
+
+
+                {% for project in data.projects%}
+
+                
+                <a href="#p{{loop.index}}">
+                    <li class="list-group-item">{{project.name}}</li>
                 </a>
-                <a href="#e2">
-                    <li class="list-group-item">Diseño de Jardín Zen</li>
-                </a>
-                <a href="#e3">
-                    <li class="list-group-item">Pérgola en madera</li>
-                </a>
-                <a href="#e4">
-                    <li class="list-group-item">Ampliación en tercer piso</li>
-                </a>
-                <a href="#e5">
-                    <li class="list-group-item">Locales comerciales</li>
-                </a>
-                <a href="#e6">
-                    <li class="list-group-item">Remodelación de vivienda</li>
-                </a>
-                <a href="#e7">
-                    <li class="list-group-item">Construcción de vivienda 1</li>
-                </a>
-                <a href="#e8">
-                    <li class="list-group-item">Construcción de vivienda 2</li>
-                </a>
-                <a href="#e9">
-                    <li class="list-group-item">Proyecto víal - urbano</li>
-                </a>
-                <a href="#e10">
-                    <li class="list-group-item">Ampliación y remodelación de vivienda</li>
-                </a>
+               
+
+                {% endfor%}
 
             </ul>
         </div>
     </div>
+
     <!--Services documentation-->
     <div id="documentation-header">
+
+        {% for project in data.projects %}
+
         <div class="documentation-text-wrapper">
             <ul>
-                <li id="e1"><strong>Proyecto E1</strong></li>
+                <li id="p{{loop.index}}"><strong>Proyecto E{{loop.index}}</strong></li>
                 <br>
-                <p><strong>Descripción:</strong> Diseño de Piscina cubierta incluye servicios.</p>
-                <p><strong>Cliente:</strong> Ing. Pareja</p>
-                <p><strong>Lugar:</strong> Valle de Tumbaco </p>
+                <p><strong>Descripción:</strong> {{project.description}}</p>
+                <p><strong>Cliente:</strong> {{project.client}}</p>
+                <p><strong>Lugar:</strong> {{project.location}} </p>
             </ul>
             <p></p>
 
         </div>
-        <div class="documentation-img-wrapper row">
-            <img src="img/proyectos/e1-1.jpg" alt="">
-            <img src="img/proyectos/e1-2.jpg" alt="">
-            <img src="img/proyectos/e1-3.jpg" alt="">
-            <img src="img/proyectos/e1-4.jpg" alt="">
-        </div>
-        <div class="documentation-text-wrapper">
-            <ul>
-                <li id="e2"><strong>Proyecto E2</strong></li>
-                <br>
-                <p><strong>Descripción:</strong> Diseño de Jardín Zen con B.B.Q.</p>
-                <p><strong>Cliente:</strong> Dr. Paúl Gamboa.</p>
-                <p><strong>Lugar:</strong> Barrio San José de Moran</p>
-            </ul>
-        </div>
-        <div class="documentation-img-wrapper row">
-            <img src="img/proyectos/e2-1.jpg" alt="">
-        </div>
-        <div class="documentation-text-wrapper">
-            <ul>
-                <li id="e3"><strong>Proyecto E3</strong></li>
-                <br>
-                <p><strong>Descripción:</strong> Diseño y construcción de pérgola en madera.</p>
-                <p><strong>Cliente:</strong> Familia Suárez - Benavides</p>
-                <p><strong>Lugar:</strong> Barrio San Carlos de Calderón</p>
-            </ul>
 
-        </div>
         <div class="documentation-img-wrapper row">
-            <img src="img/proyectos/e3-1.jpg" alt="">
-        </div>
-        <div class="documentation-text-wrapper">
-            <ul>
-                <li id="e4"><strong>Proyecto E4</strong></li>
-                <br>
-                <p><strong>Descripción:</strong> Ampliación en tercer piso, incluye dormitorios y cuarto de lavar.
-                </p>
-                <p><strong>Cliente:</strong> Familia Avilés</p>
-                <p><strong>Lugar:</strong> Sector Villa flora.</p>
-            </ul>
 
-        </div>
-        <div class="documentation-img-wrapper row">
-            <img src="img/proyectos/e4-1.jpg" alt="">
-            <img src="img/proyectos/e4-2.jpg" alt="">
-            <img src="img/proyectos/e4-3.jpg" alt="">
-            <img src="img/proyectos/e4-4.jpg" alt="">
-        </div>
-        <div class="documentation-text-wrapper">
-            <ul>
-                <li id="e5"><strong>Proyecto E5</strong></li>
-                <br>
-                <p><strong>Descripción:</strong> Diseño y construcción de locales comerciales.</p>
-                <p><strong>Cliente:</strong> Sra. Verónica Esparza</p>
-                <p><strong>Lugar:</strong> Sector Calderón</p>
-            </ul>
+            {% for img in images[project.id] %}
 
+            <img src="{{ url_for(   'static',
+                                    filename='/'.join([ 'img', 
+                                                        'projects',
+                                                        project.id,
+                                                        img
+                                                        ]))}} ">
+           
+            {% endfor %}
         </div>
-        <div class="documentation-img-wrapper row">
-            <img src="img/proyectos/e5-1.jpg" alt="">
-            <img src="img/proyectos/e5-2.jpg" alt="">
-            <img src="img/proyectos/e5-3.jpg" alt="">
-            <img src="img/proyectos/e5-4.jpg" alt="">
-        </div>
-        <div class="documentation-text-wrapper">
-            <ul>
-                <li id="e6"><strong>Proyecto E6</strong></li>
-                <br>
-                <p><strong>Descripción:</strong> Remodelación de vivienda.</p>
-                <p><strong>Cliente:</strong> Familia Guano</p>
-                <p><strong>Lugar:</strong> Sector Calderón </p>
-            </ul>
-
-        </div>
-        <div class="documentation-img-wrapper row">
-            <img src="img/proyectos/e6-1.jpg" alt="">
-            <img src="img/proyectos/e6-2.jpg" alt="">
-            <img src="img/proyectos/e6-3.jpg" alt="">
-            <img src="img/proyectos/e6-4.jpg" alt="">
-        </div>
-        <div class="documentation-text-wrapper">
-            <ul>
-                <li id="e7"><strong>Proyecto E7</strong></li>
-                <br>
-                <p><strong>Descripción:</strong> Construcción de vivienda.</p>
-                <p><strong>Cliente:</strong> Familia Sambrano</p>
-                <p><strong>Lugar:</strong> Sector Carcelén</p>
-            </ul>
-
-        </div>
-        <div class="documentation-img-wrapper row">
-            <img src="img/proyectos/e7-2.jpg" alt="">
-            <img src="img/proyectos/e7-3.jpg" alt="">
-            <img src="img/proyectos/e7-7.jpg" alt="">
-            <img src="img/proyectos/e7-6.jpg" alt="">
-        </div>
-        <div class="documentation-text-wrapper">
-            <ul>
-                <li id="e8"><strong>Proyecto E8</strong></li>
-                <br>
-                <p><strong>Descripción:</strong> Construcción de vivienda.</p>
-                <p><strong>Cliente:</strong> Familia Benalcázar</p>
-                <p><strong>Lugar:</strong> Sector Guajaló</p>
-            </ul>
-
-        </div>
-        <div class="documentation-img-wrapper row">
-            <img src="img/proyectos/e8-1.jpg" alt="">
-            <img src="img/proyectos/e8-2.jpg" alt="">
-            <img src="img/proyectos/e8-3.jpg" alt="">
-        </div>
-        <div class="documentation-text-wrapper">
-            <ul>
-                <li id="e9"><strong>Proyecto E9</strong></li>
-                <br>
-                <p><strong>Descripción:</strong> Visualización de proyecto víal - urbano.</p>
-                <p><strong>Cliente:</strong> GAMA Consultoría</p>
-                <!-- <p><strong>Lugar:</strong> Sector Carcelén</p> -->
-            </ul>
-
-        </div>
-        <div class="documentation-img-wrapper row">
-            <img src="img/proyectos/e9-1.jpg" alt="">
-            <img src="img/proyectos/e9-2.jpg" alt="">
-            <img src="img/proyectos/e9-3.jpg" alt="">
-            <img src="img/proyectos/e9-4.jpg" alt="">
-        </div>
-        <div class="documentation-text-wrapper">
-            <ul>
-                <li id="e10"><strong>Proyecto E10</strong></li>
-                <br>
-                <p><strong>Descripción:</strong> Ampliación y remodelación de vivienda.</p>
-                <p><strong>Cliente:</strong> Familia Boada Sanchez</p>
-                <p><strong>Lugar:</strong> Calderón, vía Panamericana Norte</p>
-            </ul>
-
-        </div>
-        <div class="documentation-img-wrapper row">
-            <img src="img/proyectos/e10-1.jpg" alt="">
-            <img src="img/proyectos/e10-2.jpg" alt="">
-            <img src="img/proyectos/e10-3.jpg" alt="">
-            <img src="img/proyectos/e10-4.jpg" alt="">
-        </div>
+        {% endfor %}
     </div>
-    <!--END documentation-header-->
 </main>
 
 {%endblock%}

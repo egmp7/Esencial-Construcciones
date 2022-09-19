@@ -1,0 +1,43 @@
+// Utilities
+@import "variables";
+
+nav {
+    background: $background1;
+  
+    .logo{width: 100px;}
+  
+    a:hover {text-decoration: underline !important}
+  }
+  
+  footer {
+    clear: both;
+    display: block;
+    position: relative;
+    background: #2b2b2b;
+    color: $text-color1;
+    overflow: hidden;
+    #contact-footer {
+      float: left;
+      margin: 20px;
+      font-size: 12px;
+      p {
+        margin: 10px;
+        float: left;
+      }
+    }
+    #social-media {
+      float: right;
+      i {
+        margin: 20px;
+        //margin-right: 50px;
+      }
+    }
+    #copyright p {
+      font-size: 10px;
+      text-align: center;
+    }
+    a:hover {
+      text-decoration: none !important;
+      color: $text-color1 !important;
+    }
+  }

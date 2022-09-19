@@ -1,200 +1,291 @@
-<!-- This variable controls the active 
-    class for the carousel from boostrap -->
-
-{% set carousel = { 'first':True,
-                    'second':True} %}
-
 {% extends "base.html" %}
-
 {% block content %}
 
 <main>
-    <header class="masthead">
+    <header>
+        <!--****************************
+            HOME PAGE
+        ********************************-->
 
-        <!-- HEAD -->
-        
-        <!-- Computer view -->
-
-        <div    id="makeFade"
-                class="carousel slide carousel-fade" 
+        <!-- HEAD - Computer optimize -->
+        <div    id="carouselHeader"
+                class=" carousel 
+                        slide 
+                        carousel-fade 
+                        d-none 
+                        d-sm-block" 
                 data-ride="carousel">
-
+            
             <div class="carousel-inner">
+                
+                <!-- Object to activate carousel -->
+                {% set carousel = { 'active':True } %}
                         
                 {% for i in range (1,6)%}
 
                     <!-- Carousel item -->
-
-                    <div class="carousel-item {{ 'active' if carousel.first else '' }}">            
+                    <div class="carousel-item {{ 'active' if carousel.active else '' }}">            
                         
                         <!-- img -->
-
-                        <img src="{{ url_for(   'static',
-                                                filename='/'.join([ 'img', 
-                                                                    'bg-' + i|string + '.jpg'
-                                                                    ]))}} " 
-                            class="d-block w-100">
-                        
+                        <img    class="d-block w-100"
+                                src="{{ url_for(   'static',
+                                                    filename='/'.join([ 'img', 
+                                                                        'bg-' + i|string + '.jpg'
+                                                                        ]))}} ">
                         <!-- Text -->
-
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>{{data.title}}</h5>
+                        <div class="carousel-caption">
+                            <h1>{{data.title}}</h1>
                             <p>{{data.slogan}}</p>
                         </div>
+
                     </div>
 
                     <!-- Update caraousel object -->
+                    {% if carousel.update({'active': False}) %} {% endif %}
 
-                    {% if carousel.update({'first': False}) %} {% endif %}
-
-                {% endfor %}
-                           
+                {% endfor %}      
             </div>
 
-            <!-- Bootstrap previus and next  controls -->
+            <!-- Controls - Bootstrap previus and next -->
 
-            <a class="carousel-control-prev" href="#makeFade" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#carouselHeader" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#makeFade" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#carouselHeader" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
 
         </div>
 
-        <!-- Head phone view -->
-        <div id="inicio-phone">
+        <!-- HEAD - Phone optimize -->
+        <div class="header-phone d-sm-none">
             
-            <div id="phone-text">
-                <h5>{{data.title}}</h5>
+            <div class="text">
+                <h1>{{data.title}}</h1>
                 <p>{{data.slogan}}</p>
             </div>
-            <img src="{{ url_for('static', filename='img/bg-1.jpg')}}" alt="">
+            <img src="{{ url_for('static', filename='img/bg-1.jpg')}}">
             
         </div>
 
     </header>
 
-    <!-- ABOUT -->
+    <!--****************************
+        ABOUT
+    ********************************-->
 
-    <div id="about-container">
+    <div class="about row">
 
         <!-- About - Carousel -->
+        <div    class=" carousel 
+                        slide
+                        col-sm
+                        d-none
+                        d-sm-block" 
+                data-ride="carousel">
+            <div class="carousel-inner">
 
-        <div id="about-carousel" class="about " >
-            <div class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
+                <!-- Object to activate carousel -->
+                {% set carousel = { 'active':True } %}
 
-                    {% for i in range (0,4)%}
+                {% for i in range (0,4)%}
 
-                        <!-- Carousel item -->
+                    <!-- Carousel item -->
+                    <div class="carousel-item {{ 'active' if carousel.active else '' }}"> 
 
-                        <div class="carousel-item {{ 'active' if carousel.second else '' }}"> 
+                        <img    class="img-fluid"
+                                src="{{ url_for(   'static',
+                                                    filename='/'.join([ 'img', 
+                                                                        'about-' + i|string + '.jpg'
+                                                                        ]))}} "  
+                            >
+                    </div>
 
-                            <img    src="{{ url_for(   'static',
-                                                        filename='/'.join([ 'img', 
-                                                                            'about-' + i|string + '.jpg'
-                                                                            ]))}} "  
-                                class="d-block w-100">
-                        </div>
+                    <!-- Update caraousel object -->
+                    {% if carousel.update({'active': False}) %} {% endif %}
 
-                        <!-- Update caraousel object -->
-
-                        {% if carousel.update({'second': False}) %} {% endif %}
-
-                    {% endfor %}
-
-                </div>
+                {% endfor %}
             </div>
         </div>
 
         <!-- About - Text -->
+        <div class="text col-sm">
 
-        <div id="about-text" class="about">
-            <p><strong>ACERCA DE NOSOTROS</strong></p>
+            <h2><strong>ACERCA DE NOSOTROS</strong></h2>
+            <p>{{data.about}} </p>
 
-            <h6>{{data.about}} </h6>
             <br>
-            <br>
 
-            <p><strong>OBJETIVO</strong></p>
-            <h6>{{data.objective}}</h6>
+            <h2><strong>OBJETIVO</strong></h2>
+            <p>{{data.objective}}</p>
 
         </div>
     </div>
 
-    <!-- SERVICES -->
+    <div class="services-projects">
 
-    <div id="servicios-home">
-        <h2><strong>Servicios</strong></h2>
-        <div id="servicios-container" class="row">
+        <!--****************************
+                SERVICES 
+        ********************************-->
+        
+        <ul class="services list-group mb-3">
 
-            <!-- Card -->
+            <!-- Title -->
+            <a data-toggle="collapse" href="#services-collapse">
+
+                <li class="list-group-item title"><h2><strong>SERVICIOS</strong></h2></li>
+
+            </a>
 
             {% for service in data.services%}
 
-            <div class="card col-s-6" style="width: 18rem;">
+                <!-- Collapse Functionality -->
+
+                <a  id="services-collapse"
+                    class="collapse"
+                    data-toggle="collapse" 
+                    href="#service-collapse-{{service.id}}">
+
+                    <li class="list-group-item"><strong>{{service.name}}</strong></li>
+                
+                </a>
+
                 <!-- Adding a variable to a html attribute -->
-                <img 
-                    class="card-img-top"
+                <div id="service-collapse-{{service.id}}" class="collapse body">
+
+                    <img 
+                    class="img-fluid img-thumbnail"
                     src="{{ url_for(   'static',
                                         filename='/'.join([ 'img', 
                                                             'services', 
                                                             service.id + '-1.jpg'
                                                             ]))}} ">
-                <div class="card-body">
-                    <h5 class="card-title">{{service.name}}</h5>
-                    <p class="card-text">{{service.description}}</p>
+
+                    <p>{{service.description}}</p>
+
                 </div>
-            </div>
-            
+
             {% endfor %}
-        </div>
-    </div>
 
-    <!-- PROJECTS -->
-
-    <div id="projects-home">
-        <h2 class="proyectos-title"><strong>Proyectos</strong></h2><br>
-        <div class="block">
-
-            {% for i in range(1,5) %}
-            
-            <div class="project">
-                <img src="{{ url_for(   'static',
-                                        filename='/'.join([ 'img', 
-                                                            'projects', 
-                                                            'e' + i|string + '-1.jpg'
-                                                            ]))}} ">
-                <div class="text">
-                    <p>Proyecto E{{i|string}}</p>
-                    <p>{{data.projects[i -1].description}}</p>
-                </div>
-            </div>
+        </ul>
         
-            {%endfor%}
+        <!--**************************** 
+            PROJECTS 
+        ********************************-->
 
-        </div>
+        <ul class="projects list-group pb-3">
 
-        <!-- Projects ver mas button -->
-        <a  id="ar"
-            class="a"
-            href="{{ url_for('projects') }}" >
-            <button class="btn btn-outline-dark btn-lg">Ver más</button>
-        </a>
+            <!-- Title -->
+            <a data-toggle="collapse" href="#projects-collapse">
+
+                <li class="list-group-item title"><h2><strong>PROYECTOS</strong></h2></li>
+
+            </a>
+
+            {% for project in data.projects%}
+
+                <!-- Modal List -->
+
+                <a  
+                    id="projects-collapse"
+                    class="collapse"
+                    data-toggle="modal" 
+                    href="#project-modal{{project.id}}">
+
+                    <li class="list-group-item"><strong>{{project.name}}</strong></li>
+
+                </a>
+
+                <!--  Modal view -->
+                <div class="modal fade" id="project-modal{{project.id}}" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+                            <!-- Modal content -->
+
+                            <div class="modal-header">
+
+                                <!-- Title -->
+                                <h5 class="modal-title">{{project.name}}</h5>
+
+                                <!-- Close button -->
+                                <button type="button" class="close" data-dismiss="modal">
+                                    <span>&times;</span>
+                                </button>
+
+                            </div>
+
+                            <div class="modal-body">
+
+                                <!-- Carousel -->
+
+                                <div id="projectsView-{{project.id}}" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+
+                                        {% set carousel = {'active': True } %}
+
+                                        {% for img in images[project.id] %}
+
+                                        <div class="carousel-item {{ 'active' if carousel.active else '' }}">
+        
+                                            <img    class="d-block w-100"
+                                                    src="{{ url_for(   'static',
+                                                                        filename='/'.join([ 'img', 
+                                                                                            'projects',
+                                                                                            project.id,
+                                                                                            img
+                                                                                            ]))}} ">
+                                        </div>
+
+                                        {% if carousel.update({'active': False}) %} {% endif %}
+                                        
+                                                                                            
+                                        {% endfor %}
+
+                                    </div>
+
+                                    <a class="carousel-control-prev" href="#projectsView-{{project.id}}" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#projectsView-{{project.id}}" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                    </div>
+
+
+                            </div>
+
+                            <div class="modal-footer">
+                                
+                                <p><strong>Descripción:</strong> {{project.description}}</p>
+                                
+                                <p><strong>Cliente:</strong> {{project.client}}</p>
+                                
+                                <p><strong>Lugar:</strong> {{project.location}} </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </ul>
     </div>
 
-    <!-- CONTACT -->
+    <!--**************************** 
+        CONTACT 
+    ********************************-->
 
-    <div id="contactos-header" class="container-fluid">
+    <div class="contact">
         
         <!-- Section Title -->
 
-        <h2 class="text-center"><strong>Contacto</strong></h2>
+        <h2><strong>CONTACTO</strong></h2>
 
-        <div class="row mb-3">
+        <div class="row">
 
             <!-- Name, Phone & Maps -->
 
@@ -202,13 +293,17 @@
 
                 <!-- Text -->
                 <div class="text">
-                    <p>Arquitecto: {{data.contact.name}}</p>
-                    <p>Teléfono: {{data.contact.phone}}</p>
+                    <p><strong>Arquitecto: </strong>{{data.contact.name}}</p>
+                    <p><strong>Teléfono: </strong>{{data.contact.phone}}</p>
                 </div>
-                <!-- Embeded Maps -->
-                <div class="map-responsive">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63836.69300401769!2d-78.48293860910093!3d-0.20286038013794772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d590eb5647cd6d%3A0xb8e005887399b0b9!2sQuito%20170157!5e0!3m2!1sen!2sec!4v1663201820344!5m2!1sen!2sec" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                <!-- Embeded Maps / 1:1 aspect ratio  -->
+                <div class="embed-responsive embed-responsive-1by1">
+                    <iframe class="embed-responsive-item" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63836.69300401769!2d-78.48293860910093!3d-0.20286038013794772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d590eb5647cd6d%3A0xb8e005887399b0b9!2sQuito%20170157!5e0!3m2!1sen!2sec!4v1663201820344!5m2!1sen!2sec">
+                    </iframe>
                 </div>
+                
 
             </div>
            
@@ -217,7 +312,7 @@
                     method="POST">
 
                  <!-- Form title -->
-                <h3>Necesita una proforma?</h3>
+                <h3>¿Necesita una proforma?</h3>
 
                <!--  Name -->
                 <div class="mb-3">

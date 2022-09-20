@@ -20,12 +20,8 @@
             href="{{ url_for('static', filename='style.css') }}">
     <!-- Bootstrap CSS -->
     <link   rel="stylesheet" 
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- FontAwesome-->
-    <link   rel="stylesheet" 
-            href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-            integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+            href="{{ url_for('static', filename='bootstrap-4.0.0-dist/css/bootstrap.css') }}">
+    
     <!-- Google Font -->
     <link   href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" 
             rel="stylesheet">
@@ -38,7 +34,7 @@
     <nav class="navbar navbar-light navbar-expand-lg">
         <!-- Logo Hyperlink -->
         <a  class="navbar-brand" 
-            href="{{ url_for('home')}}">
+            href="{{ url_for('home') }}">
             <img    class="logo" 
                     src="{{ url_for('static', filename='img/logo2.png') }}">
         </a>
@@ -54,15 +50,25 @@
             <ul class=" navbar-nav 
                         ml-auto"> <!--Right Alightment  -->
                 
-                {% for item in nav.top %}
+                <li>
+                    <a  class="nav-link" href="{{ url_for('home') }}">Home</a>
+                </li>
 
-                <li class="{{ 'active' if item.is_active else '' }}">
-                    <a  class="nav-link" 
-                        href="{{ item.url }}">
-                        {{ item.label }}</a>
+                <li>
+                    <a class="nav-link" href="#about">Acerca</a>
                 </li>
                 
-                {% endfor %}
+				<li>
+                    <a class="nav-link" href="#services">Servicios</a>
+                </li>
+
+				<li>
+                    <a class="nav-link" href="#projects">Proyectos</a>
+                </li>
+
+				<li>
+                    <a class="nav-link" href="#contact">Contacto</a>
+                </li>
 
             </ul>
         </div>
@@ -75,38 +81,39 @@
     <!-- FOOTER -->
 
     <footer>
-        <div id="contact-footer">
-            <p>Arquitecto: {{data.contact.name}}</p>
-            <p><i class="fab fa-whatsapp"></i> {{data.contact.phone}}</p>
+		<div class="row">
+			<div class="contact-footer col-sm text-sm-left text-center">
+				<p><strong>Arquitecto: </strong> {{data.contact.name}}</p>
+				<p><i class="fab fa-whatsapp"></i> {{data.contact.phone}}</p>
 
-        </div>
-        <div id="social-media">
+			</div>
+			<div class="social-media col-sm d-sm-block d-none">
 
-            <a href="https://www.facebook.com/Esencial-Estudio-281058769179882/" target="-blanck"><i id="facebook-icon"
-                    class="fab fa-facebook-square fa-2x"></i></a>
-            <a href="https://www.youtube.com/channel/UCrDmOTQr7J_qkJ4qD-LyoAg" target="_blank"><i id="youtube-icon"
-                    class="fab fa-youtube fa-2x"></i></a>
-        </div>
+				<a href="https://www.facebook.com/Esencial-Estudio-281058769179882/" target="-blanck"><i id="facebook-icon"
+						class="fab fa-facebook-square fa-2x"></i></a>
+				<a href="https://www.youtube.com/channel/UCrDmOTQr7J_qkJ4qD-LyoAg" target="_blank"><i id="youtube-icon"
+						class="fab fa-youtube fa-2x"></i></a>
+			</div>
+		</div>
         
-        <div style="clear: both"></div>
-        <div id="copyright">
+        <div class="copyright">
             <p>Esencial construcciones copyright@ 2019</p>
         </div>
     </footer>
     
 </body>
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous">
-</script>
+<!-- Optional jQuery -->
+<script src="{{ url_for('static', filename='jQuery.js') }}"></script>
+<!-- Poppers.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous">
 </script>
+<!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous">
 </script>
+<!-- FontAwesome-->
+<script src="https://kit.fontawesome.com/dc026d6440.js" crossorigin="anonymous"></script>

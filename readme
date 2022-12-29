@@ -69,6 +69,23 @@ sass --watch style.scss style.css
                         
         -       Modals / Lists
 
+29/12/2022
+        -       Virtual environment
+                        
+                        Create a virtual environment: 
+                        python3 -m venv <name of virtual environment>
+
+                        Activate virtual environment:
+                        . venv/bin/activate
+
+                        Deactivate virtual environmt:
+                        deactivate
+
+                        Create a requirements text file:
+                        pip freeze > requirements.txt
+
+                        
+
 
 
 

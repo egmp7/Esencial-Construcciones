@@ -41,6 +41,10 @@ def home():
             'home.html',
             data = data,
             images = images)
+    
+@app.errorhandler(404)
+def page_not_found (e):
+    return "Error 404: Hello Erick don't forget to add /home..."
 
 #   Run 
 if __name__ =='__main__':

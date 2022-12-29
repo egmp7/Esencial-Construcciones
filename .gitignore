@@ -1,0 +1,10 @@
+__pycache__
+.DS_Store
+.DS_Store
+venv
+
+static/img
+static/favicon.ico
+static/style.css.map
+static/bootstrap-4.0.0-dist
+static/jQuery.js

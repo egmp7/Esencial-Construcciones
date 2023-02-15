@@ -34,8 +34,8 @@
                                                                         ]))}} ">
                         <!-- Text -->
                         <div class="carousel-caption">
-                            <h1>{{data.title}}</h1>
-                            <p>{{data.slogan}}</p>
+                            <h1>{{data.carousel.title}}</h1>
+                            <p>{{data.carousel.slogan}}</p>
                         </div>
 
                     </div>
@@ -63,8 +63,8 @@
         <div class="header-phone d-sm-none">
             
             <div class="text">
-                <h1>{{data.title}}</h1>
-                <p>{{data.slogan}}</p>
+                <h1>{{data.carousel.title}}</h1>
+                <p>{{data.carousel.slogan}}</p>
             </div>
             <img src="{{ url_for('static', filename='img/bg-1.jpg')}}">
             
@@ -113,13 +113,13 @@
         <!-- About - Text -->
         <div class="text col-sm">
 
-            <h2><strong>ACERCA DE NOSOTROS</strong></h2>
-            <p>{{data.about}} </p>
+            <h2><strong>{{data.about.title}}</strong></h2>
+            <p>{{data.about.description}} </p>
 
             <br>
 
-            <h2><strong>OBJETIVO</strong></h2>
-            <p>{{data.objective}}</p>
+            <h2><strong>{{data.objective.title}}</strong></h2>
+            <p>{{data.objective.description}}</p>
 
         </div>
     </div>
@@ -135,11 +135,11 @@
             <!-- Title -->
             <a data-toggle="collapse" href="#services-collapse">
 
-                <li class="list-group-item title"><h2><strong>SERVICIOS</strong></h2></li>
+                <li class="list-group-item title"><h2><strong>{{data.services.title}}</strong></h2></li>
 
             </a>
 
-            {% for service in data.services%}
+            {% for service in data.services.list%}
 
                 <!-- Collapse Functionality -->
 
@@ -180,11 +180,11 @@
             <!-- Title -->
             <a data-toggle="collapse" href="#projects-collapse">
 
-                <li class="list-group-item title"><h2><strong>PROYECTOS</strong></h2></li>
+                <li class="list-group-item title"><h2><strong>{{data.projects.title}}</strong></h2></li>
 
             </a>
 
-            {% for project in data.projects%}
+            {% for project in data.projects.list%}
 
                 <!-- Modal List -->
 
@@ -283,7 +283,7 @@
         
         <!-- Section Title -->
 
-        <h2><strong>CONTACTO</strong></h2>
+        <h2><strong>{{data.contact.title}}</strong></h2>
 
         <div class="row">
 
@@ -312,30 +312,30 @@
                     method="POST">
 
                  <!-- Form title -->
-                <h3>¿Necesita una proforma?</h3>
+                <h3>{{data.contact.form.title}}</h3>
 
                <!--  Name -->
                 <div class="mb-3">
-                    <label for="name" class="form-label">Nombre</label>
+                    <label for="name" class="form-label">{{data.contact.form.name}}</label>
                     <input type="text" class="form-control" id="name">
                 </div>
 
                 <!-- Email -->
                 <div class="mb-3">
-                    <label for="e-mail" class="form-label">E-mail</label>
+                    <label for="e-mail" class="form-label">{{data.contact.form.email}}</label>
                     <input type="email" class="form-control" id="e-mail">
                 </div>
                 
                 <!-- Description -->
 
                 <div class="mb-3">
-                    <label for="description" class="form-label">Descripción</label>
+                    <label for="description" class="form-label">{{data.contact.form.description}}</label>
                     <textarea type="text" class="form-control" id="description" rows="10"></textarea>
                 </div>
 
                 <!-- Submit -->
                 
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary">{{data.contact.form.send}}</button>
               </form>
         </div>
     </div>

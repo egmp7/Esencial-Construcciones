@@ -38,6 +38,12 @@
             <img    class="logo" 
                     src="{{ url_for('static', filename='img/logo2.png') }}">
         </a>
+        <!-- Change Language -->
+        <form method="post" action="/changeLanguage">
+            <input style="font-size: 20px;" class="btn btn-outline-warning" type="submit" value="{{data.nav.language}}" name="ChangeLanguage"/>
+        </form>
+
+
         <!-- Toggle button -->
         <button class="navbar-toggler" 
                 type="button" 
@@ -51,23 +57,23 @@
                         ml-auto"> <!--Right Alightment  -->
                 
                 <li>
-                    <a  class="nav-link" href="{{ url_for('home') }}">Home</a>
+                    <a  class="nav-link" href="{{ url_for('home') }}">{{data.nav.home}}</a>
                 </li>
 
                 <li>
-                    <a class="nav-link" href="#about">Acerca</a>
+                    <a class="nav-link" href="#about">{{data.nav.about}}</a>
                 </li>
                 
 				<li>
-                    <a class="nav-link" href="#services">Servicios</a>
+                    <a class="nav-link" href="#services">{{data.nav.services}}</a>
                 </li>
 
 				<li>
-                    <a class="nav-link" href="#projects">Proyectos</a>
+                    <a class="nav-link" href="#projects">{{data.nav.projects}}</a>
                 </li>
 
 				<li>
-                    <a class="nav-link" href="#contact">Contacto</a>
+                    <a class="nav-link" href="#contact">{{data.nav.contact}}</a>
                 </li>
 
             </ul>

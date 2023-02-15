@@ -1,5 +1,5 @@
 #   SET UP 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 # get file names with
 import os
 
@@ -24,24 +24,37 @@ for project in project_imgs:
         #Get a list from each project
         l = os.listdir(os.path.join(app.static_folder, "img/projects/" + project))
 
-        # Add list to images object
+        # Add list to images dictionary
         images[project] = l
         
     except:
-        print("An exception occurred")
+        print("app.py::os.listdir An exception occurred")
 
 #   ROUTES
+
+language = 'spanish'
 
 @app.route('/home', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
-        return 'hello world'
+        return 'hello database'
     else:
         return render_template(
             'home.html',
-            data = data,
+            data = data[language],
             images = images)
-    
+
+@app.route('/changeLanguage', methods=[ 'POST'])
+def changeLanguage():
+    global language
+
+    if request.method == 'POST':
+        if(language == 'spanish'):
+            language = 'english'
+        else:
+            language = 'spanish'
+        return redirect(url_for('home'))
+
 @app.errorhandler(404)
 def page_not_found (e):
     return "Error 404: Hello Erick don't forget to add /home..."

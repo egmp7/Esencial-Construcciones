@@ -153,6 +153,11 @@
                 "client":" Familia Boada Sanchez",
                 "location":"Calderón, vía Panamericana Norte"
             }]
+        },
+        "success":
+        {
+            "description": "Su información ha sido enviada correctamente. Nos comunicaremos pronto con usted!",
+            "button": "Regresar"
         }
     },
     "english":
@@ -308,6 +313,11 @@
                 "client":" Familia Boada Sanchez",
                 "location":"Calderón, vía Panamericana Norte"
             }]
+        },
+        "success":
+        {
+            "description": "Your information has been sent succesfully! We'll contact you shortly!",
+            "button": "Return"
         }
     }
 }

@@ -136,6 +136,12 @@ footer a:hover {
   color: white !important;
 }
 
+#success {
+  background-color: #ffe442;
+  height: 100vh;
+  padding-top: 40px;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
 }

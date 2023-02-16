@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="success">
+    <div  class="container text-center">
+
+        <div class="row md">
+            <div class="col-md"></div>
+
+            <div class="col-md-6">
+                <p>{{data.success.description}}</p>
+                <a href="/home"><button class="btn btn-success" >{{data.success.button}}</button></a>
+            </div>
+
+            <div class="col-md"></div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

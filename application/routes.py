@@ -2,6 +2,7 @@
 from flask import render_template, request, redirect, url_for
 from application import app
 from application import load
+from application import db
 
 language = "spanish"
 data = load.getJson()
@@ -10,7 +11,11 @@ data = load.getJson()
 @app.route('/home', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
-        return 'hello database'
+        db.db.collection.insert_one(
+            {"name": request.form['name'],
+            "email": request.form['email'],
+            "description":request.form['description']})
+        return redirect(url_for('success'))
     else:
         return render_template(
             'home.html',
@@ -28,7 +33,14 @@ def changeLanguage():
             language = 'spanish'
         return redirect(url_for('home'))
 
+@app.route('/success', methods=[ 'GET'])
+def success():
+    return render_template(
+        'success.html',
+        data = data[language],
+        images = load.getImages(),
+        fixedFooter = True)
+
 @app.errorhandler(404)
 def page_not_found (e):
     return "Error 404: Hello Erick don't forget to add /home..."
-

@@ -1,4 +1,5 @@
-flask --app app --debug run
+flask --app run run
+flask --app run --debug run
 sass --watch style.scss style.css
 
 11/09/2022: 

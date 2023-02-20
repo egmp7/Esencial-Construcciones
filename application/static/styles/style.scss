@@ -1,9 +1,9 @@
-@use 'utilities/home';
-@use 'utilities/nav_footer';
-@use 'utilities/success';
+@use 'home';
+@use 'nav_footer';
+@use 'success';
 
 // Utilities
-@import "utilities/variables";
+@import "variables";
 
 body {
   font-family: $font;

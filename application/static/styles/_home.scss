@@ -3,6 +3,20 @@
 
 // HEADER
 
+main{
+  position: relative;
+  modal{
+    display: block;
+    border-radius: 20px;
+    background-color: red;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+  }
+}
+
+
 .header-phone {
   
   height: 9vh;

@@ -27,7 +27,7 @@
             rel="stylesheet">
 </head>
 
-<body>
+<body class="container">
 
     <!-- NAVBAR -->
     
@@ -86,7 +86,11 @@
 
     <!-- FOOTER -->
 
-    <footer class="{{ 'fixed-bottom' if fixedFooter else '' }}">
+    <footer>
+        My footer
+    </footer>
+
+    <!-- <footer class="">
 		<div class="row">
 			<div class="contact-footer col-sm text-sm-left text-center">
 				<p><strong>Arquitecto: </strong> {{data.contact.name}}</p>
@@ -105,12 +109,12 @@
         <div class="copyright">
             <p>Esencial construcciones copyright@ 2019</p>
         </div>
-    </footer>
+    </footer> -->
     
 </body>
 
-<!-- Optional jQuery -->
-<script src="{{ url_for('static', filename='jQuery.js') }}"></script>
+<!-- jQuery -->
+<script src="{{ url_for('static', filename='js/jQuery.js') }}"></script>
 <!-- Poppers.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -123,3 +127,5 @@
 </script>
 <!-- FontAwesome-->
 <script src="https://kit.fontawesome.com/dc026d6440.js" crossorigin="anonymous"></script>
+<!-- script-->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>

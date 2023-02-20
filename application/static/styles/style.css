@@ -1,10 +1,26 @@
 main {
   position: relative;
+  display: flex !important;
+}
+main .block1 {
+  background-color: orange;
+}
+main .block2 {
+  background-color: aqua;
+}
+main .stick {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  border-radius: 20px;
+  width: 15px;
 }
 main modal {
+  background-color: red;
   display: block;
   border-radius: 20px;
-  background-color: red;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -155,8 +171,12 @@ footer a:hover {
   padding-top: 40px;
 }
 
-body {
+html {
+  background-color: blue;
   font-family: "Open Sans", sans-serif;
+}
+html body {
+  background-color: blue;
 }
 
 .row {

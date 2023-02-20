@@ -5,10 +5,28 @@
 
 main{
   position: relative;
+  display: flex !important;
+  .block1{
+    background-color: orange;
+  }
+  .block2{
+    background-color: aqua;
+  }
+
+  .stick{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background-color: black;
+    border-radius: 20px;
+    width: 15px;
+  }
+
   modal{
+    background-color: red;
     display: block;
     border-radius: 20px;
-    background-color: red;
     position:absolute;
     top:50%;
     left:50%;

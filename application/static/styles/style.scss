@@ -5,9 +5,14 @@
 // Utilities
 @import "variables";
 
-body {
+html{
+  background-color: $background;
   font-family: $font;
+  body {
+    background-color: $background;
+  }
 }
+
 .row{
   margin: 0 !important;
 }

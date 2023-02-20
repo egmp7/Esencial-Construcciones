@@ -2,8 +2,44 @@
 {% block content %}
 
 <main>
-    <modal style="background-color: red; display: block;">
-        test
+    
+    <div class="block1">
+
+        <!-- About - Carousel -->
+        <div    class=" carousel 
+                        slide
+                        d-none
+                        d-sm-block" 
+                        data-ride="carousel">
+            <div class="carousel-inner">
+
+                <!-- Object to activate carousel -->
+                {% set carousel = { 'active':True } %}
+
+                {% for i in range (0,4)%}
+
+                <!-- Carousel item -->
+                <div class="carousel-item {{ 'active' if carousel.active else '' }}"> 
+
+                    <img    class="img-fluid"
+                            src="{{ url_for(   'static',
+                                                filename='/'.join([ 'img', 
+                                                                    'about-' + i|string + '.jpg'
+                                                                    ]))}} "  
+                        >
+                </div>
+
+                <!-- Update caraousel object -->
+                {% if carousel.update({'active': False}) %} {% endif %}
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="block2"></div>
+    <div class="stick"></div>
+    <modal>
+        hello
     </modal>
 </main>
 

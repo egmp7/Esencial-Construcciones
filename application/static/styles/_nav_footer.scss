@@ -1,5 +1,6 @@
 // Utilities
 @import "variables";
+@import "glowOnHover";
 
 nav {
   background: $nav-background;
@@ -14,20 +15,18 @@ nav {
   }
 
   .logo{
-    width: 100px;
+    img{
+      width: 100px;
+    }
   }
-  form{
+  
+  .language{
     text-align: center;
   }
 
   .social-media{
     text-align: end;
-
-    img {
-      margin-left: 10px;
-    }
-  }
-    
+  } 
 }
   
 footer {

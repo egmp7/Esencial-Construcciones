@@ -38,27 +38,41 @@
                 navbar-expand-lg 
                 row">
         <!-- Logo Hyperlink -->
-        <a  class="navbar-brand
-                   col" 
-            href="{{ url_for('home') }}">
-            <img    class="logo" 
-                    src="{{ url_for('static', filename='img/logo.png') }}">
-        </a>
-        <!-- Change Language -->
-        <form class="col" 
-              method="post" 
-              action="/changeLanguage">
-            <input style="font-size: 20px;" 
-                   class="btn btn-outline-warning" 
-                   type="submit" value="{{data.nav.language}}" 
-                   name="ChangeLanguage"/>
-        </form>
-        <div class="social-media col">
-            <img src="{{ url_for('static',filename='img/facebook.png')}}" alt="facebook page">
-            <img src="{{ url_for('static',filename='img/youtube.png')}}" alt="youtube page">
-            <img src="{{ url_for('static',filename='img/whatsaap.png')}}" alt="whatsaap info">
+        <div class="logo 
+                    col">
+            <a  class="navbar-brand" 
+                href="{{ url_for('home') }}">
+                <button class="glow-on-hover">
+                    <img src="{{ url_for('static', filename='img/logo.png') }}">
+                </button>
+            </a>
         </div>
-
+        <!-- Language -->
+        <div class="language
+                    col">
+            <form method="post" 
+                  action="/changeLanguage">
+                <button style="font-size: 20px;" 
+                    class="glow-on-hover" 
+                    type="submit"
+                    name="ChangeLanguage">
+                    {{data.nav.language}}
+                </button>
+            </form>
+        </div>
+        <!-- Social Media -->
+        <div class="social-media 
+                    col">
+            <button class="glow-on-hover">
+                <img class="img-fluid" src="{{ url_for('static',filename='img/facebook.png')}}" alt="facebook page">
+            </button>
+            <button class="glow-on-hover">
+                <img src="{{ url_for('static',filename='img/youtube.png')}}" alt="youtube page">
+            </button>
+            <button class="glow-on-hover">
+                <img src="{{ url_for('static',filename='img/whatsaap.png')}}" alt="whatsaap info">
+            </button>
+        </div>
     </nav>
 
     <!-- Inheritance - PARENT -->

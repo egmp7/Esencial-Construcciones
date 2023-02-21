@@ -17,7 +17,7 @@ def home():
         return redirect(url_for('success'))
     else:
         return render_template(
-            'home1.html',
+            'home.html',
             data = load.getJson()[language],
             images = load.getImages())
 

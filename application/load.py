@@ -8,9 +8,9 @@ def getJson():
     f = open(os.path.join(app.static_folder,"data.json"))
     return json.load(f)
 
-"""Get list of strings from projects folder""" 
+"""Get paths from images folder""" 
 def getImages(): 
-    #pprint.pprint(searchItemsInPath(os.path.join(app.static_folder, "img/")))
+    pprint.pprint(searchItemsInPath(os.path.join(app.static_folder, "img/")))
     return searchItemsInPath(os.path.join(app.static_folder, "img/"))
 
 

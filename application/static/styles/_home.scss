@@ -29,7 +29,7 @@ main{
       }
     }
   }
-  
+
   .block2{
     background-color: aqua;
   }
@@ -42,9 +42,23 @@ main{
   }
 
   modal{
+    display: none;
     background-color: red;
     border-radius: 20px;
     @include center;
+
+    #about{
+      display: none;
+    }
+    #projects{
+      display: none;
+    }
+    #services{
+      display: none;
+    }
+    #contact{
+      display: none;
+    }
   }
 }
 

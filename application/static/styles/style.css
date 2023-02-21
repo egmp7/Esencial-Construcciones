@@ -169,10 +169,26 @@ main modal #closeModal {
 }
 
 nav {
-  background: lightgrey;
+  background: orange;
+}
+nav img {
+  width: 56px;
+  opacity: 0.8;
+}
+nav img:hover {
+  opacity: 1;
 }
 nav .logo {
   width: 100px;
+}
+nav form {
+  text-align: center;
+}
+nav .social-media {
+  text-align: end;
+}
+nav .social-media img {
+  margin-left: 10px;
 }
 
 footer {
@@ -208,24 +224,19 @@ footer a:hover {
 }
 
 html {
-  background-color: blue;
+  background-color: #f4f4f4;
   font-family: "Open Sans", sans-serif;
 }
 html body {
-  background-color: blue;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.container {
+  padding: 0 !important;
 }
 
 .row {
   margin: 0 !important;
-}
-
-a {
-  color: #504f4f !important;
-}
-
-a:hover {
-  text-decoration: none !important;
-  color: #252525 !important;
 }
 
 /*# sourceMappingURL=style.css.map */

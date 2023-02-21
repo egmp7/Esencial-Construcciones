@@ -29,62 +29,45 @@
 
 <body class="container">
 
-    <!-- NAVBAR -->
+    <!--****************************
+    NAVBAR
+    ********************************-->
     
-    <nav class="navbar navbar-light navbar-expand-lg">
+    <nav class="navbar
+                navbar-light 
+                navbar-expand-lg 
+                row">
         <!-- Logo Hyperlink -->
-        <a  class="navbar-brand" 
+        <a  class="navbar-brand
+                   col" 
             href="{{ url_for('home') }}">
             <img    class="logo" 
                     src="{{ url_for('static', filename='img/logo.png') }}">
         </a>
         <!-- Change Language -->
-        <form method="post" action="/changeLanguage">
-            <input style="font-size: 20px;" class="btn btn-outline-warning" type="submit" value="{{data.nav.language}}" name="ChangeLanguage"/>
+        <form class="col" 
+              method="post" 
+              action="/changeLanguage">
+            <input style="font-size: 20px;" 
+                   class="btn btn-outline-warning" 
+                   type="submit" value="{{data.nav.language}}" 
+                   name="ChangeLanguage"/>
         </form>
-
-
-        <!-- Toggle button -->
-        <button class="navbar-toggler" 
-                type="button" 
-                data-toggle="collapse" 
-                data-target="#nav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Nav Items -->
-        <div class="collapse navbar-collapse" id="nav" >
-            <ul class=" navbar-nav 
-                        ml-auto"> <!--Right Alightment  -->
-                
-                <li>
-                    <a  class="nav-link" href="{{ url_for('home') }}">{{data.nav.home}}</a>
-                </li>
-
-                <li>
-                    <a class="nav-link" href="#about">{{data.nav.about}}</a>
-                </li>
-                
-				<li>
-                    <a class="nav-link" href="#services">{{data.nav.services}}</a>
-                </li>
-
-				<li>
-                    <a class="nav-link" href="#projects">{{data.nav.projects}}</a>
-                </li>
-
-				<li>
-                    <a class="nav-link" href="#contact">{{data.nav.contact}}</a>
-                </li>
-
-            </ul>
+        <div class="social-media col">
+            <img src="{{ url_for('static',filename='img/facebook.png')}}" alt="facebook page">
+            <img src="{{ url_for('static',filename='img/youtube.png')}}" alt="youtube page">
+            <img src="{{ url_for('static',filename='img/whatsaap.png')}}" alt="whatsaap info">
         </div>
+
     </nav>
 
     <!-- Inheritance - PARENT -->
 
     {% block content %} {% endblock %}
 
-    <!-- FOOTER -->
+    <!--****************************
+    FOOTER
+    ********************************-->
 
     <footer>
         My footer

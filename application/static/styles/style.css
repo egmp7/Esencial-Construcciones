@@ -4,6 +4,24 @@ main {
 }
 main .block1 {
   background-color: orange;
+  position: relative;
+}
+main .block1 .greeting {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: green;
+  text-align: center;
+}
+main .block1 .greeting .text {
+  margin-top: 3vh;
+}
+main .block1 .greeting .text h1 {
+  font-size: 20px;
+}
+main .block1 .greeting .text h2 {
+  font-size: 16px;
 }
 main .block2 {
   background-color: aqua;
@@ -19,7 +37,6 @@ main .stick {
 }
 main modal {
   background-color: red;
-  display: block;
   border-radius: 20px;
   position: absolute;
   top: 50%;

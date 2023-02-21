@@ -5,31 +5,13 @@
     
     <div class="block1">
 
-        <!-- About - Carousel -->
-        <div    class=" carousel 
-                        slide
-                        col-sm
-                        d-none
-                        d-sm-block" 
-                data-ride="carousel">
-            <div class="carousel-inner">
-
-                <!-- Object to activate carousel -->
-                {% set carousel = { 'active':True } %}
-
-                {% for image in images.introSlider %}
-
-                    <!-- Carousel item -->
-                    <div class="carousel-item {{ 'active' if carousel.active else '' }}"> 
-
-                        <img    class="img-fluid"
-                                src="{{ url_for('static',filename = images.introSlider[image])  }}">
-                    </div>
-
-                    <!-- Update caraousel object -->
-                    {% if carousel.update({'active': False}) %} {% endif %}
-
-                {% endfor %}
+        <div class="greeting">
+            <img class="img-fluid" 
+                src="{{ url_for('static',filename ='img/introSlider/building.jpg') }}"
+                alt="building">
+            <div class="text">    
+                <h1>{{data.carousel.title}}</h1>
+                <h2>{{data.carousel.slogan}}</h2>
             </div>
         </div>
 

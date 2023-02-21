@@ -255,27 +255,10 @@ nav .social-media {
 footer {
   background: #2b2b2b;
   color: white;
-}
-footer .contact-footer {
-  margin-bottom: 20px;
-  font-size: 12px;
-}
-footer .contact-footer p {
-  margin: 10px;
-}
-footer .social-media i {
-  margin-top: 10px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-footer .copyright p {
   font-size: 10px;
   margin: 0;
-  padding-bottom: 10px;
+  padding: 10px 0px;
   text-align: center;
-}
-footer a:hover {
-  color: white !important;
 }
 
 #success {

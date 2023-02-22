@@ -24,7 +24,12 @@ main .block1 .greeting .text h2 {
   font-size: 16px;
 }
 main .block2 {
-  background-color: aqua;
+  background-color: white;
+  position: relative;
+}
+main .block2 button {
+  position: absolute;
+  display: block;
 }
 main .stick {
   position: absolute;
@@ -58,9 +63,9 @@ main modal #contact {
   display: none;
 }
 main modal #closeModal {
-  position: fixed;
-  top: 1;
-  left: 1;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 .header-phone {

@@ -2,11 +2,11 @@
 
 $(document).ready(function(){
     
-    setResponsiveComponents(getMainWidth(),getMainHeight());
+    setComponentsPosition();
 
 });
 
-/**Gets the width of the container */
+/** Gets the width of the container */
 getMainWidth = function ()
 {
     return $(".container").width();
@@ -22,12 +22,12 @@ getMainHeight = function ()
     return windowHeight - navHeight - footerHeight;
 }
 
-/**Sets width and height of components
- * @param w width of the main component
- * @param h height of the main component
- */
-setResponsiveComponents = function (w,h)
+/** Sets positions of components */
+setComponentsPosition = function ()
 {
+    let w = getMainWidth();
+    let h = getMainHeight();
+
     $("main").height(h);
     
     // main components
@@ -45,6 +45,18 @@ setResponsiveComponents = function (w,h)
     $("modal").height(h * 0.95);
     $("modal").width(w);
 
+    // main buttons
+    var x = w / 4;
+    var y = h / 5;
+
+    $("#aboutButton").css({top: y - $("#aboutButton").height()/2, 
+                           left: x - $("#aboutButton").width()/2})
+    $("#projectsButton").css({top: y*2 - $("#projectsButton").height()/2, 
+                              left: x - $("#projectsButton").width()/2})
+    $("#servicesButton").css({top: y*3 - $("#servicesButton").height()/2, 
+                              left: x - $("#servicesButton").width()/2})
+    $("#contactButton").css({top: y*4 - $("#contactButton").height()/2, 
+                             left: x - $("#contactButton").width()/2})
 }
 
 // events

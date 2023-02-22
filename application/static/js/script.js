@@ -39,7 +39,7 @@ setComponentsPosition = function ()
 
     // block 1 components
     $(".greeting").width(w / 2 * 0.85)
-    $(".greeting").height(h * 0.9)
+    $(".greeting").height(h * 0.7)
     
     // modal component
     $("modal").height(h);

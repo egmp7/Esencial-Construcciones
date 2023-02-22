@@ -13,6 +13,14 @@ main .block1 .greeting {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+main .block1 .greeting .carousel {
+  width: 80%;
+  padding: 0;
+  margin: auto;
+}
+main .block1 .greeting .carousel .carousel-inner {
+  border-radius: 10px;
+}
 main .block1 .greeting .text {
   margin-top: 3vh;
 }
@@ -30,7 +38,7 @@ main .block2 button {
   position: absolute;
   display: block;
   color: black;
-  width: 240px;
+  width: 50%;
   height: 80px;
   font-size: 24px;
 }
@@ -39,9 +47,9 @@ main .stick {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: black;
+  background-color: #2b2b2b;
   border-radius: 20px;
-  width: 15px;
+  width: 8px;
 }
 main modal {
   display: none;

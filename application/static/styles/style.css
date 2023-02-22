@@ -11,7 +11,6 @@ main .block1 .greeting {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: green;
   text-align: center;
 }
 main .block1 .greeting .text {
@@ -24,12 +23,16 @@ main .block1 .greeting .text h2 {
   font-size: 16px;
 }
 main .block2 {
-  background-color: white;
+  background-color: orange;
   position: relative;
 }
 main .block2 button {
   position: absolute;
   display: block;
+  color: black;
+  width: 240px;
+  height: 80px;
+  font-size: 24px;
 }
 main .stick {
   position: absolute;

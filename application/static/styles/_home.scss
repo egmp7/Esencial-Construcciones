@@ -13,7 +13,6 @@ main{
 
     .greeting{
       @include center;
-      background-color: green;
       text-align: center;
 
       .text{
@@ -31,11 +30,15 @@ main{
   }
 
   .block2{
-    background-color: white;
+    background-color: orange;
     position: relative;
     button{
       position: absolute;
       display: block;
+      color: black;
+      width: 240px;
+      height: 80px;
+      font-size: 24px;
     }
   }
 

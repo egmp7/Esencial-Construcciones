@@ -25,8 +25,8 @@ getMainHeight = function ()
 /** Sets positions of components */
 setComponentsPosition = function ()
 {
-    let w = getMainWidth();
-    let h = getMainHeight();
+    var w = getMainWidth();
+    var h = getMainHeight();
 
     $("main").height(h);
     
@@ -69,7 +69,7 @@ $( "#aboutButton" ).click(() =>
 $( "#projectsButton" ).click(() => 
 {
     showModal()
-    $( "#projects" ).css("display", "block");
+    displayProjects()
 });
 
 $( "#servicesButton" ).click(function() {
@@ -105,4 +105,32 @@ showMain = function()
     $(".block1").css("display", "block");
     $(".block2").css("display", "block");
     $(".stick").css("display", "block");
+}
+
+/** Displays projects component */
+displayProjects = function()
+{
+    $( "#projects" ).css("display", "block");
+
+    // projects component
+    var w = getMainWidth() / 4;
+    var h = (getMainHeight() - $("#projects h2").height()) / 4;
+
+    $("#projectsList").css({
+        left:0, 
+        top:0, 
+        width: w, 
+        height: h * 4,});
+
+    $("#projectView").css({
+        left: w,
+        top: 0,
+        width: w * 3, 
+        height: h * 3});
+    $("#projectsPreview").css({
+        left: w, 
+        top: h * 3, 
+        width: w * 3, 
+        height: h});
+    
 }

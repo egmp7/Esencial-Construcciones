@@ -62,7 +62,6 @@ main{
   modal{
     display: none;
     background-color: white;
-    border-radius: 20px;
     overflow: scroll;
     @include center;
 
@@ -85,13 +84,41 @@ main{
 
     #projects{
       display: none;
+
+      .title {
+        text-align: center;
+
+        h2{
+          margin: 0;
+        }
+      }
+
+      .projectsComponent{
+        position: relative;
+
+        #projectsList{
+          position: absolute;
+          background-color: aqua;
+        }
+        #projectsPreview{
+          position: absolute;
+          background-color: red;
+        }
+        #projectView{
+          position: absolute;
+          background-color: blue;
+        }
+      }
     }
+
     #services{
       display: none;
     }
+
     #contact{
       display: none;
     }
+    
     #closeModal{
       position: absolute;
       top: 10px;
@@ -100,43 +127,7 @@ main{
   }
 }
 
-.header-phone {
-  
-  height: 9vh;
-  overflow: hidden;
-  position: relative;
-  
-  img {
-
-    height: 95vh;
-    position: absolute;
-    left: -66%;;
-    z-index: 0;
-
-  }
-
-  .text{
-
-    h1{
-      font-size: medium;
-    }
-    text-align: center;
-    position: absolute;
-    width: 230px;
-    top:80%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    color: $text-color1;
-    z-index: 1;
-  }
-}
-
-.services-projects{
-  background: $background2;
-}
-
 // SERVICES
-
 .services{
   padding-top: 1rem;
   @include lists;
@@ -153,20 +144,7 @@ main{
   }
 }
 
-// PROJECTS
-
-.projects {
-  @include lists;
-  .modal-footer{
-    display: block !important;
-    p{
-      margin: 0;
-    }
-  }
-}
-
 // CONTACT
-
 .contact{
 
   background:$background3;

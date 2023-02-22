@@ -61,9 +61,9 @@ main{
       display: none;
     }
     #closeModal{
-      position: absolute;
-      top: 0;
-      left: 0;
+      position: fixed;
+      top: 1;
+      left: 1;
     }
   }
 }

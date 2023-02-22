@@ -51,14 +51,28 @@ main{
 
   modal{
     display: none;
-    background-color: red;
+    background-color: white;
     border-radius: 20px;
     overflow: scroll;
     @include center;
 
     #about{
       display: none;
+      padding: 10px 0;
+      .carousel{
+        width: 400px;
+        padding: 0;
+        margin:auto;
+      }
+      .text {
+        color: $modal-color;
+        padding: 30px 20px 0px;
+        p{
+          text-align: justify;
+        }
+      }
     }
+
     #projects{
       display: none;
     }
@@ -107,32 +121,6 @@ main{
   }
 }
 
-// ABOUT
-
-.about {
- 
-  // Vertical Align
-  align-items: center;
-
-  .carousel{
-    max-width: 30vw;
-    padding-left: 10px;
-
-    img {
-      border-radius: 5px;
-    }
-  }
-
-  .text {
-    color: $text-color2;
-    padding: 50px 20px;
-
-    p{
-      text-align: justify;
-    }
-  }
-}
-
 .services-projects{
   background: $background2;
 }
@@ -172,7 +160,7 @@ main{
 .contact{
 
   background:$background3;
-  color: $text-color2;
+  color: $modal-color;
 
   h2{
     padding: 20px 0;

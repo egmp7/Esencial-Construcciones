@@ -45,7 +45,7 @@ main .stick {
 }
 main modal {
   display: none;
-  background-color: red;
+  background-color: white;
   border-radius: 20px;
   overflow: scroll;
   position: absolute;
@@ -55,6 +55,19 @@ main modal {
 }
 main modal #about {
   display: none;
+  padding: 10px 0;
+}
+main modal #about .carousel {
+  width: 400px;
+  padding: 0;
+  margin: auto;
+}
+main modal #about .text {
+  color: #504f4f;
+  padding: 30px 20px 0px;
+}
+main modal #about .text p {
+  text-align: justify;
 }
 main modal #projects {
   display: none;
@@ -94,24 +107,6 @@ main modal #closeModal {
 }
 .header-phone .text h1 {
   font-size: medium;
-}
-
-.about {
-  align-items: center;
-}
-.about .carousel {
-  max-width: 30vw;
-  padding-left: 10px;
-}
-.about .carousel img {
-  border-radius: 5px;
-}
-.about .text {
-  color: #504f4f;
-  padding: 50px 20px;
-}
-.about .text p {
-  text-align: justify;
 }
 
 .services-projects {

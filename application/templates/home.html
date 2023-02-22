@@ -47,42 +47,40 @@
         <div id="about" class="about row">
 
             <!-- About - Carousel -->
-            <div    class=" carousel 
-                            slide
-                            col-sm
-                            d-none
-                            d-sm-block" 
-                    data-ride="carousel">
+
+            <div id="aboutCarousel" class="carousel slide">
                 <div class="carousel-inner">
-    
+
                     <!-- Object to activate carousel -->
                     {% set carousel = { 'active':True } %}
-    
+
                     {% for image in images.about %}
-    
-                        <!-- Carousel item -->
-                        <div class="carousel-item {{ 'active' if carousel.active else '' }}"> 
-    
-                            <img    class="img-fluid"
-                                    src="{{ url_for(   'static',
-                                                        filename= images.about[image])}} "  
-                                >
+                  
+                        <div class="carousel-item {{ 'active' if carousel.active else '' }}">
+                            <img src="{{url_for('static',filename=images.about[image])}}" class="d-block w-100 img-fluid" alt="...">
                         </div>
-    
-                        <!-- Update caraousel object -->
-                        {% if carousel.update({'active': False}) %} {% endif %}
+
+                     <!-- Update caraousel object -->
+                    {% if carousel.update({'active': False}) %} {% endif %}
     
                     {% endfor %}
+
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+                    <span aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+                    <span aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-    
+
             <!-- About - Text -->
             <div class="text col-sm">
     
                 <h2><strong>{{data.about.title}}</strong></h2>
                 <p>{{data.about.description}} </p>
-    
-                <br>
     
                 <h2><strong>{{data.objective.title}}</strong></h2>
                 <p>{{data.objective.description}}</p>

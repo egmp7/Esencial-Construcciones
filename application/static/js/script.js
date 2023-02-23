@@ -1,9 +1,13 @@
 
-
+/**Init */
 $(document).ready(function(){
     
     setComponentsPosition();
 
+});
+
+window.addEventListener("resize", function(){
+    setComponentsPosition();
 });
 
 /** Gets the width of the container */
@@ -72,6 +76,33 @@ $( "#projectsButton" ).click(() =>
     displayProjects()
 });
 
+selectProject = function(projectObject){
+    
+    for  (var project in images.projects)
+    {   
+        
+        if (project == projectObject.id)
+        {
+
+            // empty html
+
+            $("#projectsPreview").empty();
+
+            // add images
+            for (var image in images.projects[project])
+            {
+                imgTag ="<img src='" + images.projects[project][image] +"'></img>"
+                html = '<div class="thumbnail">' +imgTag+ '</div>'
+                $("#projectsPreview").append(html); 
+            }
+            
+        }
+    }
+
+    displayProjects();
+    
+}
+
 $( "#servicesButton" ).click(function() {
     showModal()
     $( "#services" ).css("display", "block");
@@ -131,6 +162,16 @@ displayProjects = function()
         left: w, 
         top: h * 3, 
         width: w * 3, 
-        height: h});
-    
+        height: h}); 
+
+
+    var thumbnailHeight = $("#projectsPreview").height() * 0.9
+    var thumbnailBorderWidth = ( $("#projectsPreview").height()- thumbnailHeight) /2
+
+    $(".thumbnail img").css({height:thumbnailHeight})
+
+    $(".thumbnail").css({borderWidth: thumbnailBorderWidth })
+
+
+
 }

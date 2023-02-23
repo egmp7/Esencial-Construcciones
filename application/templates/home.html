@@ -17,7 +17,7 @@
                     {% for image in images.greeting %}
                   
                         <div class="carousel-item {{ 'active' if carousel.active else '' }}">
-                            <img src="{{url_for('static',filename=images.greeting[image])}}" class="d-block w-100 img-fluid" alt="...">
+                            <img src="{{images.greeting[image]}}" class="d-block w-100 img-fluid" alt="...">
                         </div>
 
                      <!-- Update caraousel object -->
@@ -89,7 +89,7 @@
                     {% for image in images.about %}
                   
                         <div class="carousel-item {{ 'active' if carousel.active else '' }}">
-                            <img src="{{url_for('static',filename=images.about[image])}}" class="d-block w-100 img-fluid" alt="...">
+                            <img src="{{images.about[image]}}" class="d-block w-100 img-fluid" alt="...">
                         </div>
 
                      <!-- Update caraousel object -->
@@ -129,16 +129,20 @@
             </div>
 
             <div class="projectsComponent">
-                <div id="projectsList">
-                    {% for project in data.projects.list %}
 
-                        <ul>
-                            <li>{{project.name}}</li>
-                        </ul>
-        
-                    {% endfor %}
+                <div id="projectsList">
+                    <ul>
+                        {% for project in data.projects.list %}
+                            <li>
+                                <button onclick="selectProject({{project}})"> 
+                                        {{project.name}}</button>
+                            </li>
+                        {% endfor %}
+                    </ul>
                 </div>
-                <div id="projectsPreview"> preview</div>
+
+                <div id="projectsPreview"></div>
+
                 <div id="projectView"> view</div>
             </div>
             <div></div>
@@ -254,5 +258,7 @@
     </modal>
 </main>
 
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script> const images = {{ images|tojson }} </script>
 
 {% endblock %}

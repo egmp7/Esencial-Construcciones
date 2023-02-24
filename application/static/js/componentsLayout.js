@@ -45,8 +45,8 @@ setComponentsPosition = function ()
     $(".greeting").height(h * 0.7)
     
     // modal component
-    $("modal").height(h);
-    $("modal").width(w);
+    $(".modal").height(h);
+    $(".modal").width(w);
     
     // main buttons
     var x = w / 4;

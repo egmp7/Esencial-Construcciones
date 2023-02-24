@@ -57,15 +57,9 @@ selectImage = function(image)
 fixCSS = function()
 {
     var thumbnailHeight = $("#projectsPreview").height() * 0.9
-    //var thumbnailBorderWidth = ( $("#projectsPreview").height()- thumbnailHeight) /2
     $(".thumbnail img").css({height:thumbnailHeight})
-    //$(".thumbnail").css({borderWidth: thumbnailBorderWidth })
     $("#projectView img").height($("#projectView").height())
-    // $("#projectsPreview").css({
-    //     borderLeft: "solid",
-    //     borderLeftWidth: thumbnailBorderWidth,
-    //     borderLeftColor: "orange"
-    // })
+
 }
 
 // events
@@ -97,7 +91,7 @@ $( "#closeModal" ).click(function() {
 /** Hides the main componets and shows the modal component */
 showModal = function()
 {
-    $("modal").css("display", "block");
+    $(".modal").css("display", "block");
     $(".block1").css("display", "none");
     $(".block2").css("display", "none");
     $(".stick").css("display", "none");   
@@ -105,7 +99,7 @@ showModal = function()
 /** Hides the modal componet and shows the main components */
 showMain = function()
 {
-    $("modal").css("display", "none");
+    $(".modal").css("display", "none");
     $(".block1").css("display", "block");
     $(".block2").css("display", "block");
     $(".stick").css("display", "block");

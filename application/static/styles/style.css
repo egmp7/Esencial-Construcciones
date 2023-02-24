@@ -1,6 +1,7 @@
 main {
   background-color: orange;
   display: flex;
+  position: relative;
 }
 main .block1 {
   position: relative;
@@ -60,39 +61,39 @@ main .stick {
   border-radius: 20px;
   width: 8px;
 }
-main modal {
+main .modal {
   display: none;
   background-color: white;
   overflow: scroll;
   position: absolute;
 }
-main modal #about {
+main .modal #about {
   display: none;
   padding: 10px 0;
 }
-main modal #about .carousel {
+main .modal #about .carousel {
   width: 400px;
   padding: 0;
   margin: auto;
 }
-main modal #about .text {
+main .modal #about .text {
   color: #504f4f;
   padding: 30px 20px 0px;
 }
-main modal #about .text p {
+main .modal #about .text p {
   text-align: justify;
 }
-main modal #projects {
+main .modal #projects {
   display: none;
 }
-main modal #projects .title {
+main .modal #projects .title {
   text-align: center;
   background: #ffbc11;
   text-transform: uppercase;
   height: 42px;
   position: relative;
 }
-main modal #projects .title h2 {
+main .modal #projects .title h2 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -100,20 +101,20 @@ main modal #projects .title h2 {
   font-size: 18px;
   margin: 0;
 }
-main modal #projects .projectsComponent {
+main .modal #projects .projectsComponent {
   position: relative;
 }
-main modal #projects .projectsComponent #projectsList {
+main .modal #projects .projectsComponent #projectsList {
   position: absolute;
   background-color: rgb(253, 249, 242);
   overflow: scroll;
   border-right-style: solid;
 }
-main modal #projects .projectsComponent #projectsList ul {
+main .modal #projects .projectsComponent #projectsList ul {
   list-style-type: none;
   padding: 0;
 }
-main modal #projects .projectsComponent #projectsList ul button {
+main .modal #projects .projectsComponent #projectsList ul button {
   text-align: left;
   display: block;
   width: 100%;
@@ -124,34 +125,34 @@ main modal #projects .projectsComponent #projectsList ul button {
   font-weight: bold;
   font-size: 14px;
 }
-main modal #projects .projectsComponent #projectsPreview {
+main .modal #projects .projectsComponent #projectsPreview {
   position: absolute;
   background-color: rgb(99, 99, 99);
   display: flex;
   overflow: scroll;
   align-items: center;
 }
-main modal #projects .projectsComponent #projectsPreview button {
+main .modal #projects .projectsComponent #projectsPreview button {
   padding: 0;
   background-color: transparent;
   border-style: none;
 }
-main modal #projects .projectsComponent #projectsPreview button .thumbnail {
+main .modal #projects .projectsComponent #projectsPreview button .thumbnail {
   border-radius: 4px;
   border-style: solid;
   border-width: 4px;
   border-color: rgba(255, 166, 0, 0.514);
 }
-main modal #projects .projectsComponent #projectsPreview button .active {
+main .modal #projects .projectsComponent #projectsPreview button .active {
   border-style: solid;
   border-width: 4px;
   border-color: orange;
 }
-main modal #projects .projectsComponent #projectView {
+main .modal #projects .projectsComponent #projectView {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.984);
 }
-main modal #projects .projectsComponent #projectView p {
+main .modal #projects .projectsComponent #projectView p {
   font-size: 24px;
   color: white;
   position: absolute;
@@ -159,24 +160,24 @@ main modal #projects .projectsComponent #projectView p {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-main modal #projects .projectsComponent #projectView img {
+main .modal #projects .projectsComponent #projectView img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-main modal #services {
+main .modal #services {
   display: none;
 }
-main modal #contact {
+main .modal #contact {
   display: none;
 }
-main modal #closeModal {
+main .modal #closeModal {
   position: absolute;
   top: 10px;
   left: 10px;
 }
-main modal #closeModal .btn-close {
+main .modal #closeModal .btn-close {
   background-color: rgb(105, 0, 0);
   color: red;
 }

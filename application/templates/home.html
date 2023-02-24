@@ -71,9 +71,11 @@
         </div>
     </div>
 
-    <div class="stick"></div> 
-    
-    <modal>
+     <!--****************************
+    MODAL
+    ********************************-->
+
+    <div class="modal">
        
         <!--****************************
         ABOUT
@@ -258,10 +260,13 @@
         </div>
 
         <button id="closeModal" class="btn-close"></button>
-    </modal>
+    </div>
+
+    <div class="stick"></div> 
+
 </main>
 <script> const projectImages = {{ images.projects|tojson }} </script>
 <script src="{{ url_for('static', filename='js/jQuery.js') }}"></script>
-<script src="{{ url_for('static', filename='js//homeEvents.js')}}"></script>
+<script src="{{ url_for('static', filename='js//events.js')}}"></script>
 
 {% endblock %}

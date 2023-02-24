@@ -1,43 +1,70 @@
 main {
   background-color: orange;
+  display: flex;
 }
-main .greeting {
+main .block1 {
+  position: relative;
+}
+main .block1 .greeting {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 30px;
   text-align: center;
 }
-main .greeting .carousel {
+main .block1 .greeting .carousel {
   width: 80%;
   padding: 0;
   margin: auto;
 }
-main .greeting .carousel .carousel-inner {
+main .block1 .greeting .carousel .carousel-inner {
   border-radius: 10px;
 }
-main .greeting .text {
+main .block1 .greeting .text {
   margin-top: 3vh;
 }
-main .greeting .text h1 {
+main .block1 .greeting .text h1 {
   font-size: 20px;
 }
-main .greeting .text h2 {
+main .block1 .greeting .text h2 {
   font-size: 16px;
 }
-main .mainButtons button {
+main .block2 {
+  position: relative;
+}
+main .block2 .mainButtons button {
+  width: 60%;
+  height: 80px;
   color: black;
   font-size: 24px;
 }
+main .block2 .mainButtons #aboutButton {
+  position: absolute;
+}
+main .block2 .mainButtons #projectsButton {
+  position: absolute;
+}
+main .block2 .mainButtons #servicesButton {
+  position: absolute;
+}
+main .block2 .mainButtons #contactButton {
+  position: absolute;
+}
 main .stick {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: #2b2b2b;
   border-radius: 20px;
+  width: 8px;
 }
 main modal {
   display: none;
   background-color: white;
   overflow: scroll;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 main modal #about {
   display: none;
@@ -62,6 +89,8 @@ main modal #projects .title {
   text-align: center;
   background: #ffbc11;
   text-transform: uppercase;
+  height: 42px;
+  position: relative;
 }
 main modal #projects .title h2 {
   position: absolute;
@@ -75,6 +104,7 @@ main modal #projects .projectsComponent {
   position: relative;
 }
 main modal #projects .projectsComponent #projectsList {
+  position: absolute;
   background-color: rgb(253, 249, 242);
   overflow: scroll;
   border-right-style: solid;
@@ -95,7 +125,8 @@ main modal #projects .projectsComponent #projectsList ul button {
   font-size: 14px;
 }
 main modal #projects .projectsComponent #projectsPreview {
-  background-color: orange;
+  position: absolute;
+  background-color: rgb(99, 99, 99);
   display: flex;
   overflow: scroll;
   align-items: center;
@@ -106,16 +137,18 @@ main modal #projects .projectsComponent #projectsPreview button {
   border-style: none;
 }
 main modal #projects .projectsComponent #projectsPreview button .thumbnail {
+  border-radius: 4px;
   border-style: solid;
-  border-left: none;
-  border-color: orange;
+  border-width: 4px;
+  border-color: rgba(255, 166, 0, 0.514);
 }
 main modal #projects .projectsComponent #projectsPreview button .active {
   border-style: solid;
-  border-width: 2px;
-  border-color: aqua;
+  border-width: 4px;
+  border-color: orange;
 }
 main modal #projects .projectsComponent #projectView {
+  position: absolute;
   background-color: rgba(0, 0, 0, 0.984);
 }
 main modal #projects .projectsComponent #projectView p {
@@ -142,6 +175,10 @@ main modal #closeModal {
   position: absolute;
   top: 10px;
   left: 10px;
+}
+main modal #closeModal .btn-close {
+  background-color: rgb(105, 0, 0);
+  color: red;
 }
 
 .services {
@@ -285,16 +322,11 @@ footer {
 }
 
 html {
-  position: relative;
   background-color: #f4f4f4;
   font-family: "Open Sans", sans-serif;
 }
 html body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
-
-body {
-  position: relative !important;
 }
 
 .container {

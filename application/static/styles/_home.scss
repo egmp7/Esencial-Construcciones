@@ -5,51 +5,76 @@
 
 main{
   background-color: orange;
+  display: flex;
 
-  .greeting{
-    padding: 30px;
-    text-align: center;
+  .block1{
+    position: relative;
 
-    .carousel{
-      width: 80%;
-      padding: 0;
-      margin: auto;
-
-      .carousel-inner{
-        border-radius: 10px;
+    .greeting{
+      @include center;
+      padding: 30px;
+      text-align: center;
+  
+      .carousel{
+        width: 80%;
+        padding: 0;
+        margin: auto;
+  
+        .carousel-inner{
+          border-radius: 10px;
+        }
       }
-    }
-
-    .text{
-      margin-top: 3vh;
-
-      h1{
-        font-size: 20px;
-      }
-
-      h2{
-        font-size: 16px;
+  
+      .text{
+        margin-top: 3vh;
+  
+        h1{
+          font-size: 20px;
+        }
+  
+        h2{
+          font-size: 16px;
+        }
       }
     }
   }
-
-  .mainButtons{
-    button{
-      color: black;
-      font-size: 24px;
+  .block2{
+    position: relative;
+    .mainButtons{
+      button{
+        width: 60%;
+        height: 80px;
+        color: black;
+        font-size: 24px;
+      }
+      #aboutButton{
+        position: absolute;
+      }
+      #projectsButton{
+        position: absolute;
+      }
+      #servicesButton{
+        position: absolute;
+      }
+      #contactButton{
+        position: absolute;
+      }
+      
     }
   }
 
   .stick{
+    @include center;
     background-color: $footer-background;
     border-radius: 20px;
+    width: 8px;
   }
 
   modal{
     display: none;
     background-color: white;
     overflow: scroll;
-    @include center;
+    position: absolute;
 
     #about{
       display: none;
@@ -75,7 +100,8 @@ main{
         text-align: center;
         background: #ffbc11;
         text-transform: uppercase;
-
+        height: 42px;
+        position: relative;
 
         h2{
           @include center;
@@ -88,6 +114,7 @@ main{
         position: relative;
 
         #projectsList{
+          position: absolute;
           background-color: rgb(253 249 242);
           overflow: scroll;
           border-right-style: solid;
@@ -108,7 +135,8 @@ main{
           }
         }
         #projectsPreview{
-          background-color: orange;
+          position: absolute;
+          background-color: rgb(99, 99, 99);
           display: flex;
           overflow: scroll;
           align-items: center;
@@ -119,22 +147,21 @@ main{
             border-style: none;
 
             .thumbnail{
+              border-radius: 4px;
               border-style: solid;
-              border-left: none;
-              border-color: orange;
-              img
-              {
+              border-width: 4px;
+              border-color: rgba(255, 166, 0, 0.514);
 
-              }
             }
             .active{
               border-style: solid;
-              border-width: 2px;
-              border-color: aqua;
+              border-width: 4px;
+              border-color: orange;
             }
           } 
         }
         #projectView{
+          position: absolute;
           background-color: rgba(0, 0, 0, 0.984);
           p{
             font-size: 24px;
@@ -160,7 +187,15 @@ main{
       position: absolute;
       top: 10px;
       left: 10px;
+      
+      .btn-close
+      {
+        background-color: rgb(105, 0, 0);
+        color: red;
+
+      }
     }
+
   }
 }
 

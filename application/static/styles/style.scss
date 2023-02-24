@@ -5,16 +5,11 @@
 
 // root
 html{
-  position: relative;
   background-color: $background;
   font-family: $font;
   body {
   @include shadow;
   }
-}
-
-body{
-  position: relative !important;
 }
 
 // bootstrap classes

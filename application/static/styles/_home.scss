@@ -5,7 +5,6 @@
 
 main{
   background-color: orange;
-  display: flex !important;
 
   .greeting{
     padding: 30px;
@@ -33,7 +32,6 @@ main{
       }
     }
   }
-
 
   .mainButtons{
     button{
@@ -75,9 +73,13 @@ main{
 
       .title {
         text-align: center;
+        background: #ffbc11;
+        text-transform: uppercase;
+
 
         h2{
           @include center;
+          font-size: 18px;
           margin: 0;
         }
       }
@@ -86,37 +88,62 @@ main{
         position: relative;
 
         #projectsList{
-          position: absolute;
-          background-color: aqua;
+          background-color: rgb(253 249 242);
+          overflow: scroll;
+          border-right-style: solid;
           ul{
             list-style-type: none;
             padding: 0;
-            margin-top: 10px;
-            margin-left: 8px;
-            li{
-              margin-bottom: 8px;
-              button{
-                background-color: transparent;
-                border-style: none;
-              }
+            button{
+              text-align: left;
+              display: block;
+              width: 100%;
+              padding: 12px 12px;
+              background-color: transparent;
+              border: none;
+              border-bottom-style: solid;
+              font-weight: bold;
+              font-size: 14px;
             }
           }
         }
         #projectsPreview{
-          position: absolute;
+          background-color: orange;
           display: flex;
           overflow: scroll;
           align-items: center;
-          background-color: red;
+  
+          button{
+            padding: 0;
+            background-color: transparent;
+            border-style: none;
 
-          .thumbnail{
-            border-style: solid;
-            border-left: none;
-          }
+            .thumbnail{
+              border-style: solid;
+              border-left: none;
+              border-color: orange;
+              img
+              {
+
+              }
+            }
+            .active{
+              border-style: solid;
+              border-width: 2px;
+              border-color: aqua;
+            }
+          } 
         }
         #projectView{
-          position: absolute;
-          background-color: blue;
+          background-color: rgba(0, 0, 0, 0.984);
+          p{
+            font-size: 24px;
+            color: white;
+            @include center;
+          }
+          img{
+            @include center;
+          }
         }
       }
     }

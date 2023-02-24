@@ -1,6 +1,5 @@
 main {
   background-color: orange;
-  display: flex !important;
 }
 main .greeting {
   padding: 30px;
@@ -61,48 +60,77 @@ main modal #projects {
 }
 main modal #projects .title {
   text-align: center;
+  background: #ffbc11;
+  text-transform: uppercase;
 }
 main modal #projects .title h2 {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 18px;
   margin: 0;
 }
 main modal #projects .projectsComponent {
   position: relative;
 }
 main modal #projects .projectsComponent #projectsList {
-  position: absolute;
-  background-color: aqua;
+  background-color: rgb(253, 249, 242);
+  overflow: scroll;
+  border-right-style: solid;
 }
 main modal #projects .projectsComponent #projectsList ul {
   list-style-type: none;
   padding: 0;
-  margin-top: 10px;
-  margin-left: 8px;
 }
-main modal #projects .projectsComponent #projectsList ul li {
-  margin-bottom: 8px;
-}
-main modal #projects .projectsComponent #projectsList ul li button {
+main modal #projects .projectsComponent #projectsList ul button {
+  text-align: left;
+  display: block;
+  width: 100%;
+  padding: 12px 12px;
   background-color: transparent;
-  border-style: none;
+  border: none;
+  border-bottom-style: solid;
+  font-weight: bold;
+  font-size: 14px;
 }
 main modal #projects .projectsComponent #projectsPreview {
-  position: absolute;
+  background-color: orange;
   display: flex;
   overflow: scroll;
   align-items: center;
-  background-color: red;
 }
-main modal #projects .projectsComponent #projectsPreview .thumbnail {
+main modal #projects .projectsComponent #projectsPreview button {
+  padding: 0;
+  background-color: transparent;
+  border-style: none;
+}
+main modal #projects .projectsComponent #projectsPreview button .thumbnail {
   border-style: solid;
   border-left: none;
+  border-color: orange;
+}
+main modal #projects .projectsComponent #projectsPreview button .active {
+  border-style: solid;
+  border-width: 2px;
+  border-color: aqua;
 }
 main modal #projects .projectsComponent #projectView {
+  background-color: rgba(0, 0, 0, 0.984);
+}
+main modal #projects .projectsComponent #projectView p {
+  font-size: 24px;
+  color: white;
   position: absolute;
-  background-color: blue;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main modal #projects .projectsComponent #projectView img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 main modal #services {
   display: none;

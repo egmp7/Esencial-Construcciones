@@ -8,10 +8,10 @@ class GUIComponent
         this.width = width;
         this.height = height;
 
-        this.createElement();  
+        this.drawElement();  
     }
 
-    createElement = function()
+    drawElement = function()
     {
         $(this.element).css({
             left:   this.x,
@@ -23,15 +23,22 @@ class GUIComponent
         
     }
 
+    resize = function(x,y,width,height)
+    {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.drawElement()
+    }
+
     visible = function(bool)
     {
         if (bool)
             $(this.element).css({display: "block"})
             
         else
-        {
             $(this.element).css({display: "none"})
-        }
         
     }
 }

@@ -131,17 +131,18 @@
                 <div id="projectsList">
                     <ul>
                         {% for project in data.projects.list %}
-                            <li>
-                                <button id="{{project.id}}Button"> 
-                                        {{project.name}}</button>
-                            </li>
+                            <button onclick="selectProject({{project}})"> 
+                                <li>{{project.name}}</li>
+                            </button>
                         {% endfor %}
                     </ul>
                 </div>
 
                 <div id="projectsPreview"></div>
 
-                <div id="projectView"> view</div>
+                <div id="projectView">
+                    <p>Seleccione un proyecto</p>
+                </div>
             </div>
             <div></div>
             
@@ -255,6 +256,7 @@
         <button id="closeModal" class="btn-close"></button>
     </modal>
 </main>
-<script> const images = {{ images|tojson }} </script>
+<script> const projectImages = {{ images.projects|tojson }} </script>
+<script src="{{ url_for('static', filename='js//homeEvents.js')}}"></script>
 
 {% endblock %}

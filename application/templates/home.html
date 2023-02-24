@@ -157,43 +157,29 @@
         <!--****************************
                 SERVICES 
         ********************************-->
-        <ul id="services" class="services list-group mb-3">
+        <div id="services">
 
             <!-- Title -->
 
-            <li class="list-group-item title"><h2><strong>{{data.services.title}}</strong></h2></li>
+            <div class="title"><h2>{{data.services.title}}</h2></div>
 
 
-            {% for service in data.services.list%}
+            <!-- Cards -->
 
-                <!-- Collapse Functionality -->
-
-                <a  id="services-collapse"
-                    data-toggle="collapse" 
-                    href="#service-collapse-{{service.id}}">
-
-                    <li class="list-group-item"><strong>{{service.name}}</strong></li>
+            <div class="cards">
+                <div class="card">
                 
-                </a>
 
-                <!-- Adding a variable to a html attribute -->
-                <div id="service-collapse-{{service.id}}" class="collapse body">
-
-                    <img 
-                    class="img-fluid img-thumbnail"
-                    src="{{ url_for(   'static',
-                                        filename='/'.join([ 'img', 
-                                                            'services', 
-                                                            service.id + '-1.jpg'
-                                                            ]))}} ">
-
-                    <p>{{service.description}}</p>
-
+                
                 </div>
 
-            {% endfor %}
+                <div class="card">
+                
 
-        </ul>
+                </div>
+            </div>
+
+        </div>
         
         <!--**************************** 
             CONTACT 

@@ -79,6 +79,20 @@ main{
     overflow: scroll;
     position: absolute;
 
+    .title {
+      text-align: center;
+      background: #ffbc11;
+      text-transform: uppercase;
+      height: 42px;
+      position: relative;
+
+      h2{
+        @include center;
+        font-size: 18px;
+        margin: 0;
+      }
+    }
+
     #about{
       display: none;
       padding: 10px 0;
@@ -98,20 +112,6 @@ main{
 
     #projects{
       display: none;
-
-      .title {
-        text-align: center;
-        background: #ffbc11;
-        text-transform: uppercase;
-        height: 42px;
-        position: relative;
-
-        h2{
-          @include center;
-          font-size: 18px;
-          margin: 0;
-        }
-      }
       
       .projectsComponent{
         position: relative;

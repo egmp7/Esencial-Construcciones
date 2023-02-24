@@ -6,49 +6,47 @@
     <!--****************************
     GREETING
     ********************************-->
-    <div class="block1">
-        <div class="greeting">
-            <div id="greetingCarousel" class="carousel slide">
-                <div class="carousel-inner">
-
-                    <!-- Object to activate carousel -->
-                    {% set carousel = { 'active':True } %}
-
-                    {% for image in images.greeting %}
-                  
-                        <div class="carousel-item {{ 'active' if carousel.active else '' }}">
-                            <img src="{{images.greeting[image]}}" class="d-block w-100 img-fluid" alt="...">
-                        </div>
-
-                     <!-- Update caraousel object -->
-                    {% if carousel.update({'active': False}) %} {% endif %}
     
-                    {% endfor %}
+    <div class="greeting">
+        <div id="greetingCarousel" class="carousel slide">
+            <div class="carousel-inner">
 
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#greetingCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#greetingCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+                <!-- Object to activate carousel -->
+                {% set carousel = { 'active':True } %}
 
-            <div class="text">    
-                <h1>{{data.carousel.title}}</h1>
-                <h2>{{data.carousel.slogan}}</h2>
+                {% for image in images.greeting %}
+                
+                    <div class="carousel-item {{ 'active' if carousel.active else '' }}">
+                        <img src="{{images.greeting[image]}}" class="d-block w-100 img-fluid" alt="...">
+                    </div>
+
+                    <!-- Update caraousel object -->
+                {% if carousel.update({'active': False}) %} {% endif %}
+
+                {% endfor %}
+
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#greetingCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#greetingCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
 
+        <div class="text">    
+            <h1>{{data.carousel.title}}</h1>
+            <h2>{{data.carousel.slogan}}</h2>
+        </div>
     </div>
 
     <!--****************************
     MAIN BUTTONS
     ********************************-->
 
-    <div class="block2">
+    <div class="mainButtons">
 
         <button id="aboutButton" 
                 class="glow-on-hover">
@@ -134,7 +132,7 @@
                     <ul>
                         {% for project in data.projects.list %}
                             <li>
-                                <button onclick="selectProject({{project}})"> 
+                                <button id="{{project.id}}Button"> 
                                         {{project.name}}</button>
                             </li>
                         {% endfor %}
@@ -257,8 +255,6 @@
         <button id="closeModal" class="btn-close"></button>
     </modal>
 </main>
-
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 <script> const images = {{ images|tojson }} </script>
 
 {% endblock %}

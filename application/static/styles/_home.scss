@@ -4,59 +4,47 @@
 // HEADER
 
 main{
-  position: relative;
+  background-color: orange;
   display: flex !important;
-  
-  .block1{
-    background-color: orange;
-    position: relative;
 
-    .greeting{
-      @include center;
-      text-align: center;
+  .greeting{
+    padding: 30px;
+    text-align: center;
 
-      .carousel{
-        width: 80%;
-        padding: 0;
-        margin: auto;
+    .carousel{
+      width: 80%;
+      padding: 0;
+      margin: auto;
 
-        .carousel-inner{
-          border-radius: 10px;
-        }
+      .carousel-inner{
+        border-radius: 10px;
+      }
+    }
+
+    .text{
+      margin-top: 3vh;
+
+      h1{
+        font-size: 20px;
       }
 
-      .text{
-        margin-top: 3vh;
-
-        h1{
-          font-size: 20px;
-        }
-
-        h2{
-          font-size: 16px;
-        }
+      h2{
+        font-size: 16px;
       }
     }
   }
 
-  .block2{
-    background-color: orange;
-    position: relative;
+
+  .mainButtons{
     button{
-      position: absolute;
-      display: block;
       color: black;
-      width: 50%;
-      height: 80px;
       font-size: 24px;
     }
   }
 
   .stick{
-    @include center;
     background-color: $footer-background;
     border-radius: 20px;
-    width: 8px;
   }
 
   modal{
@@ -89,10 +77,11 @@ main{
         text-align: center;
 
         h2{
+          @include center;
           margin: 0;
         }
       }
-
+      
       .projectsComponent{
         position: relative;
 
@@ -114,12 +103,11 @@ main{
           }
         }
         #projectsPreview{
-          overflow: scroll;
           position: absolute;
-          background-color: red;
           display: flex;
-
+          overflow: scroll;
           align-items: center;
+          background-color: red;
 
           .thumbnail{
             border-style: solid;

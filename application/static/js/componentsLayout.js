@@ -72,7 +72,13 @@ drawMainLayout = function ()
             $("#projectsPreview").css({ left: x,        top: y * 3, 
                                         width: x * 3,   height: y});
 
-            
+            var paddingLeft = 30;
+            var minCardWidth =300
+            var divisions = Math.floor(MAIN_WINDOW_WIDTH/minCardWidth)
+            x = (MAIN_WINDOW_WIDTH - paddingLeft) /divisions
+            //y = MAIN_WINDOW_HEIGHT / 2.5
+
+            $(".grid").css({width: x})
 
 }
 

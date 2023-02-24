@@ -10,7 +10,7 @@ def getJson():
 
 """Get paths from images folder""" 
 def getImages(): 
-    #pprint.pprint(searchItemsInPath(os.path.join(app.static_folder, "img/")))
+    pprint.pprint(searchItemsInPath(os.path.join(app.static_folder, "img/")))
     return searchItemsInPath(os.path.join(app.static_folder, "img/"))
 
 

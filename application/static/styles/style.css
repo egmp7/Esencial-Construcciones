@@ -166,9 +166,6 @@ main .modal #projects .projectsComponent #projectView img {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-main .modal #services {
-  display: none;
-}
 main .modal #contact {
   display: none;
 }
@@ -180,28 +177,6 @@ main .modal #closeModal {
 main .modal #closeModal .btn-close {
   background-color: rgb(105, 0, 0);
   color: red;
-}
-
-.services {
-  padding-top: 1rem;
-  color: #504f4f;
-  background: #f1f1f1;
-  margin: auto;
-  max-width: 500px;
-}
-.services .title {
-  background: #ffe442;
-  text-align: center;
-}
-.services .body {
-  background: white;
-  padding: 2rem;
-  border-radius: 5px;
-}
-.services .body p {
-  text-align: justify;
-  margin-top: 2rem;
-  margin-bottom: 0;
 }
 
 .contact {
@@ -221,6 +196,38 @@ main .modal #closeModal .btn-close {
 .contact .embed-responsive {
   margin: auto;
   max-width: 400px;
+}
+
+#services {
+  display: none;
+}
+#services .cards {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#services .cards .grid {
+  padding-left: 30px;
+}
+#services .cards .grid .card {
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  margin-bottom: 30px;
+}
+#services .cards .grid .card h3 {
+  text-align: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+#services .cards .grid .card p {
+  text-align: justify;
+  display: none;
+  padding-top: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+  border-top: solid;
+  border-top-color: rgb(194, 194, 194);
 }
 
 .glow-on-hover {

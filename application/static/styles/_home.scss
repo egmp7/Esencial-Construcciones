@@ -178,10 +178,6 @@ main{
       }
     }
 
-    #services{
-      display: none;
-    }
-
     #contact{
       display: none;
     }
@@ -199,23 +195,6 @@ main{
       }
     }
 
-  }
-}
-
-// SERVICES
-.services{
-  padding-top: 1rem;
-  @include lists;
-  .body{
-    background: $background1;
-    padding: 2rem;
-
-    border-radius: 5px;
-    p{
-      text-align: justify;
-      margin-top: 2rem;
-      margin-bottom: 0;
-    }
   }
 }
 

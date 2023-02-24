@@ -167,16 +167,24 @@
             <!-- Cards -->
 
             <div class="cards">
-                <div class="card">
-                
 
-                
-                </div>
+                {%for serviceID in images.services%}
 
-                <div class="card">
-                
+                    <div class="grid">
+                    
+                        <div id="{{serviceID}}" 
+                             onclick="serviceClick('{{serviceID}}')" 
+                             class="card">
+                        
+                            <img src="{{images.services[serviceID]['1.jpg']}}">
+                            <h3>{{data.services[serviceID].name}}</h3>
+                            <p>{{data.services[serviceID].description}}</p>
 
-                </div>
+                        </div>
+                    </div>
+
+                {%endfor%}
+
             </div>
 
         </div>
@@ -252,7 +260,10 @@
 
 </main>
 <script> const projectImages = {{ images.projects|tojson }} </script>
+<script> const servicesImages = {{ images.services|tojson }} </script>
+
 <script src="{{ url_for('static', filename='js/jQuery.js') }}"></script>
 <script src="{{ url_for('static', filename='js//events.js')}}"></script>
+
 
 {% endblock %}

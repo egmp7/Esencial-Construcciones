@@ -13,6 +13,10 @@ main .block1 .greeting {
   transform: translate(-50%, -50%);
   padding: 30px;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
 }
 main .block1 .greeting .carousel {
   width: 80%;
@@ -35,22 +39,8 @@ main .block2 {
   position: relative;
 }
 main .block2 .mainButtons button {
-  width: 60%;
-  height: 80px;
   color: black;
   font-size: 24px;
-}
-main .block2 .mainButtons #aboutButton {
-  position: absolute;
-}
-main .block2 .mainButtons #projectsButton {
-  position: absolute;
-}
-main .block2 .mainButtons #servicesButton {
-  position: absolute;
-}
-main .block2 .mainButtons #contactButton {
-  position: absolute;
 }
 main .stick {
   position: absolute;
@@ -71,7 +61,6 @@ main .modal .title {
   text-align: center;
   background: #ffbc11;
   text-transform: uppercase;
-  height: 42px;
   position: relative;
 }
 main .modal .title h2 {
@@ -182,9 +171,6 @@ main .modal #closeModal {
   margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
-}
-#services .cards .grid {
-  padding-left: 30px;
 }
 #services .cards .grid .card {
   cursor: pointer;

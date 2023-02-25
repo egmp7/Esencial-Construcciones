@@ -194,35 +194,23 @@
         ********************************-->
         <div id="contact" class="contact">
         
-            <!-- Section Title -->
-
-            <h2><strong>{{data.contact.title}}</strong></h2>
-
-            <div class="row">
-
-                <!-- Name, Phone & Maps -->
-
-                <div class="col-sm">
-
-                    <!-- Text -->
-                    <div class="text">
-                        <p><strong>Arquitecto: </strong>{{data.contact.name}}</p>
-                        <p><strong>Teléfono: </strong>{{data.contact.phone}}</p>
-                    </div>
-
-                    <!-- Embeded Maps / 1:1 aspect ratio  -->
-                    <!-- <div class="embed-responsive embed-responsive-1by1">
-                        <iframe class="embed-responsive-item" 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63836.69300401769!2d-78.48293860910093!3d-0.20286038013794772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d590eb5647cd6d%3A0xb8e005887399b0b9!2sQuito%20170157!5e0!3m2!1sen!2sec!4v1663201820344!5m2!1sen!2sec">
-                        </iframe>
-                    </div> -->
-                    
-
+            <div class="title"><h2>{{data.contact.title}}</h2></div>
+            <div class="map">
+                <div class="text">
+                    <p><strong>Arquitecto: </strong>{{data.contact.name}}</p>
+                    <p><strong>Teléfono: </strong>{{data.contact.phone}}</p>
                 </div>
-            
+                <!-- Embeded Maps / 1:1 aspect ratio  -->
+                <div class="embed-responsive embed-responsive-1by1">
+                    <iframe class="embed-responsive-item" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63836.69300401769!2d-78.48293860910093!3d-0.20286038013794772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d590eb5647cd6d%3A0xb8e005887399b0b9!2sQuito%20170157!5e0!3m2!1sen!2sec!4v1663201820344!5m2!1sen!2sec">
+                    </iframe>
+                </div> 
+            </div>
+            <div class="form">
+        
                 <!-- Form -->
-                <form   class="col-sm"
-                        method="POST">
+                <form method="POST">
 
                     <!-- Form title -->
                     <h3>{{data.contact.form.title}}</h3>

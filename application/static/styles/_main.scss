@@ -12,11 +12,14 @@ main{
 
   .block1{
     position: relative;
-
     .greeting{
       @include center;
       padding: 30px;
       text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
   
       .carousel{
         width: 80%;
@@ -46,24 +49,9 @@ main{
     position: relative;
     .mainButtons{
       button{
-        width: 60%;
-        height: 80px;
         color: black;
         font-size: 24px;
       }
-      #aboutButton{
-        position: absolute;
-      }
-      #projectsButton{
-        position: absolute;
-      }
-      #servicesButton{
-        position: absolute;
-      }
-      #contactButton{
-        position: absolute;
-      }
-      
     }
   }
 
@@ -84,7 +72,6 @@ main{
       text-align: center;
       background: $modal-title-background;
       text-transform: uppercase;
-      height: 42px;
       position: relative;
 
       h2{

@@ -76,7 +76,6 @@ selectProject = function(project)
 
     selectImage(1)
 
-    fixCSS()
     
 }
 selectImage = function(image)
@@ -99,17 +98,11 @@ selectImage = function(image)
         else
             $(`#thumbnail${img.slice(0,-4)}`).removeClass("active")
     }
+    drawMainLayout()
     
 
-    fixCSS()
 }
-fixCSS = function()
-{
-    var thumbnailHeight = $("#projectsPreview").height() * 0.9
-    $(".thumbnail img").css({height:thumbnailHeight})
-    $("#projectView img").height($("#projectView").height())
 
-}
 
 /********************************************* 
  * Services Events 

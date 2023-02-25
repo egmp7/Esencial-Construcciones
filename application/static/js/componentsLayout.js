@@ -15,70 +15,114 @@ drawMainLayout = function ()
     const MAIN_WINDOW_WIDTH = getMainWidth();
     const MAIN_WINDOW_HEIGHT = getMainHeight();
 
-    var x;  // grid variable
-    var y;  // grid variable
-    var scale;
-
     $("main").height(MAIN_WINDOW_HEIGHT);
 
-        x = MAIN_WINDOW_WIDTH/2;
+        const BLOCK_WIDTH = MAIN_WINDOW_WIDTH/2;
 
         $(".block1").css({
-            width: x, 
+            width: BLOCK_WIDTH, 
             height: MAIN_WINDOW_HEIGHT})
 
-            scale = 0.85
+            const BLOCK_SCALE = 0.85
+
             $(".greeting").css({
-                width: x * scale,
-                height: MAIN_WINDOW_HEIGHT * scale})
+                width: BLOCK_WIDTH * BLOCK_SCALE,
+                height: MAIN_WINDOW_HEIGHT * BLOCK_SCALE})
 
         $(".block2").css({
-            width: x,
+            width: BLOCK_WIDTH,
             height: MAIN_WINDOW_HEIGHT
         })
-
-            x = MAIN_WINDOW_WIDTH / 4;
-            y = MAIN_WINDOW_HEIGHT / 5;
+            const MAIN_BUTTON_WIDTH =  MAIN_WINDOW_WIDTH / 2 * 0.6;
+            const MAIN_BUTTON_HEIGHT = 80;
+            const MAIN_BUTTON_LEFT = (MAIN_WINDOW_WIDTH / 4 ) - MAIN_BUTTON_WIDTH /2 ;
+            const MAIN_BUTTON_TOP = MAIN_WINDOW_HEIGHT / 5;
 
             $("#aboutButton").css({
-                top: y - $("#aboutButton").height()/2, 
-                left: x - $("#aboutButton").width()/2})
+                left: MAIN_BUTTON_LEFT,     top: MAIN_BUTTON_TOP * 1 - MAIN_BUTTON_HEIGHT / 2,
+                width: MAIN_BUTTON_WIDTH,   height: MAIN_BUTTON_HEIGHT,
+                position: "absolute"}) 
             $("#projectsButton").css({
-                top: y*2 - $("#projectsButton").height()/2, 
-                left: x - $("#projectsButton").width()/2})
+                left: MAIN_BUTTON_LEFT,     top: MAIN_BUTTON_TOP * 2 - MAIN_BUTTON_HEIGHT / 2,
+                width: MAIN_BUTTON_WIDTH,   height: MAIN_BUTTON_HEIGHT,
+                position: "absolute"})
             $("#servicesButton").css({
-                top: y*3 - $("#servicesButton").height()/2, 
-                left: x - $("#servicesButton").width()/2})
+                left: MAIN_BUTTON_LEFT,     top:  MAIN_BUTTON_TOP * 3 - MAIN_BUTTON_HEIGHT / 2,
+                width: MAIN_BUTTON_WIDTH,   height: MAIN_BUTTON_HEIGHT,
+                position: "absolute"})
             $("#contactButton").css({
-                top: y*4 - $("#contactButton").height()/2, 
-                left: x - $("#contactButton").width()/2})
+                left: MAIN_BUTTON_LEFT,     top: MAIN_BUTTON_TOP * 4 - MAIN_BUTTON_HEIGHT / 2,
+                width: MAIN_BUTTON_WIDTH,   height: MAIN_BUTTON_HEIGHT,
+                position: "absolute"})
         
-        scale = 0.8
-        $(".stick").height(MAIN_WINDOW_HEIGHT * scale);
+        
+        const STICK_HEIGHT = MAIN_WINDOW_HEIGHT * 0.8;
+        $(".stick").height(STICK_HEIGHT);
 
         $(".modal").css({
             width: MAIN_WINDOW_WIDTH,
             height:MAIN_WINDOW_HEIGHT
         })
 
-            const titleHeight = 42;
-            x = MAIN_WINDOW_WIDTH / 4;
-            y = (MAIN_WINDOW_HEIGHT - titleHeight) / 4;
+        const MODAL_TITLE_HEIGHT = 42;
+        $(".modal .title").height(MODAL_TITLE_HEIGHT)
+
+            /***********************************************
+             * PROJECTS
+             ***********************************************/
+
+            const PROJECTS_GRID_WIDTH = MAIN_WINDOW_WIDTH / 4;
+            const PROJECTS_GRID_HEIGHT = (MAIN_WINDOW_HEIGHT - MODAL_TITLE_HEIGHT) / 4;
         
-            $("#projectsList").css({left:0,             top:0, 
-                                    width: x,           height: y * 4,});
-            $("#projectView").css({ left: x,            top: 0,
-                                    width: x * 3,       height: y * 3});
-            $("#projectsPreview").css({ left: x,        top: y * 3, 
-                                        width: x * 3,   height: y});
+            $("#projectsList").css({left:0,                               top:0, 
+                                    width: PROJECTS_GRID_WIDTH,           height: PROJECTS_GRID_HEIGHT * 4,});
+            $("#projectView").css({ left: PROJECTS_GRID_WIDTH,            top: 0,
+                                    width: PROJECTS_GRID_WIDTH * 3,       height: PROJECTS_GRID_HEIGHT * 3});
+            
+                if( PROJECTS_GRID_WIDTH > PROJECTS_GRID_HEIGHT)
 
-            var paddingLeft = 30;
-            var minCardWidth =300
-            var divisions = Math.floor(MAIN_WINDOW_WIDTH/minCardWidth)
-            x = (MAIN_WINDOW_WIDTH - paddingLeft) /divisions
-            //y = MAIN_WINDOW_HEIGHT / 2.5
+                    $("#projectView img").height(PROJECTS_GRID_HEIGHT * 3)
 
-            $(".grid").css({width: x})
+                else
+                    $("#projectView img").width(PROJECTS_GRID_WIDTH * 3)
+
+            $("#projectsPreview").css({ left: PROJECTS_GRID_WIDTH,        top: PROJECTS_GRID_HEIGHT * 3, 
+                                        width: PROJECTS_GRID_WIDTH * 3,   height: PROJECTS_GRID_HEIGHT});
+
+            const THUMBNAIL_HEIGHT = PROJECTS_GRID_HEIGHT * 0.9
+            $(".thumbnail img").css({height:THUMBNAIL_HEIGHT})
+            
+
+            /***********************************************
+             * SERVICES
+             ***********************************************/
+
+            const PADDING_LEFT_GRID = 30;
+            const RESPONSIVE_GRID_WIDTH_RATIO =300
+            const GRID_WIDTH = (MAIN_WINDOW_WIDTH - PADDING_LEFT_GRID) / 
+                Math.floor(MAIN_WINDOW_WIDTH / RESPONSIVE_GRID_WIDTH_RATIO)
+
+            $(".grid").css({width: GRID_WIDTH,
+                            paddingLeft: PADDING_LEFT_GRID})
+
+            /***********************************************
+             * CONTACT
+             ***********************************************/
+
+            const CONTACT_BLOCK_WIDTH = MAIN_WINDOW_WIDTH / 2
+            const CONTACT_BLOCK_HEIGHT = MAIN_WINDOW_HEIGHT - MODAL_TITLE_HEIGHT
+
+            $("#contact .map").css({
+                left: 0,            top:MODAL_TITLE_HEIGHT,
+                width: CONTACT_BLOCK_WIDTH, height: CONTACT_BLOCK_HEIGHT,
+                position: "absolute"
+            })
+
+            $("#contact .form").css({
+                left: CONTACT_BLOCK_WIDTH,  top:MODAL_TITLE_HEIGHT,
+                width: CONTACT_BLOCK_WIDTH, height: CONTACT_BLOCK_HEIGHT,
+                position: "absolute"
+            })
 
 }
 
@@ -89,15 +133,6 @@ getMainWidth = function ()
 }
 /** gets the height of the main component */
 getMainHeight = function ()
-{
-    let windowHeight = $(window).height();
-    let navHeight = $("nav").outerHeight();
-    let footerHeight = $("footer").outerHeight();
-    
-    return windowHeight - navHeight - footerHeight;
+{   
+    return $(window).height() - $("nav").outerHeight() - $("footer").outerHeight();
 }
-
-
-
-
-

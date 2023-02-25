@@ -195,49 +195,59 @@
         <div id="contact" class="contact">
         
             <div class="title"><h2>{{data.contact.title}}</h2></div>
-            <div class="map">
-                <div class="text">
-                    <p><strong>Arquitecto: </strong>{{data.contact.name}}</p>
-                    <p><strong>Teléfono: </strong>{{data.contact.phone}}</p>
+            <div class="block1">
+                <div class="map">
+                    <div class="text">
+                        <p><strong>Arquitecto: </strong>{{data.contact.name}}</p>
+                        <p><strong>Teléfono: </strong>{{data.contact.phone}}</p>
+                    </div>
+                    <!-- Embeded Maps / 1:1 aspect ratio  -->
+                    <div class="block">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d255346.77066477528!2d-78.447919!3d-0.202946!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d590eb5647cd6d%3A0xb8e005887399b0b9!2sQuito%20170157!5e0!3m2!1sen!2sec!4v1677353677440!5m2!1sen!2sec" 
+                            class="responsive-iframe"
+                            width="400" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
                 </div>
-                <!-- Embeded Maps / 1:1 aspect ratio  -->
-                <div class="embed-responsive embed-responsive-1by1">
-                    <iframe class="embed-responsive-item" 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63836.69300401769!2d-78.48293860910093!3d-0.20286038013794772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d590eb5647cd6d%3A0xb8e005887399b0b9!2sQuito%20170157!5e0!3m2!1sen!2sec!4v1663201820344!5m2!1sen!2sec">
-                    </iframe>
-                </div> 
             </div>
-            <div class="form">
-        
-                <!-- Form -->
-                <form method="POST">
+            <div class="block2">
+                <div class="form">
+            
+                    <!-- Form -->
+                    <form method="POST">
 
-                    <!-- Form title -->
-                    <h3>{{data.contact.form.title}}</h3>
+                        <!-- Form title -->
+                        <h3>{{data.contact.form.title}}</h3>
 
-                <!--  Name -->
-                    <div class="mb-3">
-                        <label for="name" class="form-label">{{data.contact.form.name}}</label>
-                        <input type="text" class="form-control" id="name" name="name">
-                    </div>
+                    <!--  Name -->
+                        <div class="mb-3">
+                            <label for="name" class="form-label">{{data.contact.form.name}}</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
 
-                    <!-- Email -->
-                    <div class="mb-3">
-                        <label for="e-mail" class="form-label">{{data.contact.form.email}}</label>
-                        <input type="email" class="form-control" id="e-mail" name="email">
-                    </div>
-                    
-                    <!-- Description -->
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="e-mail" class="form-label">{{data.contact.form.email}}</label>
+                            <input type="email" class="form-control" id="e-mail" name="email">
+                        </div>
+                        
+                        <!-- Description -->
 
-                    <div class="mb-3">
-                        <label for="description" class="form-label">{{data.contact.form.description}}</label>
-                        <textarea type="text" class="form-control" id="description" rows="10" name="description"></textarea>
-                    </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">{{data.contact.form.description}}</label>
+                            <textarea type="text" class="form-control" id="description" rows="10" name="description"></textarea>
+                        </div>
 
-                    <!-- Submit -->
-                    
-                    <button type="submit" class="btn btn-primary">{{data.contact.form.send}}</button>
-                </form>
+                        <!-- Submit -->
+                        
+                        <button type="submit" class="btn btn-success">{{data.contact.form.send}}</button>
+                    </form>
+                </div>
             </div>
         </div>
 

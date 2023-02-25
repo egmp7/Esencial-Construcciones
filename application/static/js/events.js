@@ -23,7 +23,7 @@ $( "#contactButton" ).click(function() {
     $( "#contact" ).css("display", "block");
 });
 $( "#closeModal" ).click(function() {
-    showMain()
+    closeModal()
     $( "#about" ).css("display", "none");
     $( "#projects" ).css("display", "none");
     $( "#services" ).css("display", "none");
@@ -34,16 +34,16 @@ $( "#closeModal" ).click(function() {
 showModal = function()
 {
     $(".modal").css("display", "block");
-    $(".block1").css("display", "none");
-    $(".block2").css("display", "none");
+    $(".greeting").css("display", "none");
+    $(".mainButtons").css("display", "none");
     $(".stick").css("display", "none");   
 }
 /** Hides the modal componet and shows the main components */
-showMain = function()
+closeModal = function()
 {
     $(".modal").css("display", "none");
-    $(".block1").css("display", "block");
-    $(".block2").css("display", "block");
+    $(".greeting").css("display", "block");
+    $(".mainButtons").css("display", "block");
     $(".stick").css("display", "block");
 }
 

@@ -65,6 +65,7 @@ drawMainLayout = function ()
         })
 
         const MODAL_TITLE_HEIGHT = 42;
+        const MODAL_BODY_HEIGHT = MAIN_WINDOW_HEIGHT - MODAL_TITLE_HEIGHT;
         $(".modal .title").height(MODAL_TITLE_HEIGHT)
 
             /***********************************************
@@ -72,7 +73,7 @@ drawMainLayout = function ()
              ***********************************************/
 
             const PROJECTS_GRID_WIDTH = MAIN_WINDOW_WIDTH / 4;
-            const PROJECTS_GRID_HEIGHT = (MAIN_WINDOW_HEIGHT - MODAL_TITLE_HEIGHT) / 4;
+            const PROJECTS_GRID_HEIGHT = (MODAL_BODY_HEIGHT) / 4;
         
             $("#projectsList").css({left:0,                               top:0, 
                                     width: PROJECTS_GRID_WIDTH,           height: PROJECTS_GRID_HEIGHT * 4,});
@@ -105,18 +106,16 @@ drawMainLayout = function ()
              * CONTACT
              ***********************************************/
 
-            const CONTACT_BLOCK_WIDTH = MAIN_WINDOW_WIDTH / 2
-            const CONTACT_BLOCK_HEIGHT = MAIN_WINDOW_HEIGHT - MODAL_TITLE_HEIGHT
 
-            $("#contact .map").css({
+            $("#contact .block1").css({
                 left: 0,            top:MODAL_TITLE_HEIGHT,
-                width: CONTACT_BLOCK_WIDTH, height: CONTACT_BLOCK_HEIGHT,
+                width: BLOCK_WIDTH, height: MODAL_BODY_HEIGHT,
                 position: "absolute"
             })
 
-            $("#contact .form").css({
-                left: CONTACT_BLOCK_WIDTH,  top:MODAL_TITLE_HEIGHT,
-                width: CONTACT_BLOCK_WIDTH, height: CONTACT_BLOCK_HEIGHT,
+            $("#contact .block2").css({
+                left: BLOCK_WIDTH,  top:MODAL_TITLE_HEIGHT,
+                width: BLOCK_WIDTH, height: MODAL_BODY_HEIGHT,
                 position: "absolute"
             })
 

@@ -199,20 +199,43 @@ main .modal #closeModal {
 #contact {
   display: none;
 }
-
-.contact h2 {
-  padding: 20px 0;
+#contact .block1 {
+  display: grid;
+  align-items: center;
+}
+#contact .block1 .map {
   text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
 }
-.contact form {
-  margin: 20px 0px;
+#contact .block1 .map .text p {
+  margin-bottom: 2px;
 }
-.contact .text {
-  text-align: center;
+#contact .block1 .map .block {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 75%;
 }
-.contact .embed-responsive {
-  margin: auto;
-  max-width: 400px;
+#contact .block1 .map .block .responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+#contact .block2 {
+  overflow: scroll;
+  display: grid;
+  align-items: center;
+}
+#contact .block2 .form {
+  margin: 20px;
+}
+#contact .block2 .form h3 {
+  font-size: 22px;
 }
 
 #success {

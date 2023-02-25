@@ -1,26 +1,49 @@
+@import "variables";
+
 #contact{
     display: none;
-}
 
-// CONTACT
-.contact{
-  
-    h2{
-      padding: 20px 0;
-      text-align: center;
-      
+    .block1{
+      display: grid;
+      align-items: center;
+
+      .map{
+        text-align: center;
+        margin-left: 20px;
+        margin-right:20px;
+        .text{
+          p{
+            margin-bottom: 2px;
+          }
+        }
+        
+        .block{
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          padding-top: 75%;
+
+          .responsive-iframe{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+          } 
+        }
+      }
     }
-  
-    form{
-      margin: 20px 0px;
+  .block2{
+    overflow: scroll;
+    display: grid;
+    align-items: center;
+    .form{
+      h3{
+        font-size: 22px;
+      }
+      margin: 20px;
     }
-  
-    .text{
-      text-align: center;
-    }
-  
-    .embed-responsive{
-      margin: auto;
-      max-width: 400px;
-    }  
+  }
 }

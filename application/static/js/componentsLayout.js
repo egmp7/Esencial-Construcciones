@@ -79,12 +79,8 @@ drawMainLayout = function ()
             $("#projectView").css({ left: PROJECTS_GRID_WIDTH,            top: 0,
                                     width: PROJECTS_GRID_WIDTH * 3,       height: PROJECTS_GRID_HEIGHT * 3});
             
-                if( PROJECTS_GRID_WIDTH > PROJECTS_GRID_HEIGHT)
-
-                    $("#projectView img").height(PROJECTS_GRID_HEIGHT * 3)
-
-                else
-                    $("#projectView img").width(PROJECTS_GRID_WIDTH * 3)
+            
+            
 
             $("#projectsPreview").css({ left: PROJECTS_GRID_WIDTH,        top: PROJECTS_GRID_HEIGHT * 3, 
                                         width: PROJECTS_GRID_WIDTH * 3,   height: PROJECTS_GRID_HEIGHT});

@@ -64,7 +64,11 @@
           @include center;
         }
         img{
-          @include center;
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+
+            @include center;
         }
       }
     }

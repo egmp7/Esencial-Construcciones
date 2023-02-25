@@ -4,29 +4,23 @@ main {
   position: relative;
 }
 main .block1 {
-  position: relative;
-}
-main .block1 .greeting {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 30px;
-  text-align: center;
   display: flex;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: center;
+}
+main .block1 .greeting {
+  margin-right: 10%;
+  width: 70%;
 }
 main .block1 .greeting .carousel {
-  width: 80%;
-  padding: 0;
-  margin: auto;
+  width: 100%;
 }
 main .block1 .greeting .carousel .carousel-inner {
   border-radius: 10px;
 }
 main .block1 .greeting .text {
+  text-align: center;
   margin-top: 3vh;
 }
 main .block1 .greeting .text h1 {
@@ -36,13 +30,22 @@ main .block1 .greeting .text h2 {
   font-size: 16px;
 }
 main .block2 {
-  position: relative;
+  display: grid;
+  align-content: center;
+}
+main .block2 .mainButtons {
+  margin-left: 10%;
+  display: grid;
+  align-content: space-evenly;
 }
 main .block2 .mainButtons button {
+  width: 70%;
+  padding: 20px;
   color: black;
-  font-size: 24px;
+  font-size: 22px;
 }
 main .stick {
+  z-index: 1;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -52,6 +55,7 @@ main .stick {
   width: 8px;
 }
 main .modal {
+  z-index: 0;
   display: none;
   background-color: white;
   overflow: scroll;
@@ -80,18 +84,25 @@ main .modal #closeModal {
 #about {
   display: none;
 }
-#about .carousel {
-  width: 400px;
-  padding: 0;
-  margin: auto;
+#about .block1 {
+  display: grid;
+  align-items: center;
+  justify-items: end;
 }
-#about .carousel .carousel-inner {
-  margin-top: 30px;
+#about .block1 .carousel {
+  padding-right: 30px;
+  width: 80%;
 }
-#about .text {
-  padding: 30px 20px 0px;
+#about .block2 {
+  overflow: scroll;
+  display: grid;
+  align-items: center;
 }
-#about .text p {
+#about .block2 .text {
+  width: 80%;
+  padding-left: 30px;
+}
+#about .block2 .text p {
   text-align: justify;
 }
 
@@ -202,11 +213,14 @@ main .modal #closeModal {
 #contact .block1 {
   display: grid;
   align-items: center;
+  justify-items: end;
 }
 #contact .block1 .map {
+  width: 85%;
+  padding-right: 25px;
+}
+#contact .block1 .map .text {
   text-align: center;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 #contact .block1 .map .text p {
   margin-bottom: 2px;
@@ -232,7 +246,10 @@ main .modal #closeModal {
   align-items: center;
 }
 #contact .block2 .form {
-  margin: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+  width: 85%;
 }
 #contact .block2 .form h3 {
   font-size: 22px;

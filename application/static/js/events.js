@@ -8,6 +8,8 @@ $( "#aboutButton" ).click(() =>
 {
     showModal()
     $( "#about" ).css("display", "block");
+    $(".stick").css({display: "block", width: 4});
+
 });
 $( "#projectsButton" ).click(() => 
 {
@@ -21,13 +23,18 @@ $( "#servicesButton" ).click(function() {
 $( "#contactButton" ).click(function() {
     showModal()
     $( "#contact" ).css("display", "block");
+    $(".stick").css({display: "block", width: 4});
+
 });
 $( "#closeModal" ).click(function() {
-    closeModal()
     $( "#about" ).css("display", "none");
     $( "#projects" ).css("display", "none");
     $( "#services" ).css("display", "none");
     $( "#contact" ).css("display", "none");
+    $(".modal").css("display", "none");
+    $(".greeting").css("display", "block");
+    $(".mainButtons").css("display", "grid");
+    $(".stick").css({display: "block", width: 8});
 });
 
 /** Hides the main componets and shows the modal component */
@@ -38,14 +45,7 @@ showModal = function()
     $(".mainButtons").css("display", "none");
     $(".stick").css("display", "none");   
 }
-/** Hides the modal componet and shows the main components */
-closeModal = function()
-{
-    $(".modal").css("display", "none");
-    $(".greeting").css("display", "block");
-    $(".mainButtons").css("display", "block");
-    $(".stick").css("display", "block");
-}
+
 
 /********************************************* 
  * Projects Events 

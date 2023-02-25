@@ -11,27 +11,23 @@ main{
   position: relative;
 
   .block1{
-    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    align-content: center;    
     .greeting{
-      @include center;
-      padding: 30px;
-      text-align: center;
-      display: flex;
-      flex-wrap: wrap;
-      align-content: center;
-      justify-content: center;
-  
+      margin-right:10%;
+      width: 70%;
+
       .carousel{
-        width: 80%;
-        padding: 0;
-        margin: auto;
-  
+        width: 100%;  
         .carousel-inner{
           border-radius: 10px;
         }
       }
   
       .text{
+        text-align: center;
         margin-top: 3vh;
   
         h1{
@@ -46,16 +42,25 @@ main{
   }
 
   .block2{
-    position: relative;
+    display: grid;
+    align-content: center;
+
     .mainButtons{
+      margin-left: 10%;
+      display: grid;
+      align-content: space-evenly;
+
       button{
+        width: 70%;
+        padding: 20px;
         color: black;
-        font-size: 24px;
+        font-size: 22px;
       }
     }
   }
 
   .stick{
+    z-index: 1;
     @include center;
     background-color: $footer-background;
     border-radius: 20px;
@@ -63,6 +68,7 @@ main{
   }
 
   .modal{
+    z-index: 0;
     display: none;
     background-color: white;
     overflow: scroll;

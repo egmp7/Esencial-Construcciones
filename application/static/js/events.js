@@ -53,7 +53,7 @@ showModal = function()
 
 let projectSelected;
 
-selectProject = function(project)
+projectsClick = function(project)
 {
     // store project selected
     projectSelected = project.id
@@ -78,7 +78,7 @@ selectProject = function(project)
 
     
 }
-selectImage = function(image)
+thumbnailClick = function(image)
 {
     // clear html
     $("#projectView").empty();
@@ -98,9 +98,7 @@ selectImage = function(image)
         else
             $(`#thumbnail${img.slice(0,-4)}`).removeClass("active")
     }
-    drawMainLayout()
-    
-
+    draw()
 }
 
 

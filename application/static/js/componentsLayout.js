@@ -2,18 +2,31 @@
 /** This document draws tthe component of the app */
 
 $(document).ready(function(){
-    drawMainLayout();
+    draw();
 });
 
 window.addEventListener("resize", function(){
-    drawMainLayout();
+    draw();
 });
 
-/** Draws components in main container */
-drawMainLayout = function ()
+draw = function()
 {
-    const MAIN_WINDOW_WIDTH = getMainWidth();
-    const MAIN_WINDOW_HEIGHT = getMainHeight();
+    if($(".container").width() > $(window).height())
+    {
+        drawComputerView();
+    }
+    else
+    {
+        drawPhoneView();
+    }    
+}
+
+
+/** Draws components in main container */
+drawComputerView = function ()
+{
+    const MAIN_WINDOW_WIDTH = $(".container").width();
+    const MAIN_WINDOW_HEIGHT = $(window).height() - $("nav").outerHeight() - $("footer").outerHeight();
 
     $("main").height(MAIN_WINDOW_HEIGHT);
 
@@ -30,29 +43,6 @@ drawMainLayout = function ()
 
             const MAIN_BUTTONS_HEIGHT = MAIN_WINDOW_HEIGHT*0.7
             $(".mainButtons").height(MAIN_BUTTONS_HEIGHT);
-
-            // const MAIN_BUTTON_WIDTH =  MAIN_WINDOW_WIDTH / 2 * 0.6;
-            // const MAIN_BUTTON_HEIGHT = 80;
-            // const MAIN_BUTTON_LEFT = (MAIN_WINDOW_WIDTH / 4 ) - MAIN_BUTTON_WIDTH /2 ;
-            // const MAIN_BUTTON_TOP = MAIN_WINDOW_HEIGHT / 5;
-
-            // $("#aboutButton").css({
-            //     left: MAIN_BUTTON_LEFT,     top: MAIN_BUTTON_TOP * 1 - MAIN_BUTTON_HEIGHT / 2,
-            //     width: MAIN_BUTTON_WIDTH,   height: MAIN_BUTTON_HEIGHT,
-            //     position: "absolute"}) 
-            // $("#projectsButton").css({
-            //     left: MAIN_BUTTON_LEFT,     top: MAIN_BUTTON_TOP * 2 - MAIN_BUTTON_HEIGHT / 2,
-            //     width: MAIN_BUTTON_WIDTH,   height: MAIN_BUTTON_HEIGHT,
-            //     position: "absolute"})
-            // $("#servicesButton").css({
-            //     left: MAIN_BUTTON_LEFT,     top:  MAIN_BUTTON_TOP * 3 - MAIN_BUTTON_HEIGHT / 2,
-            //     width: MAIN_BUTTON_WIDTH,   height: MAIN_BUTTON_HEIGHT,
-            //     position: "absolute"})
-            // $("#contactButton").css({
-            //     left: MAIN_BUTTON_LEFT,     top: MAIN_BUTTON_TOP * 4 - MAIN_BUTTON_HEIGHT / 2,
-            //     width: MAIN_BUTTON_WIDTH,   height: MAIN_BUTTON_HEIGHT,
-            //     position: "absolute"})
-        
         
         const STICK_HEIGHT = MAIN_WINDOW_HEIGHT * 0.7;
         $(".stick").height(STICK_HEIGHT);
@@ -115,21 +105,9 @@ drawMainLayout = function ()
 
             $(".grid").css({width: GRID_WIDTH,
                             paddingLeft: PADDING_LEFT_GRID})
-
-            
-
-
-            
-
 }
 
-/** gets the width of the main component */
-getMainWidth = function ()
+drawPhoneView = function()
 {
-    return $(".container").width();
-}
-/** gets the height of the main component */
-getMainHeight = function ()
-{   
-    return $(window).height() - $("nav").outerHeight() - $("footer").outerHeight();
+
 }

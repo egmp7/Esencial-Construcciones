@@ -1,7 +1,11 @@
-@use 'home';
+@use 'main';
+@use 'about';
+@use 'projects';
 @use 'services';
-@use 'nav_footer';
+@use 'contact';
 @use 'success';
+@use 'nav_footer';
+
 @import "variables";
 
 // root

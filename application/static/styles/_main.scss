@@ -1,0 +1,104 @@
+// Needs Work
+
+// Utilities
+@import "variables";
+
+// HEADER
+
+main{
+  background-color: $main-background;
+  display: flex;
+  position: relative;
+
+  .block1{
+    position: relative;
+
+    .greeting{
+      @include center;
+      padding: 30px;
+      text-align: center;
+  
+      .carousel{
+        width: 80%;
+        padding: 0;
+        margin: auto;
+  
+        .carousel-inner{
+          border-radius: 10px;
+        }
+      }
+  
+      .text{
+        margin-top: 3vh;
+  
+        h1{
+          font-size: 20px;
+        }
+  
+        h2{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .block2{
+    position: relative;
+    .mainButtons{
+      button{
+        width: 60%;
+        height: 80px;
+        color: black;
+        font-size: 24px;
+      }
+      #aboutButton{
+        position: absolute;
+      }
+      #projectsButton{
+        position: absolute;
+      }
+      #servicesButton{
+        position: absolute;
+      }
+      #contactButton{
+        position: absolute;
+      }
+      
+    }
+  }
+
+  .stick{
+    @include center;
+    background-color: $footer-background;
+    border-radius: 20px;
+    width: 8px;
+  }
+
+  .modal{
+    display: none;
+    background-color: white;
+    overflow: scroll;
+    position: absolute;
+
+    .title {
+      text-align: center;
+      background: $modal-title-background;
+      text-transform: uppercase;
+      height: 42px;
+      position: relative;
+
+      h2{
+        @include center;
+        font-size: 18px;
+        margin: 0;
+      }
+    }
+
+    #closeModal{
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+  }
+}
+

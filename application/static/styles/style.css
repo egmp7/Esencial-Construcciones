@@ -82,39 +82,47 @@ main .modal .title h2 {
   font-size: 18px;
   margin: 0;
 }
-main .modal #about {
-  display: none;
-  padding: 10px 0;
+main .modal #closeModal {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
-main .modal #about .carousel {
+
+#about {
+  display: none;
+}
+#about .carousel {
   width: 400px;
   padding: 0;
   margin: auto;
 }
-main .modal #about .text {
-  color: #504f4f;
+#about .carousel .carousel-inner {
+  margin-top: 30px;
+}
+#about .text {
   padding: 30px 20px 0px;
 }
-main .modal #about .text p {
+#about .text p {
   text-align: justify;
 }
-main .modal #projects {
+
+#projects {
   display: none;
 }
-main .modal #projects .projectsComponent {
+#projects .projectsComponent {
   position: relative;
 }
-main .modal #projects .projectsComponent #projectsList {
+#projects .projectsComponent #projectsList {
   position: absolute;
   background-color: rgb(253, 249, 242);
   overflow: scroll;
   border-right-style: solid;
 }
-main .modal #projects .projectsComponent #projectsList ul {
+#projects .projectsComponent #projectsList ul {
   list-style-type: none;
   padding: 0;
 }
-main .modal #projects .projectsComponent #projectsList ul button {
+#projects .projectsComponent #projectsList ul button {
   text-align: left;
   display: block;
   width: 100%;
@@ -125,34 +133,34 @@ main .modal #projects .projectsComponent #projectsList ul button {
   font-weight: bold;
   font-size: 14px;
 }
-main .modal #projects .projectsComponent #projectsPreview {
+#projects .projectsComponent #projectsPreview {
   position: absolute;
   background-color: rgb(99, 99, 99);
   display: flex;
   overflow: scroll;
   align-items: center;
 }
-main .modal #projects .projectsComponent #projectsPreview button {
+#projects .projectsComponent #projectsPreview button {
   padding: 0;
   background-color: transparent;
   border-style: none;
 }
-main .modal #projects .projectsComponent #projectsPreview button .thumbnail {
+#projects .projectsComponent #projectsPreview button .thumbnail {
   border-radius: 4px;
   border-style: solid;
   border-width: 4px;
   border-color: rgba(255, 166, 0, 0.514);
 }
-main .modal #projects .projectsComponent #projectsPreview button .active {
+#projects .projectsComponent #projectsPreview button .active {
   border-style: solid;
   border-width: 4px;
   border-color: orange;
 }
-main .modal #projects .projectsComponent #projectView {
+#projects .projectsComponent #projectView {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.984);
 }
-main .modal #projects .projectsComponent #projectView p {
+#projects .projectsComponent #projectView p {
   font-size: 24px;
   color: white;
   position: absolute;
@@ -160,42 +168,11 @@ main .modal #projects .projectsComponent #projectView p {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-main .modal #projects .projectsComponent #projectView img {
+#projects .projectsComponent #projectView img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-main .modal #contact {
-  display: none;
-}
-main .modal #closeModal {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-main .modal #closeModal .btn-close {
-  background-color: rgb(105, 0, 0);
-  color: red;
-}
-
-.contact {
-  background: #ffe442;
-  color: #504f4f;
-}
-.contact h2 {
-  padding: 20px 0;
-  text-align: center;
-}
-.contact form {
-  margin: 20px 0px;
-}
-.contact .text {
-  text-align: center;
-}
-.contact .embed-responsive {
-  margin: auto;
-  max-width: 400px;
 }
 
 #services {
@@ -228,6 +205,31 @@ main .modal #closeModal .btn-close {
   margin-right: 8px;
   border-top: solid;
   border-top-color: rgb(194, 194, 194);
+}
+
+#contact {
+  display: none;
+}
+
+.contact h2 {
+  padding: 20px 0;
+  text-align: center;
+}
+.contact form {
+  margin: 20px 0px;
+}
+.contact .text {
+  text-align: center;
+}
+.contact .embed-responsive {
+  margin: auto;
+  max-width: 400px;
+}
+
+#success {
+  background-color: #ffe442;
+  height: 100vh;
+  padding-top: 40px;
 }
 
 .glow-on-hover {
@@ -321,12 +323,6 @@ footer {
   margin: 0;
   padding: 10px 0px;
   text-align: center;
-}
-
-#success {
-  background-color: #ffe442;
-  height: 100vh;
-  padding-top: 40px;
 }
 
 html {

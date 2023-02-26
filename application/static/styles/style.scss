@@ -1,4 +1,4 @@
-@use 'main';
+@use 'home';
 @use 'about';
 @use 'projects';
 @use 'services';
@@ -6,19 +6,19 @@
 @use 'success';
 @use 'nav_footer';
 
-@import "variables";
+@import "utilities";
 
-// root
 html{
   background-color: $background;
-  font-family: $font;
-  body {
-  @include shadow;
-  }
 }
 
-// bootstrap classes
-.container{
+main {
+  position: relative;
+  @include shadow;
+  font-family: 'Open Sans', sans-serif; 
+}
+
+.container{  // Bootstrap 
   padding: 0 !important;
 }
 

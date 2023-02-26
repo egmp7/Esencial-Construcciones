@@ -1,8 +1,11 @@
 // Utilities
-@import "variables";
+@import "utilities";
 @import "glowOnHover";
 
 nav {
+  position: absolute;
+  top: 0;
+  left: 0;
   background: $nav-background;
   border-bottom: solid;
   border-bottom-color: $modal-title-background;
@@ -28,6 +31,10 @@ nav {
 }
   
 footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background: $footer-background;
   color: $footer-color;
   font-size: 10px;

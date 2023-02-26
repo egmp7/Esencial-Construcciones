@@ -1,0 +1,47 @@
+$background:#f4f4f4;
+$nav-background: orange;
+$home-background:orange;
+$modal-color:#504f4f;
+$modal-background:white;
+$modal-title-background: #ffbc11;
+$footer-color: white;
+$footer-background:#2b2b2b;
+
+
+@mixin shadow {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+@mixin center{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
+@mixin modal {
+
+  position: absolute;
+  display: none;
+  overflow: scroll;
+
+  .title {
+    text-align: center;
+    background: $modal-title-background;
+    text-transform: uppercase;
+    position: relative;
+
+    h2{
+      @include center;
+      font-size: 18px;
+      margin: 0;
+    }
+  }
+
+  .closeModal{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+}

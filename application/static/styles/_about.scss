@@ -1,29 +1,66 @@
+@import "utilities";
+
 #about{
+  @include modal;
   display: none;
+  height: inherit;
 
-  .block1{
-    display: grid;
-    align-items: center;
-    justify-items: end;
 
-    .carousel{
-      padding-right: 30px;
-      width: 80%;
+    .block1{
+      // width: 50%;
+      // position: relative;
+      // display: grid;
+      // align-items: center;
+
+      .carousel{
+        // position: absolute;
+        // right: 6%;
+        //  width: 80%;
+      }
+    }
+  
+    .block2
+    {
+      // width: 50%;
+      // display: grid;
+      // align-items: center;
+      // padding: 5% 0;
+  
+      .text {
+        //  width: 80%;
+         //padding-left: 6%;
+        p{
+          // text-align: justify;
+        }
+      }
     }
   }
 
-  .block2
-  {
-    overflow: scroll;
-    display: grid;
-    align-items: center;
+@media screen and (max-width: 768px) {
 
-    .text {
-      width: 80%;
-      padding-left: 30px;
-      p{
-        text-align: justify;
+  #about{
+    .modal-body{
+      // display: block;
+
+      .block1{
+        // width: 100%;
+
+        .carousel{
+          // position: relative;
+          // padding: 8px; 
+          // width: 100%;
+          // margin: auto;
+        }
+      }
+      .block2{
+        // width: 100%;
+
+        .text{
+          // padding: 8 ;
+          // width: 100%;
+        }
       }
     }
+    
   }
 }

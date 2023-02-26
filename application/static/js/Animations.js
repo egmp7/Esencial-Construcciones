@@ -15,18 +15,18 @@ slideModal = function ()
     
     })
 
-    $( ".home" ).show();
-    $( ".home" ).animate({left: - $(window).width()}, 0)
-    $( ".home" ).animate({left: 0 }, ANIMATION_TIME)
+    $( "#home" ).show();
+    $( "#home" ).animate({left: - $(window).width()}, 0)
+    $( "#home" ).animate({left: 0 }, ANIMATION_TIME)
 }
 
 slideHome = function ()
 {
-    $( ".home" ).animate({
+    $( "#home" ).animate({
         left: - $(window).width()},
         ANIMATION_TIME, 
         () => {
-        $(".home").hide();
+        $("#home").hide();
     })
 
     $( ".modal" ).show();

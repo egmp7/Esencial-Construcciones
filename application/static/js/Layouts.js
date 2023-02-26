@@ -11,19 +11,23 @@ window.addEventListener("resize", function(){
 
 draw = function()
 {
-    if($(".container").width() > $(window).height())
-    {
-        drawComputerView();
-    }
-    else
-    {
+    if(window.matchMedia("(max-width: 767px)").matches){
+        // The viewport is less than 768 pixels wide
         drawPhoneView();
-    }    
+        console.log("draw = function() This is a phone size");
+    } else{
+        // The viewport is at least 768 pixels wide
+        drawComputerView();
+        alert("This is a tablet or desktop.");
+        console.log("draw = function() This is a computer size");
+    }  
 }
 
 /** Draws components in main container */
 drawComputerView = function ()
 {
+    $("body").addClass("container")
+
     /***********************************************
     * NAV
     ***********************************************/
@@ -33,45 +37,45 @@ drawComputerView = function ()
     const MAIN_WINDOW_WIDTH = $(".container").width();
     const MAIN_WINDOW_HEIGHT = $(window).height() - $("nav").outerHeight() - $("footer").outerHeight();
 
-    $("main").height(MAIN_WINDOW_HEIGHT);
+    //$("main").height(MAIN_WINDOW_HEIGHT);
 
-        $(".home").css({
-            width: MAIN_WINDOW_WIDTH,
-            height:MAIN_WINDOW_HEIGHT
-        })
+        // $("#home").css({
+        //     width: MAIN_WINDOW_WIDTH,
+        //     height:MAIN_WINDOW_HEIGHT
+        // })
 
-            const BLOCK_WIDTH = MAIN_WINDOW_WIDTH/2;
+        // $("#about").css({
+        //     width: MAIN_WINDOW_WIDTH,
+        //     height:MAIN_WINDOW_HEIGHT
+        // })
 
-        /***********************************************
-         * MODAL
-         ***********************************************/
-        const MODAL_TITLE_HEIGHT = 42;
-        const MODAL_BODY_HEIGHT = MAIN_WINDOW_HEIGHT - MODAL_TITLE_HEIGHT;
+        // $("#about").css({
+        //     width: MAIN_WINDOW_WIDTH,
+        //     height:MAIN_WINDOW_HEIGHT
+        // })
 
-        $(".modal").css({
-            width: MAIN_WINDOW_WIDTH,
-            height:MAIN_WINDOW_HEIGHT
-        })
+        // const MODAL_TITLE_HEIGHT = 42;
+        // const MODAL_BODY_HEIGHT = MAIN_WINDOW_HEIGHT - MODAL_TITLE_HEIGHT;
 
-        $(".modal .title").height(MODAL_TITLE_HEIGHT)
+        // $(".modal .title").height(MODAL_TITLE_HEIGHT)
+        // $(".modal-body").height(MODAL_BODY_HEIGHT)
 
-        $(".modal .block1").css({
-            left: 0,            top:MODAL_TITLE_HEIGHT,
-            width: BLOCK_WIDTH, height: MODAL_BODY_HEIGHT,
-            position: "absolute"
-        })
+        // $(".modal .block1").css({
+        //     left: 0,            top:MODAL_TITLE_HEIGHT,
+        //     width: BLOCK_WIDTH, height: MODAL_BODY_HEIGHT,
+        //     position: "absolute"
+        // })
 
-        $(".modal .block2").css({
-            left: BLOCK_WIDTH,  top:MODAL_TITLE_HEIGHT,
-            width: BLOCK_WIDTH, height: MODAL_BODY_HEIGHT,
-            position: "absolute"
-        })
+        // $(".modal .block2").css({
+        //     left: BLOCK_WIDTH,  top:MODAL_TITLE_HEIGHT,
+        //     width: BLOCK_WIDTH, height: MODAL_BODY_HEIGHT,
+        //     position: "absolute"
+        // })
             /***********************************************
              * ABOUT
              ***********************************************/
 
-            $("#about .carousel").css({paddingRight: 30, width: "80%"})
-            $("#about .text").css({paddingLeft: 30, width: "80%"})
+            
        
             /***********************************************
              * PROJECTS
@@ -116,51 +120,48 @@ drawComputerView = function ()
 
 drawPhoneView = function()
 {
+    $("body").removeClass("container")
+
     $(".social-media").css({display: "none"});
     $("nav .language").css({textAlign: "end"});
 
-    const MAIN_WINDOW_WIDTH = $(".container").width();
+    const MAIN_WINDOW_WIDTH = $(window).width();
     const MAIN_WINDOW_HEIGHT = $(window).height() - $("nav").outerHeight() - $("footer").outerHeight();
 
-    $("main").height(MAIN_WINDOW_HEIGHT);
+    // $("main").height(MAIN_WINDOW_HEIGHT);
 
-        $(".block1").css({display: "none"})
-        $(".block2").css({ width: MAIN_WINDOW_WIDTH, height: MAIN_WINDOW_HEIGHT})
+    //     $("#home").css({
+    //         width: MAIN_WINDOW_WIDTH,
+    //         height:MAIN_WINDOW_HEIGHT
+    //     })
 
-            const MAIN_BUTTONS_HEIGHT = MAIN_WINDOW_HEIGHT*0.7
-            $(".mainButtons").css({height: MAIN_BUTTONS_HEIGHT, marginRight: "5%"});
-            $(".mainButtons button").css({width: "100%"});
-        
-        $(".stick").css({display:"none"});
+    //     const MODAL_TITLE_HEIGHT = 42;
+    //     const MODAL_BODY_HEIGHT = MAIN_WINDOW_HEIGHT - MODAL_TITLE_HEIGHT;
 
-        const MODAL_TITLE_HEIGHT = 42;
-        const MODAL_BODY_HEIGHT = MAIN_WINDOW_HEIGHT - MODAL_TITLE_HEIGHT;
+    //     $("#about").css({
+    //         width: MAIN_WINDOW_WIDTH,
+    //         height:MAIN_WINDOW_HEIGHT
+    //     })
 
-        $(".modal").css({
-            width: MAIN_WINDOW_WIDTH,
-            height:MAIN_WINDOW_HEIGHT
-        })
+    //     $("#about .title").height(MODAL_TITLE_HEIGHT)
 
-        $(".modal .title").height(MODAL_TITLE_HEIGHT)
+        // $(".modal .block1").css({
+        //     left: "",                   top:"",
+        //     width: MAIN_WINDOW_WIDTH,   height: "",
+        //     position: "relative",       display:"block"
+        // })
 
-        $(".modal .block1").css({
-            left: "",                   top:"",
-            width: MAIN_WINDOW_WIDTH,   height: "",
-            position: "relative",       display:"block"
-        })
-
-        $(".modal .block2").css({
-            left: "",                   top:"",
-            width: MAIN_WINDOW_WIDTH,   height: "",
-            position: "relative"
-        })
+        // $(".modal .block2").css({
+        //     left: "",                   top:"",
+        //     width: MAIN_WINDOW_WIDTH,   height: "",
+        //     position: "relative"
+        // })
 
         /***********************************************
         * ABOUT
         ***********************************************/
 
-        $("#about .carousel").css({padding: 5, width: "100%"})
-        $("#about .text").css({padding: 5, width: "100%"})
+        
 
         /***********************************************
          * SERVICES

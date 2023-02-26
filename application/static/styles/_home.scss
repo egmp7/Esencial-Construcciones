@@ -1,27 +1,32 @@
 // Needs Work
 
 // Utilities
-@import "variables";
+@import "utilities";
 
-// HEADER
-
+/************************************
+HOME 
+*************************************/
 main{
   position: relative;
-  .home{
+
+  #home{
     position: absolute;
     display: flex;
-    background-color: $main-background;
+    background-color: $home-background;
+    width: 100%;
+    
 
     .block1{
       display: grid;
       width: 50%;
     
-      .greeting{
+      #greeting{
         width: 75%;
         margin: auto;
   
         .carousel{
-          width: 100%;  
+          width: 100%; 
+
           .carousel-inner{
             border-radius: 10px;
           }
@@ -29,7 +34,7 @@ main{
     
         .text{
           text-align: center;
-          margin-top: 3vh;
+          margin-top: 8px;
     
           h1{
             font-size: 20px;
@@ -49,6 +54,7 @@ main{
       .mainButtons{
         width: 70%;
         margin:auto;
+        // test
         display: grid;
       
         button{
@@ -59,6 +65,8 @@ main{
         }
       }
     }
+
+    // test
     .stick{
       @include center;
       background-color: $footer-background;
@@ -66,32 +74,34 @@ main{
       width: 8px;
       height: 80%;
     }   
-  }
+  } 
+}
 
-  .modal{
-    position: absolute;
-    display: none;
-    background-color: white;
-    overflow: scroll;
-    .title {
-      text-align: center;
-      background: $modal-title-background;
-      text-transform: uppercase;
-      position: relative;
-  
-      h2{
-        @include center;
-        font-size: 18px;
-        margin: 0;
+@media screen and (max-width: 768px) {
+  main{
+
+    #home {
+      display: grid;
+      width: 100%;
+      overflow: scroll;
+
+      .block1{
+        display: none;
+      }
+
+      .block2{
+        width: 100%;
+
+        .mainButtons{
+          width: 90%;
+        }
+      }
+
+      .stick{
+        display: none;
       }
     }
-  
-    #closeModal{
-      position: absolute;
-      top: 10px;
-      left: 10px;
-    }
-  } 
+  }
 }
 
 

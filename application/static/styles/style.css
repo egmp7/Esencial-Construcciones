@@ -1,51 +1,55 @@
+/************************************
+HOME 
+*************************************/
 main {
   position: relative;
 }
-main .home {
+main #home {
   position: absolute;
   display: flex;
   background-color: orange;
+  width: 100%;
 }
-main .home .block1 {
+main #home .block1 {
   display: grid;
   width: 50%;
 }
-main .home .block1 .greeting {
+main #home .block1 #greeting {
   width: 75%;
   margin: auto;
 }
-main .home .block1 .greeting .carousel {
+main #home .block1 #greeting .carousel {
   width: 100%;
 }
-main .home .block1 .greeting .carousel .carousel-inner {
+main #home .block1 #greeting .carousel .carousel-inner {
   border-radius: 10px;
 }
-main .home .block1 .greeting .text {
+main #home .block1 #greeting .text {
   text-align: center;
-  margin-top: 3vh;
+  margin-top: 8px;
 }
-main .home .block1 .greeting .text h1 {
+main #home .block1 #greeting .text h1 {
   font-size: 20px;
 }
-main .home .block1 .greeting .text h2 {
+main #home .block1 #greeting .text h2 {
   font-size: 16px;
 }
-main .home .block2 {
+main #home .block2 {
   width: 50%;
   display: grid;
 }
-main .home .block2 .mainButtons {
+main #home .block2 .mainButtons {
   width: 70%;
   margin: auto;
   display: grid;
 }
-main .home .block2 .mainButtons button {
+main #home .block2 .mainButtons button {
   margin: 6% 0;
   padding: 7% 0;
   color: black;
   font-size: 22px;
 }
-main .home .stick {
+main #home .stick {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -55,19 +59,40 @@ main .home .stick {
   width: 8px;
   height: 80%;
 }
-main .modal {
+
+@media screen and (max-width: 768px) {
+  main #home {
+    display: grid;
+    width: 100%;
+    overflow: scroll;
+  }
+  main #home .block1 {
+    display: none;
+  }
+  main #home .block2 {
+    width: 100%;
+  }
+  main #home .block2 .mainButtons {
+    width: 90%;
+  }
+  main #home .stick {
+    display: none;
+  }
+}
+#about {
   position: absolute;
   display: none;
-  background-color: white;
   overflow: scroll;
+  display: none;
+  height: inherit;
 }
-main .modal .title {
+#about .title {
   text-align: center;
   background: #ffbc11;
   text-transform: uppercase;
   position: relative;
 }
-main .modal .title h2 {
+#about .title h2 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -75,37 +100,11 @@ main .modal .title h2 {
   font-size: 18px;
   margin: 0;
 }
-main .modal #closeModal {
+#about .closeModal {
   position: absolute;
   top: 10px;
   left: 10px;
 }
-
-#about {
-  display: none;
-}
-#about .block1 {
-  display: grid;
-  align-items: center;
-  justify-items: end;
-}
-#about .block1 .carousel {
-  padding-right: 30px;
-  width: 80%;
-}
-#about .block2 {
-  overflow: scroll;
-  display: grid;
-  align-items: center;
-}
-#about .block2 .text {
-  width: 80%;
-  padding-left: 30px;
-}
-#about .block2 .text p {
-  text-align: justify;
-}
-
 #projects {
   display: none;
 }
@@ -319,6 +318,9 @@ main .modal #closeModal {
   }
 }
 nav {
+  position: absolute;
+  top: 0;
+  left: 0;
   background: orange;
   border-bottom: solid;
   border-bottom-color: #ffbc11;
@@ -338,6 +340,10 @@ nav .social-media {
 }
 
 footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background: #2b2b2b;
   color: white;
   font-size: 10px;
@@ -348,10 +354,12 @@ footer {
 
 html {
   background-color: #f4f4f4;
-  font-family: "Open Sans", sans-serif;
 }
-html body {
+
+main {
+  position: relative;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  font-family: "Open Sans", sans-serif;
 }
 
 .container {

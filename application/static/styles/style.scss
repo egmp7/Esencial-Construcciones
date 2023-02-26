@@ -1,21 +1,27 @@
-@use 'home';
-@use 'nav_footer';
+@use 'main';
+@use 'about';
+@use 'projects';
+@use 'services';
+@use 'contact';
 @use 'success';
+@use 'nav_footer';
 
-// Utilities
 @import "variables";
 
-body {
+// root
+html{
+  background-color: $background;
   font-family: $font;
-}
-.row{
-  margin: 0 !important;
+  body {
+  @include shadow;
+  }
 }
 
-a {
-  color: $text-color2 !important;
+// bootstrap classes
+.container{
+  padding: 0 !important;
 }
-a:hover {
-  text-decoration: none !important;
-  color: $text-hover !important;
+
+.row{
+  margin: 0 !important;
 }

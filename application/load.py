@@ -1,32 +1,41 @@
 from application import app
 import os
 import json
+import pprint
 
-# GET website DATA with JSON
+""" Get jason file from static folder """
 def getJson():
-    f = open('application/static/data.json')
+    f = open(os.path.join(app.static_folder,"data.json"))
     return json.load(f)
 
-# Get list of strings from projects folder
-def getImages():
-    project_imgs = os.listdir(os.path.join(app.static_folder, "img/projects"))
+"""Get paths from images folder""" 
+def getImages(): 
+    pprint.pprint(searchItemsInPath(os.path.join(app.static_folder, "img/")))
+    return searchItemsInPath(os.path.join(app.static_folder, "img/"))
 
-    images={}
+
+"""Searches all files and directories in the path
+@returns a dictionary of the files and directories in the path"""
+def searchItemsInPath(path):
+    folderList = os.listdir(path)
+    package ={}
+
+    for item in folderList:
         
-    for project in project_imgs:
+        checkedItem = checkItem(item, path)
+        if checkedItem is not None:
+            package[item] = checkedItem
 
-        # Use try to catch the error when handling routes that doesnt contain a list
-        # Such as DS_STORE
-        try:
+    return package
 
-            #Get a list from each project
-            l = os.listdir(os.path.join(app.static_folder, "img/projects/" + project))
+""" check if item is a file or a directory, uses recursion if it's a directory"""
+def checkItem(item , directory):
 
-            # Add list to images dictionary
-            images[project] = l
-            
-        except:
-            print("app.py::os.listdir An exception occurred")
-    
-    return images
+    if (item.startswith('.')): # if item is secret .
+        return None
 
+    if(os.path.isfile(directory + item)): # if file
+        return (directory + item).replace(app.static_folder,"/static")
+
+    if(os.path.isdir(directory + item)): # if directory
+        return searchItemsInPath(directory + item+"/")

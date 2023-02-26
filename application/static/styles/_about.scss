@@ -1,0 +1,30 @@
+#about{
+  display: none;
+
+  .block1{
+    display: grid;
+    align-items: center;
+    justify-items: end;
+
+    .carousel{
+      padding-right: 30px;
+      width: 80%;
+    }
+  }
+
+  .block2
+  {
+    overflow: scroll;
+    display: grid;
+    align-items: center;
+
+    .text {
+      width: 80%;
+      padding-left: 30px;
+      height: inherit;
+      p{
+        text-align: justify;
+      }
+    }
+  }
+}

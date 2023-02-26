@@ -1,0 +1,75 @@
+@import "variables";
+
+#projects{
+    display: none;
+    
+    .projectsComponent{
+      position: relative;
+
+      #projectsList{
+        position: absolute;
+        background-color: rgb(253 249 242);
+        overflow: scroll;
+        border-right-style: solid;
+        ul{
+          list-style-type: none;
+          padding: 0;
+          button{
+            text-align: left;
+            display: block;
+            width: 100%;
+            padding: 12px 12px;
+            background-color: transparent;
+            border: none;
+            border-bottom-style: solid;
+            font-weight: bold;
+            font-size: 14px;
+          }
+        }
+      }
+
+      #projectsPreview{
+        position: absolute;
+        background-color: rgb(99, 99, 99);
+        display: flex;
+        overflow: scroll;
+        align-items: center;
+
+        button{
+          padding: 0;
+          background-color: transparent;
+          border-style: none;
+
+          .thumbnail{
+            border-radius: 4px;
+            border-style: solid;
+            border-width: 4px;
+            border-color: rgba(255, 166, 0, 0.514);
+
+          }
+          .active{
+            border-style: solid;
+            border-width: 4px;
+            border-color: orange;
+          }
+        } 
+      }
+
+      #projectView{
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.984);
+        p{
+          font-size: 24px;
+          color: white;
+          @include center;
+        }
+        img{
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+
+            @include center;
+        }
+      }
+    }
+  }

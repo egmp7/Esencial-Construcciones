@@ -5,7 +5,6 @@ from application import load
 from application import db
 
 language = "spanish"
-data = load.getJson()
 
 #   ROUTES
 @app.route('/home', methods=['GET', 'POST'])
@@ -19,7 +18,7 @@ def home():
     else:
         return render_template(
             'home.html',
-            data = data[language],
+            data = load.getJson()[language],
             images = load.getImages())
 
 @app.route('/changeLanguage', methods=[ 'POST'])
@@ -37,7 +36,7 @@ def changeLanguage():
 def success():
     return render_template(
         'success.html',
-        data = data[language],
+        data = load.getJson()[language],
         images = load.getImages(),
         fixedFooter = True)
 

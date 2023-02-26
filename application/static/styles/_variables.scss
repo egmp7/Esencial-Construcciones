@@ -1,31 +1,43 @@
-
+// Needs WORK
 
 $text-background:#25252571;
 
 $text-color1: white;
-$text-color2:#504f4f;
 $text-hover:#252525;
 
-$background1: white;
+$background:#f4f4f4;
+$nav-background: orange;
 
-$background2:#f1f1f1;
+$main-background:orange;
 
-$background3: #ffe442;
+$modal-color:#504f4f;
+$modal-title-background: #ffbc11;
 
-$background4:#ffdb00;
-
+$footer-color: white;
 $footer-background:#2b2b2b;
 
+
+
+
+$background1: white;
+$background2:#f1f1f1;
+$background3: #ffe442;
+$background4:#ffdb00;
 $font: 'Open Sans', sans-serif; 
 
 @mixin shadow {
-
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  
+}
+
+@mixin center{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
 }
 
 @mixin lists{
-  color: $text-color2;
+  color: $modal-color;
   background: $background2;
   margin: auto;
   max-width: 500px;
@@ -34,5 +46,4 @@ $font: 'Open Sans', sans-serif;
     background: $background3;
     text-align: center;
   }
-
 }

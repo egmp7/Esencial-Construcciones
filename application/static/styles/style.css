@@ -10,8 +10,8 @@ main .block1 {
   align-content: center;
 }
 main .block1 .greeting {
-  margin-right: 10%;
-  width: 70%;
+  padding-right: 5%;
+  width: 75%;
 }
 main .block1 .greeting .carousel {
   width: 100%;
@@ -34,18 +34,16 @@ main .block2 {
   align-content: center;
 }
 main .block2 .mainButtons {
-  margin-left: 10%;
+  margin-left: 5%;
   display: grid;
   align-content: space-evenly;
 }
 main .block2 .mainButtons button {
-  width: 70%;
   padding: 20px;
   color: black;
   font-size: 22px;
 }
 main .stick {
-  z-index: 1;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -55,7 +53,6 @@ main .stick {
   width: 8px;
 }
 main .modal {
-  z-index: 0;
   display: none;
   background-color: white;
   overflow: scroll;
@@ -101,6 +98,7 @@ main .modal #closeModal {
 #about .block2 .text {
   width: 80%;
   padding-left: 30px;
+  height: inherit;
 }
 #about .block2 .text p {
   text-align: justify;
@@ -215,10 +213,6 @@ main .modal #closeModal {
   align-items: center;
   justify-items: end;
 }
-#contact .block1 .map {
-  width: 85%;
-  padding-right: 25px;
-}
 #contact .block1 .map .text {
   text-align: center;
 }
@@ -246,10 +240,7 @@ main .modal #closeModal {
   align-items: center;
 }
 #contact .block2 .form {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 25px;
-  width: 85%;
+  height: inherit;
 }
 #contact .block2 .form h3 {
   font-size: 22px;
@@ -327,6 +318,8 @@ main .modal #closeModal {
 }
 nav {
   background: orange;
+  border-bottom: solid;
+  border-bottom-color: #ffbc11;
 }
 nav img {
   width: 56px;
@@ -337,9 +330,6 @@ nav img:hover {
 }
 nav .logo img {
   width: 100px;
-}
-nav .language {
-  text-align: center;
 }
 nav .social-media {
   text-align: end;

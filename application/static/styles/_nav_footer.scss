@@ -4,6 +4,8 @@
 
 nav {
   background: $nav-background;
+  border-bottom: solid;
+  border-bottom-color: $modal-title-background;
 
   img {
     width: 56px;
@@ -18,10 +20,6 @@ nav {
     img{
       width: 100px;
     }
-  }
-  
-  .language{
-    text-align: center;
   }
 
   .social-media{

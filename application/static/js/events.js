@@ -35,6 +35,7 @@ $( "#closeModal" ).click(function() {
     $(".greeting").css("display", "block");
     $(".mainButtons").css("display", "grid");
     $(".stick").css({display: "block", width: 8});
+    draw();
 });
 
 /** Hides the main componets and shows the modal component */

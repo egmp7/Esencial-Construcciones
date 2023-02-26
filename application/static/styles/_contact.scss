@@ -9,8 +9,6 @@
     justify-items: end;
 
     .map{
-      width:85%;
-      padding-right:25px;
 
       .text{
         text-align: center;
@@ -45,11 +43,7 @@
     align-items: center;
 
     .form{
-      padding-top:20px;
-      padding-bottom:20px;
-      padding-left: 25px;
-      width:85%;
-
+      height: inherit;
       h3{
         font-size: 22px;
       }

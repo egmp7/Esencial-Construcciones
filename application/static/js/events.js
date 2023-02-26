@@ -65,8 +65,7 @@ projectsClick = function(project)
     // load images
     for (var image in projectImages[project.id])
     {
-        console.log(project.id)
-        var html = `<button onclick="selectImage(${image.slice(0,-4)})"> 
+        var html = `<button onclick="thumbnailClick(${image.slice(0,-4)})"> 
                         <div id="thumbnail${image.slice(0,-4)}" class="thumbnail">
                             <img src="${projectImages[project.id][image]}"></img>
                         </div> 
@@ -75,7 +74,7 @@ projectsClick = function(project)
         $("#projectsPreview").append(html); 
     }
 
-    selectImage(1)
+    thumbnailClick(1)
 
     
 }

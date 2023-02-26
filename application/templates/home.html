@@ -142,7 +142,7 @@
                 <div id="projectsList">
                     <ul>
                         {% for project in data.projects.list %}
-                            <button onclick="selectProject({{project}})"> 
+                            <button onclick="projectsClick({{project}})"> 
                                 <li>{{project.name}}</li>
                             </button>
                         {% endfor %}

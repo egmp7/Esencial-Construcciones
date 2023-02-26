@@ -1,28 +1,11 @@
-// Needs WORK
-
-$text-background:#25252571;
-
-$text-color1: white;
-$text-hover:#252525;
-
 $background:#f4f4f4;
 $nav-background: orange;
-
 $main-background:orange;
-
 $modal-color:#504f4f;
 $modal-title-background: #ffbc11;
-
 $footer-color: white;
 $footer-background:#2b2b2b;
 
-
-
-
-$background1: white;
-$background2:#f1f1f1;
-$background3: #ffe442;
-$background4:#ffdb00;
 $font: 'Open Sans', sans-serif; 
 
 @mixin shadow {
@@ -34,16 +17,4 @@ $font: 'Open Sans', sans-serif;
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
-}
-
-@mixin lists{
-  color: $modal-color;
-  background: $background2;
-  margin: auto;
-  max-width: 500px;
-
-  .title{
-    background: $background3;
-    text-align: center;
-  }
 }

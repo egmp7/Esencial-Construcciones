@@ -1,49 +1,51 @@
 main {
-  background-color: orange;
-  display: flex;
   position: relative;
 }
-main .block1 {
+main .home {
+  position: absolute;
   display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-  align-content: center;
+  background-color: orange;
 }
-main .block1 .greeting {
-  padding-right: 5%;
+main .home .block1 {
+  display: grid;
+  width: 50%;
+}
+main .home .block1 .greeting {
   width: 75%;
+  margin: auto;
 }
-main .block1 .greeting .carousel {
+main .home .block1 .greeting .carousel {
   width: 100%;
 }
-main .block1 .greeting .carousel .carousel-inner {
+main .home .block1 .greeting .carousel .carousel-inner {
   border-radius: 10px;
 }
-main .block1 .greeting .text {
+main .home .block1 .greeting .text {
   text-align: center;
   margin-top: 3vh;
 }
-main .block1 .greeting .text h1 {
+main .home .block1 .greeting .text h1 {
   font-size: 20px;
 }
-main .block1 .greeting .text h2 {
+main .home .block1 .greeting .text h2 {
   font-size: 16px;
 }
-main .block2 {
+main .home .block2 {
+  width: 50%;
   display: grid;
-  align-content: center;
 }
-main .block2 .mainButtons {
-  margin-left: 5%;
+main .home .block2 .mainButtons {
+  width: 70%;
+  margin: auto;
   display: grid;
-  align-content: space-evenly;
 }
-main .block2 .mainButtons button {
-  padding: 20px;
+main .home .block2 .mainButtons button {
+  margin: 6% 0;
+  padding: 7% 0;
   color: black;
   font-size: 22px;
 }
-main .stick {
+main .home .stick {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -51,12 +53,13 @@ main .stick {
   background-color: #2b2b2b;
   border-radius: 20px;
   width: 8px;
+  height: 80%;
 }
 main .modal {
+  position: absolute;
   display: none;
   background-color: white;
   overflow: scroll;
-  position: absolute;
 }
 main .modal .title {
   text-align: center;
@@ -98,7 +101,6 @@ main .modal #closeModal {
 #about .block2 .text {
   width: 80%;
   padding-left: 30px;
-  height: inherit;
 }
 #about .block2 .text p {
   text-align: justify;
@@ -247,7 +249,7 @@ main .modal #closeModal {
 }
 
 #success {
-  background-color: #ffe442;
+  background-color: orange;
   height: 100vh;
   padding-top: 40px;
 }

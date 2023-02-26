@@ -1,52 +1,36 @@
-
-
-
 /********************************************* 
  * Main Buttons Events 
  * ********************************************/
 $( "#aboutButton" ).click(() => 
 {
-    showModal()
-    $( "#about" ).css("display", "block");
-    $(".stick").css({display: "block", width: 4});
-
+    $( "#about" ).show();
+    slideHome();
+    draw();
 });
 $( "#projectsButton" ).click(() => 
 {
-    showModal()
-    $( "#projects" ).css("display", "block");
+    $( "#projects" ).show();
+    slideHome();
+    draw();
 });
 $( "#servicesButton" ).click(function() {
-    showModal()
-    $( "#services" ).css("display", "block");
+    
+    $( "#services" ).show();
+    slideHome();
+    draw();
 });
 $( "#contactButton" ).click(function() {
-    showModal()
-    $( "#contact" ).css("display", "block");
-    $(".stick").css({display: "block", width: 4});
+    
+    $( "#contact" ).show();
+    slideHome();
+    draw();
 
 });
 $( "#closeModal" ).click(function() {
-    $( "#about" ).css("display", "none");
-    $( "#projects" ).css("display", "none");
-    $( "#services" ).css("display", "none");
-    $( "#contact" ).css("display", "none");
-    $(".modal").css("display", "none");
-    $(".greeting").css("display", "block");
-    $(".mainButtons").css("display", "grid");
-    $(".stick").css({display: "block", width: 8});
+
+    slideModal();
     draw();
 });
-
-/** Hides the main componets and shows the modal component */
-showModal = function()
-{
-    $(".modal").css("display", "block");
-    $(".greeting").css("display", "none");
-    $(".mainButtons").css("display", "none");
-    $(".stick").css("display", "none");   
-}
-
 
 /********************************************* 
  * Projects Events 
@@ -75,9 +59,9 @@ projectsClick = function(project)
     }
 
     thumbnailClick(1)
-
-    
+  
 }
+
 thumbnailClick = function(image)
 {
     // clear html
@@ -101,7 +85,6 @@ thumbnailClick = function(image)
     draw()
 }
 
-
 /********************************************* 
  * Services Events 
  * ********************************************/
@@ -112,7 +95,7 @@ serviceClick = function (serviceID)
     if($(`#${serviceID} p`).css('display') == "none")
     {
         hideServicesCards()
-        $(`#${serviceID} p`).css({display:"block"})
+        $(`#${serviceID} p`).slideDown("fast")
     }
     // hide if clicked again
     else 
@@ -122,5 +105,5 @@ serviceClick = function (serviceID)
 hideServicesCards = function()
 {
     for (var service in servicesImages)
-        $(`#${service} p`).css({display:"none"})
+        $(`#${service} p`).slideUp("fast")
 }

@@ -2,81 +2,89 @@
 {% block content %}
 
 <main>
-    
+
     <!--****************************
-    GREETING
+    HOME
     ********************************-->
-    
-    <div class="block1">
-        <div class="greeting">
-            <div id="greetingCarousel" class="carousel slide">
-                <div class="carousel-inner">
 
-                    <!-- Object to activate carousel -->
-                    {% set carousel = { 'active':True } %}
+    <div class="home">
 
-                    {% for image in images.greeting %}
-                    
-                        <div class="carousel-item {{ 'active' if carousel.active else '' }}">
-                            <img src="{{images.greeting[image]}}" class="d-block w-100 img-fluid" alt="...">
-                        </div>
+        <!--****************************
+        GREETING
+        ********************************-->
+        
+        <div class="block1">
+            <div class="greeting">
+                <div id="greetingCarousel" class="carousel slide">
+                    <div class="carousel-inner">
 
-                        <!-- Update caraousel object -->
-                    {% if carousel.update({'active': False}) %} {% endif %}
+                        {% set carousel = { 'active':True } %}
 
-                    {% endfor %}
+                        {% for image in images.greeting %}
+                        
+                            <div class="carousel-item {{ 'active' if carousel.active else '' }}">
+                                <img src="{{images.greeting[image]}}" class="d-block w-100 img-fluid" alt="...">
+                            </div>
 
+                        {% if carousel.update({'active': False}) %} {% endif %}
+
+                        {% endfor %}
+
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#greetingCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#greetingCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#greetingCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#greetingCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
 
-            <div class="text">    
-                <h1>{{data.carousel.title}}</h1>
-                <h2>{{data.carousel.slogan}}</h2>
+                <div class="text">    
+                    <h1>{{data.carousel.title}}</h1>
+                    <h2>{{data.carousel.slogan}}</h2>
+                </div>
             </div>
         </div>
+
+        <!--****************************
+        MAIN BUTTONS
+        ********************************-->
+
+        <div class="block2">
+            <div class="mainButtons">
+
+                <button id="aboutButton" 
+                        class="glow-on-hover">
+                        {{data.about.title}}
+                </button>
+                <button id="projectsButton" 
+                        class="glow-on-hover">
+                        {{data.projects.title}}
+                </button>
+                <button id="servicesButton" 
+                        class="glow-on-hover">
+                        {{data.services.title}}
+                </button>
+                <button id="contactButton" 
+                        class="glow-on-hover">
+                        {{data.contact.title}}
+                </button>
+        
+            </div>
+        </div>
+        
+        <div class="stick"></div> 
+
     </div>
 
     <!--****************************
-    MAIN BUTTONS
-    ********************************-->
-
-    <div class="block2">
-        <div class="mainButtons">
-
-            <button id="aboutButton" 
-                    class="glow-on-hover">
-                    {{data.about.title}}
-            </button>
-            <button id="projectsButton" 
-                    class="glow-on-hover">
-                    {{data.projects.title}}
-            </button>
-            <button id="servicesButton" 
-                    class="glow-on-hover">
-                    {{data.services.title}}
-            </button>
-            <button id="contactButton" 
-                    class="glow-on-hover">
-                    {{data.contact.title}}
-            </button>
-    
-        </div>
-    </div>
-
-     <!--****************************
     MODAL
     ********************************-->
 
     <div class="modal">
-       
+
         <!--****************************
         ABOUT
         ********************************-->
@@ -259,14 +267,12 @@
         <button id="closeModal" class="btn-close"></button>
     </div>
 
-    <div class="stick"></div> 
-
 </main>
 <script> const projectImages = {{ images.projects|tojson }} </script>
 <script> const servicesImages = {{ images.services|tojson }} </script>
 
-<script src="{{ url_for('static', filename='js/jQuery.js') }}"></script>
-<script src="{{ url_for('static', filename='js//events.js')}}"></script>
+<script src="{{ url_for('static', filename='js/Libraries/jQuery.js') }}"></script>
+<script src="{{ url_for('static', filename='js//Events.js')}}"></script>
 
 
 {% endblock %}

@@ -35,17 +35,12 @@ drawComputerView = function ()
 
     $("main").height(MAIN_WINDOW_HEIGHT);
 
-        const BLOCK_WIDTH = MAIN_WINDOW_WIDTH/2;
+        $(".home").css({
+            width: MAIN_WINDOW_WIDTH,
+            height:MAIN_WINDOW_HEIGHT
+        })
 
-        $(".block1").css({width: BLOCK_WIDTH, height: MAIN_WINDOW_HEIGHT, display: "flex"})
-        $(".block2").css({ width: BLOCK_WIDTH, height: MAIN_WINDOW_HEIGHT})
-
-            const MAIN_BUTTONS_HEIGHT = MAIN_WINDOW_HEIGHT*0.7
-            $(".mainButtons").css({height: MAIN_BUTTONS_HEIGHT, marginRight:0});
-            $(".mainButtons button").css({width: "75%"});
-        
-        const STICK_HEIGHT = MAIN_WINDOW_HEIGHT * 0.7;
-        $(".stick").css({height: STICK_HEIGHT, display:"block"});
+            const BLOCK_WIDTH = MAIN_WINDOW_WIDTH/2;
 
         /***********************************************
          * MODAL
@@ -89,9 +84,6 @@ drawComputerView = function ()
                                     width: PROJECTS_GRID_WIDTH,           height: PROJECTS_GRID_HEIGHT * 4,});
             $("#projectView").css({ left: PROJECTS_GRID_WIDTH,            top: 0,
                                     width: PROJECTS_GRID_WIDTH * 3,       height: PROJECTS_GRID_HEIGHT * 3});
-            
-            
-            
 
             $("#projectsPreview").css({ left: PROJECTS_GRID_WIDTH,        top: PROJECTS_GRID_HEIGHT * 3, 
                                         width: PROJECTS_GRID_WIDTH * 3,   height: PROJECTS_GRID_HEIGHT});

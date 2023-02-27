@@ -1,66 +1,141 @@
 @import "utilities";
 
+@mixin resetCSS {
+  #about{
+
+    .content{
+
+      // .block1{
+      //   display: block;
+      //   max-height: unset;
+
+      //   .carousel-container{
+      //     width: auto;
+      //   }
+      // }
+      // .block2{
+      //   display: block;
+      //   .text{
+      //     max-width: unset;
+      //   }
+      // }
+    }
+  }
+}
+
 #about{
   @include modal;
   display: none;
-  height: inherit;
 
+  .box{
 
-    .block1{
-      // width: 50%;
-      // position: relative;
-      // display: grid;
-      // align-items: center;
-
-      .carousel{
-        // position: absolute;
-        // right: 6%;
-        //  width: 80%;
-      }
-    }
-  
-    .block2
-    {
-      // width: 50%;
-      // display: grid;
-      // align-items: center;
-      // padding: 5% 0;
-  
-      .text {
-        //  width: 80%;
-         //padding-left: 6%;
-        p{
-          // text-align: justify;
-        }
-      }
-    }
-  }
-
-@media screen and (max-width: 768px) {
-
-  #about{
-    .modal-body{
-      // display: block;
-
+    .content{
+      display: flex;
+      flex-flow: row;
+    
       .block1{
-        // width: 100%;
+        flex: 1 0;
+        display: flex;
+        flex-flow: column;
+        //overflow: hidden;
+        // display: flex;
+        // align-items: center;
+        // justify-content: flex-end;
+        // max-height: 100%;
+        background-color: red;
 
         .carousel{
-          // position: relative;
-          // padding: 8px; 
-          // width: 100%;
-          // margin: auto;
+          flex: 0 1 100%;
+          //width: 50%;
+          .carousel-inner{
+            border-radius: 10px;
+          }
         }
-      }
-      .block2{
-        // width: 100%;
 
-        .text{
-          // padding: 8 ;
-          // width: 100%;
+        
+        
+        
+      }
+    
+      .block2
+      {
+        flex: 1 0;
+        // display: flex;
+        // align-items: center;
+        background-color: blue;
+        
+        // // padding: 5% 0;
+    
+        // .text {
+        //   max-width: 80%;
+        //   //padding-left: 6%;
+        //   p{
+        //       text-align: justify;
+        //   }
+        // }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: $phone-screen-size) and ( orientation: "portrait" ) {
+
+  @include resetCSS;
+
+  #about{
+
+    .box{
+
+      .content{
+        display: block;
+
+        .block1{
+
+          .box{
+            .carousel{
+              width: 95%;
+              margin: 8px auto;
+              
+            }
+
+          }
+
+          
+        }
+        .block2{
+
+          .text{
+            margin: 0 12px;
+            margin-bottom: 8px;
+          
+            h2{
+              text-align: center;
+            }
+          }
         }
       }
     }
-    
   }
 }
+
+@media screen and ( max-width: $phone-screen-size ) and ( orientation : "landscape" ){  
+  
+  @include resetCSS;
+
+  #about{
+    .box{
+      .content{
+        .block1{
+          .carousel{
+          }
+        }
+
+        .block2{
+
+        }
+      }
+    }
+  }
+}
+

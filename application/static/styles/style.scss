@@ -12,10 +12,12 @@ html{
   background-color: $background;
 }
 
-main {
-  position: relative;
-  @include shadow;
+body{
   font-family: 'Open Sans', sans-serif; 
+}
+
+main{
+  position: relative;
 }
 
 .container{  // Bootstrap 

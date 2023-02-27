@@ -6,102 +6,107 @@
 /************************************
 HOME 
 *************************************/
-main{
-  position: relative;
 
-  #home{
-    position: absolute;
-    display: flex;
-    background-color: $home-background;
-    width: 100%;
-    
 
-    .block1{
-      display: grid;
-      width: 50%;
-    
-      #greeting{
-        width: 75%;
-        margin: auto;
+#home{
+  position: absolute; // animation
+  width: 100%;
+  height: inherit;
+  display: flex;
+  background-color: $home-background;
+
+  .block1{
+    display: grid;
+    width: 50%;
   
-        .carousel{
-          width: 100%; 
+    #greeting{
+      position: relative;
+      width: 75%;
+      margin: auto;
 
-          .carousel-inner{
-            border-radius: 10px;
-          }
-        }
-    
-        .text{
-          text-align: center;
-          margin-top: 8px;
-    
-          h1{
-            font-size: 20px;
-          }
-    
-          h2{
-            font-size: 16px;
-          }
+      .carousel{
+        width: 100%; 
+
+        .carousel-inner{
+          border-radius: 10px;
         }
       }
-    }
   
-    .block2{
-      width: 50%;
-      display: grid;
-
-      .mainButtons{
-        width: 70%;
-        margin:auto;
-        // test
-        display: grid;
-      
-        button{
-          margin: 6% 0;
-          padding: 7% 0;
-          color: black;
-          font-size: 22px;
+      .text{
+        @include absolute-horizontal;
+        bottom: 20px;
+        min-width: 300px;
+        text-align: center;
+        background-color: #808080b3;
+        color: #e1dfdf;
+        border-radius: 10px;
+  
+        h1{
+          font-size: 20px;
+          margin-bottom: 0;
         }
-      }
-    }
-
-    // test
-    .stick{
-      @include center;
-      background-color: $footer-background;
-      border-radius: 20px;
-      width: 8px;
-      height: 80%;
-    }   
-  } 
-}
-
-@media screen and (max-width: 768px) {
-  main{
-
-    #home {
-      display: grid;
-      width: 100%;
-      overflow: scroll;
-
-      .block1{
-        display: none;
-      }
-
-      .block2{
-        width: 100%;
-
-        .mainButtons{
-          width: 90%;
+  
+        h2{
+          font-size: 16px;
         }
-      }
-
-      .stick{
-        display: none;
       }
     }
   }
+
+  .block2{
+    width: 50%;
+    display: grid;
+
+    .mainButtons{
+      width: 70%;
+      margin:auto;
+      // test
+      display: grid;
+    
+      button{
+        margin: 6% 0;
+        padding: 7% 0;
+        color: black;
+        font-size: 22px;
+      }
+    }
+  }
+
+  // test
+  .stick{
+    @include center;
+    background-color: $footer-background;
+    border-radius: 20px;
+    width: 8px;
+    height: 80%;
+  }   
+} 
+
+
+@media screen and (max-width: $phone-screen-size) {
+
+  #home {
+    display: grid;
+    overflow: scroll;
+
+    .block1{
+      display: none;
+    }
+
+    .block2{
+      width: 100%;
+
+      .mainButtons{
+        width: 90%;
+      }
+    }
+
+    .stick{
+      display: none;
+    }
+  }
 }
+
+
 
 

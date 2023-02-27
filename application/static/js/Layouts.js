@@ -11,69 +11,25 @@ window.addEventListener("resize", function(){
 
 draw = function()
 {
-    if(window.matchMedia("(max-width: 767px)").matches){
-        // The viewport is less than 768 pixels wide
-        drawPhoneView();
-        console.log("draw = function() This is a phone size");
-    } else{
-        // The viewport is at least 768 pixels wide
-        drawComputerView();
-        alert("This is a tablet or desktop.");
-        console.log("draw = function() This is a computer size");
-    }  
+    if(window.matchMedia("(max-width: 920px)").matches) drawPhoneView();
+    else drawComputerView();
 }
 
 /** Draws components in main container */
 drawComputerView = function ()
 {
-    $("body").addClass("container")
-
-    /***********************************************
-    * NAV
-    ***********************************************/
-    $(".social-media").css({display: "block"});
-    $("nav .language").css({textAlign: "center"});
-
-    const MAIN_WINDOW_WIDTH = $(".container").width();
+    $(" body ").addClass(" container ");
+    const MAIN_WINDOW_WIDTH = $( ".container" ).width();
     const MAIN_WINDOW_HEIGHT = $(window).height() - $("nav").outerHeight() - $("footer").outerHeight();
+    $( "main" ).css({ width: MAIN_WINDOW_WIDTH, height: MAIN_WINDOW_HEIGHT })
 
-    //$("main").height(MAIN_WINDOW_HEIGHT);
+    console.log(`drawComputerView :: w: ${MAIN_WINDOW_WIDTH}  h: ${MAIN_WINDOW_HEIGHT}`)
 
-        // $("#home").css({
-        //     width: MAIN_WINDOW_WIDTH,
-        //     height:MAIN_WINDOW_HEIGHT
-        // })
+    
 
-        // $("#about").css({
-        //     width: MAIN_WINDOW_WIDTH,
-        //     height:MAIN_WINDOW_HEIGHT
-        // })
 
-        // $("#about").css({
-        //     width: MAIN_WINDOW_WIDTH,
-        //     height:MAIN_WINDOW_HEIGHT
-        // })
-
-        // const MODAL_TITLE_HEIGHT = 42;
-        // const MODAL_BODY_HEIGHT = MAIN_WINDOW_HEIGHT - MODAL_TITLE_HEIGHT;
-
-        // $(".modal .title").height(MODAL_TITLE_HEIGHT)
-        // $(".modal-body").height(MODAL_BODY_HEIGHT)
-
-        // $(".modal .block1").css({
-        //     left: 0,            top:MODAL_TITLE_HEIGHT,
-        //     width: BLOCK_WIDTH, height: MODAL_BODY_HEIGHT,
-        //     position: "absolute"
-        // })
-
-        // $(".modal .block2").css({
-        //     left: BLOCK_WIDTH,  top:MODAL_TITLE_HEIGHT,
-        //     width: BLOCK_WIDTH, height: MODAL_BODY_HEIGHT,
-        //     position: "absolute"
-        // })
-            /***********************************************
-             * ABOUT
-             ***********************************************/
+         const MODAL_TITLE_HEIGHT = 42;
+         const MODAL_BODY_HEIGHT = MAIN_WINDOW_HEIGHT - MODAL_TITLE_HEIGHT;
 
             
        
@@ -116,52 +72,23 @@ drawComputerView = function ()
             $("#contact form").css({    
                 paddingTop: 20,     paddingBottom: 20,
                 paddingLeft: 25,    width: "85%"})
+
+                
+
 }
 
 drawPhoneView = function()
 {
-    $("body").removeClass("container")
+    $(" body ").removeClass(" container ")
+    const MAIN_WINDOW_WIDTH = $( window ).width();
+    const MAIN_WINDOW_HEIGHT = $( window ).height() - $(" nav ").outerHeight() - $(" footer ").outerHeight();
+    $(" main ").css({ width: MAIN_WINDOW_WIDTH, height: MAIN_WINDOW_HEIGHT });
 
-    $(".social-media").css({display: "none"});
-    $("nav .language").css({textAlign: "end"});
+    console.log(`drawPhoneView :: w: ${MAIN_WINDOW_WIDTH} h: ${MAIN_WINDOW_HEIGHT}`)
 
-    const MAIN_WINDOW_WIDTH = $(window).width();
-    const MAIN_WINDOW_HEIGHT = $(window).height() - $("nav").outerHeight() - $("footer").outerHeight();
+     
 
-    // $("main").height(MAIN_WINDOW_HEIGHT);
 
-    //     $("#home").css({
-    //         width: MAIN_WINDOW_WIDTH,
-    //         height:MAIN_WINDOW_HEIGHT
-    //     })
-
-    //     const MODAL_TITLE_HEIGHT = 42;
-    //     const MODAL_BODY_HEIGHT = MAIN_WINDOW_HEIGHT - MODAL_TITLE_HEIGHT;
-
-    //     $("#about").css({
-    //         width: MAIN_WINDOW_WIDTH,
-    //         height:MAIN_WINDOW_HEIGHT
-    //     })
-
-    //     $("#about .title").height(MODAL_TITLE_HEIGHT)
-
-        // $(".modal .block1").css({
-        //     left: "",                   top:"",
-        //     width: MAIN_WINDOW_WIDTH,   height: "",
-        //     position: "relative",       display:"block"
-        // })
-
-        // $(".modal .block2").css({
-        //     left: "",                   top:"",
-        //     width: MAIN_WINDOW_WIDTH,   height: "",
-        //     position: "relative"
-        // })
-
-        /***********************************************
-        * ABOUT
-        ***********************************************/
-
-        
 
         /***********************************************
          * SERVICES
@@ -181,5 +108,7 @@ drawPhoneView = function()
 
         $("#contact .map").css({width: "100%", padding: 8})
         $("#contact form").css({width: "100%", padding: 8})
+
+        
 
 }

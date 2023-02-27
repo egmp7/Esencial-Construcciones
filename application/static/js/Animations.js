@@ -1,35 +1,27 @@
 const ANIMATION_TIME= 400;
 
-slideModal = function ()
+slideAnimationOut = function ( element )
 {
-    $( ".modal" ).animate({
-        left: $(window).width()}, 
+    $( element ).animate({
+        left: $( window ).width()}, 
         ANIMATION_TIME, 
-        () => {
-    
-            $( "#about" ).hide();
-            $( "#projects" ).hide();
-            $( "#services" ).hide();
-            $( "#contact" ).hide();
-            $(".modal").hide();
-    
-    })
+        () => {$( element ).hide()})
 
     $( "#home" ).show();
-    $( "#home" ).animate({left: - $(window).width()}, 0)
+    $( "#home" ).animate({left: - $( window ).width()}, 0)
     $( "#home" ).animate({left: 0 }, ANIMATION_TIME)
+    draw()
 }
 
-slideHome = function ()
+slideAnimationIn = function ( element )
 {
     $( "#home" ).animate({
         left: - $(window).width()},
         ANIMATION_TIME, 
-        () => {
-        $("#home").hide();
-    })
+        () => { $("#home").hide()})
 
-    $( ".modal" ).show();
-    $( ".modal" ).animate({left: $(window).width()}, 0)
-    $( ".modal" ).animate({left:"0"}, ANIMATION_TIME)
+    $( element ).show();
+    $( element ).animate({left: $( window ).width()}, 0)
+    $( element ).animate({left: "0" }, ANIMATION_TIME)
+    draw()
 }

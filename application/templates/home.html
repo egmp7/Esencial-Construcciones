@@ -4,20 +4,17 @@
 <main>
 
     <!--****************************
-    HOME
+        HOME
     ********************************-->
-
+    
     <div id="home">
-
-        <!--****************************
-        GREETING
-        ********************************-->
-        
+    
         <div class="block1">
-            <div class="greeting">
+            <div id="greeting">
                 <div id="greetingCarousel" class="carousel slide">
                     <div class="carousel-inner">
 
+                        <!-- Object to activate carousel -->
                         {% set carousel = { 'active':True } %}
 
                         {% for image in images.greeting %}
@@ -26,6 +23,7 @@
                                 <img src="{{images.greeting[image]}}" class="d-block w-100 img-fluid" alt="...">
                             </div>
 
+                            <!-- Update caraousel object -->
                         {% if carousel.update({'active': False}) %} {% endif %}
 
                         {% endfor %}
@@ -47,10 +45,6 @@
                 </div>
             </div>
         </div>
-
-        <!--****************************
-        MAIN BUTTONS
-        ********************************-->
 
         <div class="block2">
             <div class="mainButtons">
@@ -74,201 +68,76 @@
         
             </div>
         </div>
-        
-        <div class="stick"></div> 
-
     </div>
 
     <!--****************************
-    ABOUT
+        ABOUT
     ********************************-->
     <div id="about">
 
-        <div class="title"><h2>{{data.about.title}}</h2></div>
+        <div class="box">
 
-        <div class="modal-body">
+            <div class="title"><h2>{{data.about.title}}</h2></div>
 
-            <div class="block1">
-                <!-- About - Carousel -->
-                <div id="aboutCarousel" class="carousel slide">
-                    <div class="carousel-inner">
-
-                        <!-- Object to activate carousel -->
-                        {% set carousel = { 'active':True } %}
-
-                        {% for image in images.about %}
+            <div class="content">
+        
+                <div class="block1">
                     
-                            <div class="carousel-item {{ 'active' if carousel.active else '' }}">
-                                <img src="{{images.about[image]}}" class="d-block w-100 img-fluid" alt="...">
-                            </div>
+                    <!-- About - Carousel -->
 
-                        <!-- Update caraousel object -->
-                        {% if carousel.update({'active': False}) %} {% endif %}
-        
-                        {% endfor %}
+                    <div id="aboutCarousel" class="carousel slide">
+                        <div class="carousel-inner">
 
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
-                        <span aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
-                        <span aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
+                            <!-- Object to activate carousel -->
+                            {% set carousel = { 'active':True } %}
 
-            <div class="block2">
-                <!-- About - Text -->
-                <div class="text col-sm">
-        
-                    <h2><strong>{{data.about.title}}</strong></h2>
-                    <p>{{data.about.description}} </p>
-        
-                    <h2><strong>{{data.objective.title}}</strong></h2>
-                    <p>{{data.objective.description}}</p>
-        
-                </div>
-            </div>
-        </div>
-    </div>
+                            {% for image in images.about %}
+                        
+                                <div class="carousel-item {{ 'active' if carousel.active else '' }}">
+                                    <img src="{{images.about[image]}}" class="d-block w-100 img-fluid" alt="...">
+                                </div>
 
-    <!--**************************** 
-        PROJECTS 
-    ********************************-->
-    <div id="projects">
-        <div class="title">
-            <h2>{{data.projects.title}}</h2>
-        </div>
+                            <!-- Update caraousel object -->
+                            {% if carousel.update({'active': False}) %} {% endif %}
+            
+                            {% endfor %}
 
-        <div class="projectsComponent">
-
-            <div id="projectsList">
-                <ul>
-                    {% for project in data.projects.list %}
-                        <button onclick="projectsClick({{project}})"> 
-                            <li>{{project.name}}</li>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+                            <span aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
                         </button>
-                    {% endfor %}
-                </ul>
-            </div>
-
-            <div id="projectsPreview"></div>
-
-            <div id="projectView">
-                <p>Seleccione un proyecto</p>
-            </div>
-        </div>
-        <div></div>
-        
-    </div>
-
-    <!--****************************
-            SERVICES 
-    ********************************-->
-    <div id="services">
-
-        <!-- Title -->
-
-        <div class="title"><h2>{{data.services.title}}</h2></div>
-
-
-        <!-- Cards -->
-
-        <div class="cards">
-
-            {%for serviceID in images.services%}
-
-                <div class="grid">
-                
-                    <div id="{{serviceID}}" 
-                            onclick="serviceClick('{{serviceID}}')" 
-                            class="card">
-                    
-                        <img src="{{images.services[serviceID]['1.jpg']}}">
-                        <h3>{{data.services[serviceID].name}}</h3>
-                        <p>{{data.services[serviceID].description}}</p>
+                        <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+                            <span aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
 
                     </div>
                 </div>
 
-            {%endfor%}
-
-        </div>
-
-    </div>
-    
-    <!--**************************** 
-        CONTACT 
-    ********************************-->
-    <div id="contact" class="contact">
-    
-        <div class="title"><h2>{{data.contact.title}}</h2></div>
-        <div class="block1">
-            <div class="map">
-                <div class="text">
-                    <p><strong>Arquitecto: </strong>{{data.contact.name}}</p>
-                    <p><strong>Teléfono: </strong>{{data.contact.phone}}</p>
+                <div class="block2">
+                <!-- About - Text -->
+                    {# <div class="text col-sm">
+            
+                        <h2><strong>{{data.about.title}}</strong></h2>
+                        <p>{{data.about.description}} </p>
+            
+                        <h2><strong>{{data.objective.title}}</strong></h2>
+                        <p>{{data.objective.description}}</p>
+            
+                    </div> #}
                 </div>
-                <!-- Embeded Maps / 1:1 aspect ratio  -->
-                <div class="block">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d255346.77066477528!2d-78.447919!3d-0.202946!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d590eb5647cd6d%3A0xb8e005887399b0b9!2sQuito%20170157!5e0!3m2!1sen!2sec!4v1677353677440!5m2!1sen!2sec" 
-                        class="responsive-iframe"
-                        width="400" 
-                        height="300" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
+
             </div>
         </div>
-        <div class="block2">
-            <div class="form">
-        
-                <!-- Form -->
-                <form method="POST">
-
-                    <!-- Form title -->
-                    <h3>{{data.contact.form.title}}</h3>
-
-                <!--  Name -->
-                    <div class="mb-3">
-                        <label for="name" class="form-label">{{data.contact.form.name}}</label>
-                        <input type="text" class="form-control" id="name" name="name">
-                    </div>
-
-                    <!-- Email -->
-                    <div class="mb-3">
-                        <label for="e-mail" class="form-label">{{data.contact.form.email}}</label>
-                        <input type="email" class="form-control" id="e-mail" name="email">
-                    </div>
-                    
-                    <!-- Description -->
-
-                    <div class="mb-3">
-                        <label for="description" class="form-label">{{data.contact.form.description}}</label>
-                        <textarea type="text" class="form-control" id="description" rows="10" name="description"></textarea>
-                    </div>
-
-                    <!-- Submit -->
-                    
-                    <button type="submit" class="btn btn-success">{{data.contact.form.send}}</button>
-                </form>
-            </div>
-        </div>
+         <button id="closeAbout" class="btn-close close-modal"></button>
     </div>
-
-    <button id="closeModal" class="btn-close"></button>
 
 </main>
-<script> const projectImages = {{ images.projects|tojson }} </script>
-<script> const servicesImages = {{ images.services|tojson }} </script>
 
 <script src="{{ url_for('static', filename='js/Libraries/jQuery.js') }}"></script>
 <script src="{{ url_for('static', filename='js//Events.js')}}"></script>
-
+<script> const projectImages = {{ images.projects|tojson }} </script>
+<script> const servicesImages = {{ images.services|tojson }} </script>
 
 {% endblock %}

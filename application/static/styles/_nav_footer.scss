@@ -3,9 +3,6 @@
 @import "glowOnHover";
 
 nav {
-  position: absolute;
-  top: 0;
-  left: 0;
   background: $nav-background;
   border-bottom: solid;
   border-bottom-color: $modal-title-background;
@@ -25,15 +22,18 @@ nav {
     }
   }
 
+  .language{
+    text-align: center;
+  }
+
   .social-media{
+    display: block;
     text-align: end;
   } 
 }
-  
+
+
 footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
   width: 100%;
   background: $footer-background;
   color: $footer-color;
@@ -42,3 +42,19 @@ footer {
   padding: 10px 0px;
   text-align: center;
 }
+
+@media screen and (max-width: $phone-screen-size) {
+  nav{
+
+    .social-media{
+      display: none;
+    }
+
+    .language{
+      text-align: end;
+    } 
+  }
+}
+
+
+

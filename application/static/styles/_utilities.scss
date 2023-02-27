@@ -1,3 +1,4 @@
+$phone-screen-size : 920px;
 $background:#f4f4f4;
 $nav-background: orange;
 $home-background:orange;
@@ -19,29 +20,46 @@ $footer-background:#2b2b2b;
   transform:translate(-50%,-50%);
 }
 
+@mixin absolute-horizontal{
+  position:absolute;
+  left:50%;
+  transform:translate(-50%);
+}
+
 @mixin modal {
 
   position: absolute;
-  display: none;
-  overflow: scroll;
+  width: inherit;
+  height: inherit;
 
-  .title {
-    text-align: center;
-    background: $modal-title-background;
-    text-transform: uppercase;
-    position: relative;
+  .box{
+    display: flex;
+    flex-flow: column ;
+    width: inherit;
+    height: inherit;    
 
-    h2{
-      @include center;
-      font-size: 18px;
-      margin: 0;
+    .title {
+      flex-grow: 0;
+      background: $modal-title-background;
+      text-transform: uppercase;
+  
+      h2{
+        font-size: 18px;
+        text-align: center;
+        margin: 0;
+        padding: 12px;
+      }
     }
-  }
+  
+    .content{
+      flex-grow: 1;
+    }
 
-  .closeModal{
+  }
+  
+  .close-modal{
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 12px;
   }
-
 }

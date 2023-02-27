@@ -3,8 +3,7 @@
  * ********************************************/
 $( "#aboutButton" ).click(() => 
 {
-    $( "#about" ).show();
-    slideHome();
+    slideAnimationIn( "#about" );
     draw();
 });
 $( "#projectsButton" ).click(() => 
@@ -26,11 +25,8 @@ $( "#contactButton" ).click(function() {
     draw();
 
 });
-$( "#closeModal" ).click(function() {
 
-    slideModal();
-    draw();
-});
+$ (" #closeAbout ").click( ()=> slideAnimationOut( "#about "))
 
 /********************************************* 
  * Projects Events 

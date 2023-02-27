@@ -1,55 +1,62 @@
 /************************************
 HOME 
 *************************************/
-main {
-  position: relative;
-}
-main #home {
+#home {
   position: absolute;
+  width: 100%;
+  height: inherit;
   display: flex;
   background-color: orange;
-  width: 100%;
 }
-main #home .block1 {
+#home .block1 {
   display: grid;
   width: 50%;
 }
-main #home .block1 #greeting {
+#home .block1 #greeting {
+  position: relative;
   width: 75%;
   margin: auto;
 }
-main #home .block1 #greeting .carousel {
+#home .block1 #greeting .carousel {
   width: 100%;
 }
-main #home .block1 #greeting .carousel .carousel-inner {
+#home .block1 #greeting .carousel .carousel-inner {
   border-radius: 10px;
 }
-main #home .block1 #greeting .text {
+#home .block1 #greeting .text {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 20px;
+  min-width: 300px;
   text-align: center;
-  margin-top: 8px;
+  background-color: rgba(128, 128, 128, 0.7019607843);
+  color: #e1dfdf;
+  border-radius: 10px;
 }
-main #home .block1 #greeting .text h1 {
+#home .block1 #greeting .text h1 {
   font-size: 20px;
+  margin-bottom: 0;
 }
-main #home .block1 #greeting .text h2 {
+#home .block1 #greeting .text h2 {
   font-size: 16px;
 }
-main #home .block2 {
+#home .block2 {
   width: 50%;
   display: grid;
 }
-main #home .block2 .mainButtons {
+#home .block2 .mainButtons {
   width: 70%;
   margin: auto;
   display: grid;
 }
-main #home .block2 .mainButtons button {
+#home .block2 .mainButtons button {
   margin: 6% 0;
   padding: 7% 0;
   color: black;
   font-size: 22px;
 }
-main #home .stick {
+#home .stick {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -60,50 +67,91 @@ main #home .stick {
   height: 80%;
 }
 
-@media screen and (max-width: 768px) {
-  main #home {
+@media screen and (max-width: 920px) {
+  #home {
     display: grid;
-    width: 100%;
     overflow: scroll;
   }
-  main #home .block1 {
+  #home .block1 {
     display: none;
   }
-  main #home .block2 {
+  #home .block2 {
     width: 100%;
   }
-  main #home .block2 .mainButtons {
+  #home .block2 .mainButtons {
     width: 90%;
   }
-  main #home .stick {
+  #home .stick {
     display: none;
   }
 }
 #about {
   position: absolute;
+  width: inherit;
+  height: inherit;
   display: none;
-  overflow: scroll;
-  display: none;
+}
+#about .box {
+  display: flex;
+  flex-flow: column;
+  width: inherit;
   height: inherit;
 }
-#about .title {
-  text-align: center;
+#about .box .title {
+  flex-grow: 0;
   background: #ffbc11;
   text-transform: uppercase;
-  position: relative;
 }
-#about .title h2 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+#about .box .title h2 {
   font-size: 18px;
+  text-align: center;
   margin: 0;
+  padding: 12px;
 }
-#about .closeModal {
+#about .box .content {
+  flex-grow: 1;
+}
+#about .close-modal {
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 12px;
+}
+#about .box .content {
+  display: flex;
+  flex-flow: row;
+}
+#about .box .content .block1 {
+  flex: 1 0;
+  display: flex;
+  flex-flow: column;
+  background-color: red;
+}
+#about .box .content .block1 .carousel {
+  flex: 0 1 100%;
+}
+#about .box .content .block1 .carousel .carousel-inner {
+  border-radius: 10px;
+}
+#about .box .content .block2 {
+  flex: 1 0;
+  background-color: blue;
+}
+
+@media screen and (max-width: 920px) and (orientation: portrait) {
+  #about .box .content {
+    display: block;
+  }
+  #about .box .content .block1 .box .carousel {
+    width: 95%;
+    margin: 8px auto;
+  }
+  #about .box .content .block2 .text {
+    margin: 0 12px;
+    margin-bottom: 8px;
+  }
+  #about .box .content .block2 .text h2 {
+    text-align: center;
+  }
 }
 #projects {
   display: none;
@@ -318,9 +366,6 @@ main #home .stick {
   }
 }
 nav {
-  position: absolute;
-  top: 0;
-  left: 0;
   background: orange;
   border-bottom: solid;
   border-bottom-color: #ffbc11;
@@ -335,14 +380,15 @@ nav img:hover {
 nav .logo img {
   width: 100px;
 }
+nav .language {
+  text-align: center;
+}
 nav .social-media {
+  display: block;
   text-align: end;
 }
 
 footer {
-  position: absolute;
-  left: 0;
-  bottom: 0;
   width: 100%;
   background: #2b2b2b;
   color: white;
@@ -352,14 +398,24 @@ footer {
   text-align: center;
 }
 
+@media screen and (max-width: 920px) {
+  nav .social-media {
+    display: none;
+  }
+  nav .language {
+    text-align: end;
+  }
+}
 html {
   background-color: #f4f4f4;
 }
 
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
 main {
   position: relative;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  font-family: "Open Sans", sans-serif;
 }
 
 .container {

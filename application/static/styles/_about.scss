@@ -1,28 +1,5 @@
 @import "utilities";
 
-@mixin resetCSS {
-  #about{
-
-    .content{
-
-      // .block1{
-      //   display: block;
-      //   max-height: unset;
-
-      //   .carousel-container{
-      //     width: auto;
-      //   }
-      // }
-      // .block2{
-      //   display: block;
-      //   .text{
-      //     max-width: unset;
-      //   }
-      // }
-    }
-  }
-}
-
 #about{
   @include modal;
   display: none;
@@ -32,47 +9,52 @@
     .content{
       display: flex;
       flex-flow: row;
+      overflow-y: auto;
+
     
       .block1{
-        flex: 1 0;
-        display: flex;
-        flex-flow: column;
-        //overflow: hidden;
-        // display: flex;
-        // align-items: center;
-        // justify-content: flex-end;
-        // max-height: 100%;
         background-color: red;
+         flex: 1 1;
+         display: flex;
+         justify-content: end;
 
-        .carousel{
-          flex: 0 1 100%;
-          //width: 50%;
-          .carousel-inner{
+        
+
+        .test{
+          display: flex;
+          img{
+            height: auto; 
+            width: auto;
+            max-width: 100%; 
+            max-height: 100%;
+            align-self: center;
             border-radius: 10px;
           }
+          
         }
 
-        
-        
-        
+        .carousel{
+          display: flex;
+          .carousel-inner{
+            display: flex;
+            border-radius: 10px;
+            .carousel-item{
+              display: flex;
+              img{
+                
+                max-width: 100%;
+                max-height: 100%;
+              }
+            }
+          }
+        }
       }
     
       .block2
       {
-        flex: 1 0;
-        // display: flex;
-        // align-items: center;
+        flex: 1 1;
+
         background-color: blue;
-        
-        // // padding: 5% 0;
-    
-        // .text {
-        //   max-width: 80%;
-        //   //padding-left: 6%;
-        //   p{
-        //       text-align: justify;
-        //   }
-        // }
       }
     }
   }
@@ -80,8 +62,6 @@
 
 
 @media screen and (max-width: $phone-screen-size) and ( orientation: "portrait" ) {
-
-  @include resetCSS;
 
   #about{
 
@@ -120,14 +100,13 @@
 }
 
 @media screen and ( max-width: $phone-screen-size ) and ( orientation : "landscape" ){  
-  
-  @include resetCSS;
 
   #about{
     .box{
       .content{
         .block1{
           .carousel{
+            //margin: unset;
           }
         }
 

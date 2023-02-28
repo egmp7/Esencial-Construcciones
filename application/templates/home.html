@@ -83,36 +83,40 @@
         
                 <div class="block1">
                     
+                    <div class="test">
                     <!-- About - Carousel -->
+                        <img src="https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/TextwithImage-Horizontal/acela-engine.jpg/_jcr_content/renditions/cq5dam.web.900.548.jpeg">
+                    </div>
 
-                    <div id="aboutCarousel" class="carousel slide">
-                        <div class="carousel-inner">
+                    <!-- About - Carousel -->
+                {# <div id="aboutCarousel" class="carousel slide">
+                    <div class="carousel-inner">
 
-                            <!-- Object to activate carousel -->
-                            {% set carousel = { 'active':True } %}
+                        <!-- Object to activate carousel -->
+                        {% set carousel = { 'active':True } %}
 
-                            {% for image in images.about %}
-                        
-                                <div class="carousel-item {{ 'active' if carousel.active else '' }}">
-                                    <img src="{{images.about[image]}}" class="d-block w-100 img-fluid" alt="...">
-                                </div>
+                        {% for image in images.about %}
+                    
+                            <div class="carousel-item {{ 'active' if carousel.active else '' }}">
+                                <img src="{{images.about[image]}}" class="d-block w-100 img-fluid" alt="...">
+                            </div>
 
-                            <!-- Update caraousel object -->
-                            {% if carousel.update({'active': False}) %} {% endif %}
-            
-                            {% endfor %}
-
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
-                            <span aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
-                            <span aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
+                        <!-- Update caraousel object -->
+                        {% if carousel.update({'active': False}) %} {% endif %}
+        
+                        {% endfor %}
 
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+                        <span aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+                        <span aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div> #}
+
                 </div>
 
                 <div class="block2">
